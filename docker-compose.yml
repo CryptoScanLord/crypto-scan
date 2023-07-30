@@ -1,0 +1,36 @@
+services:
+  yarn:
+    image: node:19
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn install --immutable --immutable-cache
+    profiles: []
+  api-dev:
+    image: node:19
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    environment:
+      - PORT=8000
+    entrypoint: yarn workspace @api/entrypoint dev
+    ports:
+      - 8000:8000
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
+    profiles: ['dev']
+  client-dev:
+    image: node:19
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @app/entrypoint dev
+    ports:
+      - 5173:5173
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
+      api-dev:
+        condition: service_started
+    profiles: ['dev']
