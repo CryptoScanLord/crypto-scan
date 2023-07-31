@@ -1,5 +1,6 @@
 import type { Plugin, Project } from '@yarnpkg/core'
 import { formatUtils, MessageName, structUtils } from '@yarnpkg/core'
+// @ts-expect-error
 import type { InstallOptions } from '@yarnpkg/core/lib/Project'
 import { ppath, xfs } from '@yarnpkg/fslib'
 
@@ -30,16 +31,32 @@ export const plugin: Plugin = {
           const added: string[] = []
 
           project.workspaces
-            .filter((ws) => ws.cwd !== project.cwd && ws.manifest.name.scope !== 'private')
-            .forEach(({ relativeCwd, manifest: { name } }) => {
-              if (name) {
-                const stringifiedName = structUtils.stringifyIdent(name)
-                paths[stringifiedName] = [relativeCwd]
-                if (!previousPaths.includes(stringifiedName)) {
-                  added.push(stringifiedName)
+            .filter((ws) => ws.cwd !== project.cwd && ws.manifest.name?.scope !== 'private')
+            .forEach(
+              ({
+                relativeCwd,
+                manifest: {
+                  name,
+                  main,
+                  raw: { exports = {} },
+                },
+              }) => {
+                if (name) {
+                  const stringifiedName = structUtils.stringifyIdent(name)
+                  paths[stringifiedName] = [relativeCwd]
+                  const customs = Object.entries(exports) as Array<[string, string]>
+
+                  if (!previousPaths.includes(stringifiedName)) {
+                    added.push(stringifiedName)
+                  }
+
+                  customs.forEach(([sub, path]) => {
+                    const exportsName = `${stringifiedName}/${sub.replaceAll('./', '')}`
+                    paths[exportsName] = [ppath.join(relativeCwd, path as any)]
+                  })
                 }
-              }
-            })
+              },
+            )
 
           const actualPaths = Object.keys(paths)
 

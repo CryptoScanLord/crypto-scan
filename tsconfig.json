@@ -7,14 +7,14 @@
       "ESNext"
     ],
     "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ES2022",
     "sourceMap": true,
-    "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
@@ -71,12 +71,21 @@
       ],
       "@theme/schema": [
         "client/shared/theme/schema"
+      ],
+      "@lib/auth-nestjs": [
+        "lib/auth/nestjs"
+      ],
+      "@lib/auth-react": [
+        "lib/auth/react"
+      ],
+      "@lib/vite": [
+        "lib/vite"
       ]
     }
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
+    ".yarn/standalone/**/*",
+    "**/*"
   ],
   "exclude": [
     "node_modules"
