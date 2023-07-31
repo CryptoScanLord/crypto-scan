@@ -4,7 +4,7 @@ services:
     working_dir: /workspace
     volumes:
       - ./:/workspace
-    entrypoint: yarn install --immutable --immutable-cache
+    entrypoint: yarn
     profiles: []
   api-dev:
     image: node:19
