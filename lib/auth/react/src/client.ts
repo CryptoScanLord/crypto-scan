@@ -49,19 +49,12 @@ export function createClient<
     })
 
   if (isSingleton) {
-    // The `Singleton` pattern is the default to simplify the instantiation
-    // of a Supabase client across Client Components.
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const _supabase = supabase ?? createNewClient()
-    // For SSG and SSR always create a new Supabase client
     if (typeof window === 'undefined') return _supabase
-    // Create the Supabase client once in the client
     if (!supabase) supabase = _supabase
     return supabase
   }
 
-  // This allows for multiple Supabase clients, which may be required when using
-  // multiple schemas. The user will be responsible for ensuring a single
-  // instance of Supabase is used across Client Components, for each schema.
   return createNewClient()
 }
