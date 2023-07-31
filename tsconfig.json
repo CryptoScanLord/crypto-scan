@@ -71,6 +71,15 @@
       ],
       "@theme/schema": [
         "client/shared/theme/schema"
+      ],
+      "@lib/auth-nestjs": [
+        "lib/auth/nestjs"
+      ],
+      "@lib/auth-react": [
+        "lib/auth/react"
+      ],
+      "@lib/vite": [
+        "lib/vite"
       ]
     }
   },

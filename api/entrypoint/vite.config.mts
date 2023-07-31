@@ -2,6 +2,7 @@
 
 import { defineConfig } from 'vite'
 import { VitePluginNode as node } from 'vite-plugin-node'
+import { env } from '@lib/vite'
 
 export default defineConfig({
   server: {
@@ -27,5 +28,11 @@ export default defineConfig({
     deps: {
       interopDefault: true
     }
+  },
+  define: {
+    ...env(
+      'SUPABASE_URL',
+      'SUPABASE_KEY'
+    ),
   }
 })
