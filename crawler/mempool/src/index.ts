@@ -1,2 +1,2 @@
-export * from './get-txs'
-export * from './public-types'
+export * from './get-txs.js'
+export * from './public-types.js'

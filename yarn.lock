@@ -793,9 +793,6 @@ __metadata:
 "@crawler/mempool@workspace:crawler/mempool":
   version: 0.0.0-use.local
   resolution: "@crawler/mempool@workspace:crawler/mempool"
-  dependencies:
-    "@types/node": "npm:^20.4.5"
-    axios: "npm:^1.4.0"
   languageName: unknown
   linkType: soft
 
@@ -2566,7 +2563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.3.1, @types/node@npm:^20.4.5":
+"@types/node@npm:*, @types/node@npm:^20.3.1":
   version: 20.4.5
   resolution: "@types/node@npm:20.4.5"
   checksum: ed414b8fea1b462cb7444464e18cf0786a11def8b863bcca52b0466992d04f701422f9fc3c33e0601444bfdbf9e18d8f4b163d35902758495b51e635b09fee64
@@ -4276,17 +4273,6 @@ __metadata:
   version: 4.7.2
   resolution: "axe-core@npm:4.7.2"
   checksum: 8dfc61f038fbd9623ae8a264c8a475d887113a027fb440a2b377b82ffd300e71d1a0bcf042ff13b517a8d548b34c44b4159eff693725c5d7cde240d0aa68feac
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "axios@npm:1.4.0"
-  dependencies:
-    follow-redirects: "npm:^1.15.0"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: a925a07590b0ec1d4daf28cd27890f930daab980371558deb3b883af174b881da09e5ba2cb8393a648fda5859e39934982d0b8b092fe89fc84cb6c80a70a1910
   languageName: node
   linkType: hard
 
@@ -6431,16 +6417,6 @@ __metadata:
   version: 3.2.7
   resolution: "flatted@npm:3.2.7"
   checksum: 207a87c7abfc1ea6928ea16bac84f9eaa6d44d365620ece419e5c41cf44a5e9902b4c1f59c9605771b10e4565a0cb46e99d78e0464e8aabb42c97de880642257
-  languageName: node
-  linkType: hard
-
-"follow-redirects@npm:^1.15.0":
-  version: 1.15.2
-  resolution: "follow-redirects@npm:1.15.2"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: da5932b70e63944d38eecaa16954bac4347036f08303c913d166eda74809d8797d38386e3a0eb1d2fe37d2aaff2764cce8e9dbd99459d860cf2cdfa237923b5f
   languageName: node
   linkType: hard
 
@@ -9607,13 +9583,6 @@ __metadata:
     forwarded: "npm:0.2.0"
     ipaddr.js: "npm:1.9.1"
   checksum: c3eed999781a35f7fd935f398b6d8920b6fb00bbc14287bc6de78128ccc1a02c89b95b56742bf7cf0362cc333c61d138532049c7dedc7a328ef13343eff81210
-  languageName: node
-  linkType: hard
-
-"proxy-from-env@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "proxy-from-env@npm:1.1.0"
-  checksum: fe7dd8b1bdbbbea18d1459107729c3e4a2243ca870d26d34c2c1bcd3e4425b7bcc5112362df2d93cc7fb9746f6142b5e272fd1cc5c86ddf8580175186f6ad42b
   languageName: node
   linkType: hard
 

@@ -1,13 +1,8 @@
 {
   "name": "@crawler/mempool",
   "main": "src/index.ts",
+  "type": "module",
   "exports": {
     "./private": "./src/private.ts"
-  },
-  "dependencies": {
-    "axios": "^1.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.4.5"
   }
 }

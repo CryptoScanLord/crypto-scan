@@ -1,5 +1,5 @@
-import * as Prv from './private-types'
-import * as Pub from './public-types'
+import * as Prv from './private-types.js'
+import * as Pub from './public-types.js'
 
 const negate = (value: number) => -value
 
