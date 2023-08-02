@@ -72,6 +72,18 @@
       "@theme/schema": [
         "client/shared/theme/schema"
       ],
+      "@crawler/bis": [
+        "crawler"
+      ],
+      "@crawler/bis/private": [
+        "crawler/src/private.ts"
+      ],
+      "@crawler/mempool": [
+        "crawler/mempool"
+      ],
+      "@crawler/mempool/private": [
+        "crawler/mempool/src/private.ts"
+      ],
       "@lib/auth-nestjs": [
         "lib/auth/nestjs"
       ],
