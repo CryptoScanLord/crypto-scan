@@ -237,6 +237,7 @@ __metadata:
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
     "@api/hello-module": "workspace:^"
+    "@crawler/bis": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@lib/vite": "workspace:^"
     "@nestjs/cli": "npm:^10.0.0"
@@ -790,7 +791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@crawler/bis@workspace:crawler/bis":
+"@crawler/bis@workspace:^, @crawler/bis@workspace:crawler/bis":
   version: 0.0.0-use.local
   resolution: "@crawler/bis@workspace:crawler/bis"
   languageName: unknown

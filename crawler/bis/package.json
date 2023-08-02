@@ -1,8 +1,5 @@
 {
   "name": "@crawler/bis",
   "main": "src/index.ts",
-  "type": "module",
-  "exports": {
-    "./private": "./src/private.ts"
-  }
+  "type": "module"
 }

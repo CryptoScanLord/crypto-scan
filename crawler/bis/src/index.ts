@@ -1,2 +1,2 @@
-export * from './get-nfts'
-export * from './public-types'
+export * from './get-nfts.js'
+export * from './public-types.js'

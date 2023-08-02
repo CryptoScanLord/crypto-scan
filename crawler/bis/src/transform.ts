@@ -1,5 +1,5 @@
-import * as Prv from './private-types'
-import * as Pub from './public-types'
+import * as Prv from './private-types.js'
+import * as Pub from './public-types.js'
 
 const transformTransfers = (transfers: Prv.Transfer[]) =>
   transfers.map(
@@ -32,7 +32,7 @@ const transformTraits = (traits: Prv.Traits[]) =>
   )
 
 export const transformData = (nft: Prv.NftDataApi) => {
-  const time = new Date(nft.timestamp * 1000).toISOString()
+  const time = new Date(Number(nft.timestamp) * 1000).toISOString()
 
   return {
     tokenId: nft.token_id,
@@ -45,7 +45,7 @@ export const transformData = (nft: Prv.NftDataApi) => {
     genesisFee: nft.genesis_fee,
     transfers: transformTransfers(nft.transfers),
     itemName: nft.item_name,
-    metadata: transformMetadata(nft.metadata),
+    metadata: nft?.metadata ? transformMetadata(nft.metadata) : undefined,
     collectionName: nft.collection_name,
     collectionSlug: nft.collections_slug,
     blockHeight: nft.block_height,

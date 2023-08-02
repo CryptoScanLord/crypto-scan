@@ -24,7 +24,7 @@ export interface Traits {
 
 export interface NftDataApi {
   token_id: string
-  token_num: string
+  token_num: number
   title: string
   image_url: string
   wallet_addr: string
@@ -36,7 +36,7 @@ export interface NftDataApi {
   output_value: number
   transfers: Transfer[]
   item_name?: string
-  metadata?: Metadata[]
+  metadata?: Metadata
   collection_name?: string
   collections_slug?: string
   block_height: number

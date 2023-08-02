@@ -75,9 +75,6 @@
       "@crawler/bis": [
         "crawler/bis"
       ],
-      "@crawler/bis/private": [
-        "crawler/bis/src/private.ts"
-      ],
       "@crawler/mempool": [
         "crawler/mempool"
       ],
