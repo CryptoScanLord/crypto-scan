@@ -1,15 +1,18 @@
 import * as Prv from './private-types'
 import * as Pub from './public-types'
 
-const transformTransfers = (transfers: Pub.Transfer[]) =>
-  transfers.map(({ from, to, height, salePrice, timestamp, tx }) => ({
-    from,
-    to,
-    height,
-    salePrice,
-    timestamp,
-    tx,
-  }))
+const transformTransfers = (transfers: Prv.Transfer[]) =>
+  transfers.map(
+    ({ from, to, height, psbt_sale, ts, tx }) =>
+      ({
+        from,
+        to,
+        height,
+        salePrice: psbt_sale === -1 ? undefined : psbt_sale,
+        timestamp: ts,
+        tx,
+      }) satisfies Pub.Transfer,
+  )
 
 const transformMetadata = (metadata: Prv.Metadata) =>
   ({
