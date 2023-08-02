@@ -72,6 +72,9 @@
       "@theme/schema": [
         "client/shared/theme/schema"
       ],
+      "@crawler/unisat": [
+        "crawler/unisat"
+      ],
       "@lib/auth-nestjs": [
         "lib/auth/nestjs"
       ],
