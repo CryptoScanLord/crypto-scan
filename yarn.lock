@@ -790,6 +790,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@crawler/unisat@workspace:crawler/unisat":
+  version: 0.0.0-use.local
+  resolution: "@crawler/unisat@workspace:crawler/unisat"
+  languageName: unknown
+  linkType: soft
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
