@@ -4,24 +4,20 @@ import * as Pub from './public-types'
 const convertSatoshiToBTC = (satoshiValue: number) => (satoshiValue !== -1 ? satoshiValue / 100000000 : undefined)
 
 const transformTransfers = (transfers: Pub.Transfer[]) =>
-  transfers.map((transfer) => ({
-    from: transfer.from,
-    to: transfer.to,
-    height: transfer.height,
-    salePrice: convertSatoshiToBTC(transfer.psbt_sale),
-    timestamp: transfer.ts,
-    tx: transfer.tx,
+  transfers.map(({ from, to, height, salePrice, timestamp, tx }) => ({
+    from,
+    to,
+    height,
+    salePrice: convertSatoshiToBTC(salePrice),
+    timestamp,
+    tx,
   }))
 
 const transformMetadata = (metadata: Prv.Metadata) =>
   ({
     name: metadata?.name,
     attributes: metadata?.attributes?.map(
-      (elem: Prv.Attributes) =>
-        ({
-          value: elem.value,
-          traitType: elem.trait_type,
-        }) satisfies Pub.Attributes,
+      ({ value, trait_type }) => ({ value, traitType: trait_type }) satisfies Pub.Attributes,
     ),
   }) satisfies Pub.Metadata
 
