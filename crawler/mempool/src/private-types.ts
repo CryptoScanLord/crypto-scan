@@ -2,13 +2,8 @@ export interface Txid {
   txid: string
 }
 
-export interface Prevout {
-  scriptpubkey_address: string
-  value: number
-}
-
 export interface Vin extends Txid {
-  prevout: Prevout
+  prevout: Vout
 }
 
 export interface Vout {
