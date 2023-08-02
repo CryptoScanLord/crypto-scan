@@ -374,7 +374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.22.5":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.22.9":
   version: 7.22.9
   resolution: "@babel/core@npm:7.22.9"
   dependencies:
@@ -789,6 +789,12 @@ __metadata:
   checksum: eb42729851adca56d19a08e48d5a1e95efd2a32c55ae0323de8119052be0510d4b7a1611f2abcbf28c044a6c11e6b7d38f99fccdad7429300c37a8ea5fb95b44
   languageName: node
   linkType: hard
+
+"@crawler/mempool@workspace:crawler/mempool":
+  version: 0.0.0-use.local
+  resolution: "@crawler/mempool@workspace:crawler/mempool"
+  languageName: unknown
+  linkType: soft
 
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
@@ -3028,16 +3034,16 @@ __metadata:
   linkType: hard
 
 "@vitejs/plugin-react@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "@vitejs/plugin-react@npm:4.0.3"
+  version: 4.0.4
+  resolution: "@vitejs/plugin-react@npm:4.0.4"
   dependencies:
-    "@babel/core": "npm:^7.22.5"
+    "@babel/core": "npm:^7.22.9"
     "@babel/plugin-transform-react-jsx-self": "npm:^7.22.5"
     "@babel/plugin-transform-react-jsx-source": "npm:^7.22.5"
     react-refresh: "npm:^0.14.0"
   peerDependencies:
     vite: ^4.2.0
-  checksum: 3361a7725216ecb36ad9f84159964eb8918f7f6d7aa7559fed985a8d82fbb045f19f9a69ec92b950b865c822138fd7ca09aa0231186db1fe3d014e6fcc126064
+  checksum: ca687dfe5e1b29822194cbfdde5cc75fe329dbee107489ab35e5e75911eca1cf5d38d3fe52886d50bf5249975948a8f4098c5fa23652afb7275d5aa79a5300b7
   languageName: node
   linkType: hard
 
