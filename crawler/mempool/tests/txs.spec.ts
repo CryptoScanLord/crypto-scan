@@ -1,5 +1,5 @@
-import data from '../mocks/wallet.json' assert { type: 'json' }
-import expected from '../mocks/expected.json' assert { type: 'json' }
+import data from '../data/wallet.json' assert { type: 'json' }
+import expected from '../data/expected.json' assert { type: 'json' }
 
 import { transformTx } from '@crawler/mempool/private'
 
