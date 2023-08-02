@@ -24,7 +24,7 @@ export default defineConfig({
   test: {
     environment: 'node',
     globals: true,
-    include: ['../**/**.spec.ts'],
+    root: '../../',
     deps: {
       interopDefault: true
     }

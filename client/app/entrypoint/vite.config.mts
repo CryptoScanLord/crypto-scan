@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
-import vite from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react'
 import { env } from '@lib/vite'
 
 export default defineConfig({
-  plugins: [vite()],
+  // @ts-expect-error
+  plugins: [react()],
   server: {
     host: '0.0.0.0',
     watch: {
