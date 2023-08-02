@@ -790,9 +790,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@crawler/bis@workspace:crawler":
+"@crawler/bis@workspace:crawler/bis":
   version: 0.0.0-use.local
-  resolution: "@crawler/bis@workspace:crawler"
+  resolution: "@crawler/bis@workspace:crawler/bis"
+  languageName: unknown
+  linkType: soft
+
+"@crawler/mempool@workspace:crawler/mempool":
+  version: 0.0.0-use.local
+  resolution: "@crawler/mempool@workspace:crawler/mempool"
   languageName: unknown
   linkType: soft
 

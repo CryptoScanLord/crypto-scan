@@ -73,10 +73,10 @@
         "client/shared/theme/schema"
       ],
       "@crawler/bis": [
-        "crawler"
+        "crawler/bis"
       ],
       "@crawler/bis/private": [
-        "crawler/src/private.ts"
+        "crawler/bis/src/private.ts"
       ],
       "@crawler/mempool": [
         "crawler/mempool"
