@@ -1,14 +1,12 @@
 import * as Prv from './private-types'
 import * as Pub from './public-types'
 
-const convertSatoshiToBTC = (satoshiValue: number) => (satoshiValue !== -1 ? satoshiValue / 100000000 : undefined)
-
 const transformTransfers = (transfers: Pub.Transfer[]) =>
   transfers.map(({ from, to, height, salePrice, timestamp, tx }) => ({
     from,
     to,
     height,
-    salePrice: convertSatoshiToBTC(salePrice),
+    salePrice,
     timestamp,
     tx,
   }))
@@ -48,8 +46,8 @@ export const transformData = (nft: Prv.NftDataApi) => {
     collectionName: nft.collection_name,
     collectionSlug: nft.collections_slug,
     blockHeight: nft.block_height,
-    magicedenListingPrice: convertSatoshiToBTC(nft.magiceden_listing_price),
-    magicedenFloorPrice: convertSatoshiToBTC(nft.floor_price_magiceden),
+    magicedenListingPrice: nft.magiceden_listing_price,
+    magicedenFloorPrice: nft.floor_price_magiceden,
     traits: transformTraits(nft.traits),
   } satisfies Pub.NftData
 }
