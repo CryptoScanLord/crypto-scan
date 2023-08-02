@@ -7,7 +7,11 @@ export interface GetTxsOptions {
 
 export async function getTxs(wallet: string, { after }: GetTxsOptions = {}) {
   const url = new URL(`address/${wallet}/txs`, 'https://mempool.space/api/')
-  Object.entries({ after_txid: after }).forEach(([k, v]) => v && url.searchParams.append(k, v))
+
+  if (after) {
+    url.searchParams.append('after_txid', after)
+  }
+
   const data = await fetch(url).then((res) => res.json() satisfies Promise<Prv.Txs>)
 
   return data.map(transformTx(wallet))
