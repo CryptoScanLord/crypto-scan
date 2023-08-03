@@ -1,4 +1,5 @@
 {
   "name": "@lib/vite",
-  "main": "src/index.mjs"
+  "main": "src/index.mjs",
+  "typings": "src/index.d.ts"
 }
