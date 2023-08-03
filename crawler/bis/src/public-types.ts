@@ -7,19 +7,19 @@ export interface Transfer {
   tx: string
 }
 
-export interface Attributes {
+export interface Attribute {
   value: string
   traitType: string
 }
 
 export interface Metadata {
   name: string
-  attributes: Attributes[]
+  attributes: Attribute[]
 }
 
-export interface Traits {
-  traitType: string
-  value: string
+export interface Trait {
+  trait: string
+  value: string | number
 }
 
 export type NftData = {
@@ -39,5 +39,5 @@ export type NftData = {
   blockHeight: number
   magicedenListingPrice?: number
   magicedenFloorPrice?: number
-  traits: Traits[]
+  traits: Trait[]
 }

@@ -18,17 +18,17 @@ const transformMetadata = (metadata: Prv.Metadata) =>
   ({
     name: metadata?.name,
     attributes: metadata?.attributes?.map(
-      ({ value, trait_type }) => ({ value, traitType: trait_type }) satisfies Pub.Attributes,
+      ({ value, trait_type }) => ({ value, traitType: trait_type }) satisfies Pub.Attribute,
     ),
   }) satisfies Pub.Metadata
 
-const transformTraits = (traits: Prv.Traits[]) =>
+const transformTraits = (traits: Prv.Trait[]) =>
   traits.map(
     (elem) =>
       ({
-        traitType: elem.trait_type,
-        value: elem.value.toString(),
-      }) satisfies Pub.Traits,
+        trait: elem.trait_type,
+        value: elem.value,
+      }) satisfies Pub.Trait,
   )
 
 export const transformData = (nft: Prv.NftDataApi) => {

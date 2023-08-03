@@ -1,20 +1,11 @@
-import {
-  Controller,
-  Get,
-  // UseGuards
-} from '@nestjs/common'
-import { getNFTs } from '@crawler/bis'
+import { Controller, Get, UseGuards } from '@nestjs/common'
+import { CurrentUser, SupabaseGuard, type SupabaseUser } from '@lib/auth-nestjs'
 
-// import { CurrentUser, SupabaseGuard, type SupabaseUser } from '@lib/auth-nestjs'
-
-// @Controller()
+@Controller()
 export class HelloController {
-  // @UseGuards(SupabaseGuard)
+  @UseGuards(SupabaseGuard)
   @Get()
-  async getHello() {
-    // @CurrentUser() user: SupabaseUser
-    const data = await getNFTs()
-
-    return data
+  getHello(@CurrentUser() user: SupabaseUser) {
+    return user
   }
 }

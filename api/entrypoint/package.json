@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@api/hello-module": "workspace:^",
-    "@crawler/bis": "workspace:^",
     "@lib/auth-nestjs": "workspace:^",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",

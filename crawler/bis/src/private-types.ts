@@ -7,19 +7,19 @@ export interface Transfer {
   tx: string
 }
 
-export interface Attributes {
+export interface Attribute {
   value: string
   trait_type: string
 }
 
 export interface Metadata {
   name: string
-  attributes: Attributes[]
+  attributes: Attribute[]
 }
 
-export interface Traits {
+export interface Trait {
   trait_type: string
-  value: string
+  value: string | number
 }
 
 export interface NftDataApi {
@@ -57,5 +57,5 @@ export interface NftDataApi {
   unisat_listing_price?: number
   ordinalsmarket_listing_price?: number
   floor_price_ordinalsmarket?: number
-  traits: Traits[]
+  traits: Trait[]
 }
