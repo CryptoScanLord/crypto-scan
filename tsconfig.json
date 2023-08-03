@@ -72,6 +72,9 @@
       "@theme/schema": [
         "client/shared/theme/schema"
       ],
+      "@crawler/bis": [
+        "crawler/bis"
+      ],
       "@crawler/mempool": [
         "crawler/mempool"
       ],
