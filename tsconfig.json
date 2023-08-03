@@ -81,6 +81,9 @@
       "@crawler/mempool/private": [
         "crawler/mempool/src/private.ts"
       ],
+      "@crawler/unisat": [
+        "crawler/unisat"
+      ],
       "@lib/auth-nestjs": [
         "lib/auth/nestjs"
       ],
