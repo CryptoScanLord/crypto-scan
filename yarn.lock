@@ -802,6 +802,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@crawler/ordinals@workspace:crawler/ordinals":
+  version: 0.0.0-use.local
+  resolution: "@crawler/ordinals@workspace:crawler/ordinals"
+  languageName: unknown
+  linkType: soft
+
 "@crawler/unisat@workspace:crawler/unisat":
   version: 0.0.0-use.local
   resolution: "@crawler/unisat@workspace:crawler/unisat"

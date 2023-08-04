@@ -81,6 +81,9 @@
       "@crawler/mempool/private": [
         "crawler/mempool/src/private.ts"
       ],
+      "@crawler/ordinals": [
+        "crawler/ordinals"
+      ],
       "@crawler/unisat": [
         "crawler/unisat"
       ],
