@@ -1,0 +1,4 @@
+{
+  "name": "@crawler/ordinals",
+  "main": "src/index.ts"
+}
