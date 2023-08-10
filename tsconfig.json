@@ -90,6 +90,9 @@
       "@theme/schema": [
         "client/shared/theme/schema"
       ],
+      "@ui/graph": [
+        "client/shared/ui/graph"
+      ],
       "@crawler/bis": [
         "crawler/bis"
       ],
