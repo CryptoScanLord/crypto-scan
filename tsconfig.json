@@ -66,6 +66,9 @@
       "@page/home": [
         "client/pages/home"
       ],
+      "@theme/font": [
+        "client/shared/theme/font"
+      ],
       "@theme/provider": [
         "client/shared/theme/provider"
       ],
