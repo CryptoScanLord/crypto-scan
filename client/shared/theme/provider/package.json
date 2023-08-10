@@ -2,6 +2,7 @@
   "name": "@theme/provider",
   "main": "src/index.tsx",
   "dependencies": {
+    "@theme/font": "workspace:^",
     "@theme/schema": "workspace:^"
   },
   "devDependencies": {

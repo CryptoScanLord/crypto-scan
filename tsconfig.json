@@ -81,6 +81,9 @@
       "@page/transactions": [
         "client/pages/transactions"
       ],
+      "@theme/font": [
+        "client/shared/theme/font"
+      ],
       "@theme/provider": [
         "client/shared/theme/provider"
       ],
