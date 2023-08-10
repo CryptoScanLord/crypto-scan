@@ -2,7 +2,8 @@
   "name": "@lib/auth-react",
   "main": "src/index.ts",
   "devDependencies": {
-    "@types/react": "^18.2.17"
+    "@types/react": "^18.2.17",
+    "react-router-dom": "^6.14.1"
   },
   "dependencies": {
     "@supabase/auth-helpers-react": "^0.4.1",
@@ -12,6 +13,7 @@
   },
   "peerDependencies": {
     "react": "18",
-    "react-dom": "18"
+    "react-dom": "18",
+    "react-router-dom": "6"
   }
 }
