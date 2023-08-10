@@ -5,7 +5,7 @@ services:
     volumes:
       - ./:/workspace
     entrypoint: yarn
-    profiles: []
+    profiles: [ ]
   api-dev:
     image: node:19
     working_dir: /workspace
@@ -21,7 +21,7 @@ services:
     depends_on:
       yarn:
         condition: service_completed_successfully
-    profiles: ['dev']
+    profiles: [ 'dev' ]
   client-dev:
     image: node:19
     working_dir: /workspace
@@ -31,6 +31,7 @@ services:
     environment:
       - SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
       - SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
+      - PUBLIC_URL=https://localhost:5173/
     ports:
       - 5173:5173
     depends_on:
@@ -38,4 +39,4 @@ services:
         condition: service_completed_successfully
       api-dev:
         condition: service_started
-    profiles: ['dev']
+    profiles: [ 'dev' ]

@@ -15,6 +15,7 @@ export default defineConfig({
     ...env(
       'SUPABASE_URL',
       'SUPABASE_ANON_KEY',
+      'PUBLIC_URL',
     ),
   },
 })
