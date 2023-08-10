@@ -63,8 +63,23 @@
       "@app/routes": [
         "client/app/routes"
       ],
-      "@page/home": [
-        "client/pages/home"
+      "@page/brc-20": [
+        "client/pages/brc-20"
+      ],
+      "@page/login": [
+        "client/pages/login"
+      ],
+      "@page/nfts": [
+        "client/pages/nfts"
+      ],
+      "@page/not-found": [
+        "client/pages/not-found"
+      ],
+      "@page/portfolio": [
+        "client/pages/portfolio"
+      ],
+      "@page/transactions": [
+        "client/pages/transactions"
       ],
       "@theme/provider": [
         "client/shared/theme/provider"

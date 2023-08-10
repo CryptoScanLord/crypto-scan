@@ -2,7 +2,12 @@
   "name": "@app/routes",
   "main": "src/index.tsx",
   "dependencies": {
-    "@page/home": "workspace:^"
+    "@page/brc-20": "workspace:^",
+    "@page/login": "workspace:^",
+    "@page/nfts": "workspace:^",
+    "@page/not-found": "workspace:^",
+    "@page/portfolio": "workspace:^",
+    "@page/transactions": "workspace:^"
   },
   "devDependencies": {
     "@types/react": "^18.2.12",

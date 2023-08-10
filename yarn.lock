@@ -339,7 +339,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/routes@workspace:client/app/routes"
   dependencies:
-    "@page/home": "workspace:^"
+    "@page/brc-20": "workspace:^"
+    "@page/login": "workspace:^"
+    "@page/nfts": "workspace:^"
+    "@page/not-found": "workspace:^"
+    "@page/portfolio": "workspace:^"
+    "@page/transactions": "workspace:^"
     "@types/react": "npm:^18.2.12"
     react-router-dom: "npm:^6.14.1"
   peerDependencies:
@@ -1953,9 +1958,64 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@page/home@workspace:^, @page/home@workspace:client/pages/home":
+"@page/brc-20@workspace:^, @page/brc-20@workspace:client/pages/brc-20":
   version: 0.0.0-use.local
-  resolution: "@page/home@workspace:client/pages/home"
+  resolution: "@page/brc-20@workspace:client/pages/brc-20"
+  dependencies:
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/login@workspace:^, @page/login@workspace:client/pages/login":
+  version: 0.0.0-use.local
+  resolution: "@page/login@workspace:client/pages/login"
+  dependencies:
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/nfts@workspace:^, @page/nfts@workspace:client/pages/nfts":
+  version: 0.0.0-use.local
+  resolution: "@page/nfts@workspace:client/pages/nfts"
+  dependencies:
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/not-found@workspace:^, @page/not-found@workspace:client/pages/not-found":
+  version: 0.0.0-use.local
+  resolution: "@page/not-found@workspace:client/pages/not-found"
+  dependencies:
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/portfolio@workspace:^, @page/portfolio@workspace:client/pages/portfolio":
+  version: 0.0.0-use.local
+  resolution: "@page/portfolio@workspace:client/pages/portfolio"
+  dependencies:
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/transactions@workspace:^, @page/transactions@workspace:client/pages/transactions":
+  version: 0.0.0-use.local
+  resolution: "@page/transactions@workspace:client/pages/transactions"
   dependencies:
     "@types/react": "npm:^18.2.17"
   peerDependencies:
