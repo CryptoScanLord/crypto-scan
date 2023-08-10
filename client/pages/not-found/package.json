@@ -1,0 +1,11 @@
+{
+  "name": "@page/not-found",
+  "main": "src/index.tsx",
+  "devDependencies": {
+    "@types/react": "^18.2.17"
+  },
+  "peerDependencies": {
+    "react": "18",
+    "react-dom": "18"
+  }
+}
