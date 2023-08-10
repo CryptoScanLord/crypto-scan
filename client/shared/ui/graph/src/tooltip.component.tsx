@@ -7,8 +7,8 @@ export const Tooltip =
   (data: Datum[]): FC<SliceTooltipProps> =>
   ({ slice }) => {
     const [point] = slice.points
-    const value = point.data.y
-    const prevValue = data[point.index - 1]?.y ?? value
+    const value = point!.data.y as number
+    const prevValue = (data[point!.index - 1]?.y ?? value) as number
     const diff = Math.floor((1 - prevValue / value) * 10000) / 100
 
     return (

@@ -2278,6 +2278,7 @@ __metadata:
   dependencies:
     "@lib/auth-react": "workspace:^"
     "@types/react": "npm:^18.2.17"
+    "@ui/graph": "workspace:^"
   peerDependencies:
     react: 18
     react-dom: 18
