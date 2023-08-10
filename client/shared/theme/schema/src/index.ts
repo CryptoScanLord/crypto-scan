@@ -1,5 +1,6 @@
 import type { ThemeOptions } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
+import { MuiInput } from './input'
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -67,4 +68,10 @@ export const palette = {
   },
 } satisfies ThemeOptions
 
-export const schema = createTheme({ ...base, ...palette })
+const components = {
+  components: {
+    MuiInput,
+  },
+} satisfies ThemeOptions
+
+export const schema = createTheme({ ...base, ...palette, ...components })
