@@ -93,6 +93,9 @@
       "@ui/graph": [
         "client/shared/ui/graph"
       ],
+      "@ui/header": [
+        "client/shared/ui/header"
+      ],
       "@ui/search": [
         "client/shared/ui/search"
       ],
@@ -124,7 +127,8 @@
   },
   "include": [
     ".yarn/standalone/**/*",
-    "**/*"
+    "**/*",
+    "client/shared/ui/header/src/Header.tsx"
   ],
   "exclude": [
     "node_modules"

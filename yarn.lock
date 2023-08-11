@@ -2273,6 +2273,7 @@ __metadata:
     "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
+    "@ui/header": "workspace:^"
   peerDependencies:
     "@emotion/react": 11
     "@emotion/styled": 11
@@ -3507,6 +3508,21 @@ __metadata:
   checksum: 954c89325320d56b06638965db40c71278b8db3e621c22338e400370fb1595a10de40b0b2a3777cadd90145c0148790e6c05ac635f0b9a4b7b003389bd59c6d9
   languageName: node
   linkType: hard
+
+"@ui/header@workspace:^, @ui/header@workspace:client/shared/ui/header":
+  version: 0.0.0-use.local
+  resolution: "@ui/header@workspace:client/shared/ui/header"
+  dependencies:
+    "@mui/material": "npm:^5.14.2"
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    "@emotion/react": 11
+    "@emotion/styled": 11
+    "@mui/material": 5
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
 
 "@ui/graph@workspace:client/shared/ui/graph":
   version: 0.0.0-use.local
