@@ -90,6 +90,9 @@
       "@theme/schema": [
         "client/shared/theme/schema"
       ],
+      "@ui/header": [
+        "client/shared/ui/header"
+      ],
       "@crawler/bis": [
         "crawler/bis"
       ],
@@ -118,7 +121,8 @@
   },
   "include": [
     ".yarn/standalone/**/*",
-    "**/*"
+    "**/*",
+    "client/shared/ui/header/src/Header.tsx"
   ],
   "exclude": [
     "node_modules"

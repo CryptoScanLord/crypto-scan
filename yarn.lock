@@ -2104,6 +2104,7 @@ __metadata:
     "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
+    "@ui/header": "workspace:^"
   peerDependencies:
     "@emotion/react": 11
     "@emotion/styled": 11
@@ -3273,6 +3274,21 @@ __metadata:
   checksum: 0da2046f1edbace33348c4455bb069037a13388ff1ff8cd6b94972aece4dfa1e006790fcf9f30a6210265854d74f16fe62e159e7f673e899a933ac8216f1cc03
   languageName: node
   linkType: hard
+
+"@ui/header@workspace:^, @ui/header@workspace:client/shared/ui/header":
+  version: 0.0.0-use.local
+  resolution: "@ui/header@workspace:client/shared/ui/header"
+  dependencies:
+    "@mui/material": "npm:^5.14.2"
+    "@types/react": "npm:^18.2.17"
+  peerDependencies:
+    "@emotion/react": 11
+    "@emotion/styled": 11
+    "@mui/material": 5
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
 
 "@vitejs/plugin-react@npm:^4.0.3":
   version: 4.0.3
