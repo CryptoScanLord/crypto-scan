@@ -3279,7 +3279,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ui/search@workspace:client/shared/ui/search"
   dependencies:
-    "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
   peerDependencies:
