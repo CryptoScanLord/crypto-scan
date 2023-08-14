@@ -51,6 +51,9 @@
       "@api/entrypoint": [
         "api/entrypoint"
       ],
+      "@api/wallet-module": [
+        "api/wallet"
+      ],
       "@app/entrypoint": [
         "client/app/entrypoint"
       ],

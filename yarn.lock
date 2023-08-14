@@ -255,6 +255,7 @@ __metadata:
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
     "@api/btc-module": "workspace:^"
+    "@api/wallet-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@lib/vite": "workspace:^"
     "@nestjs/cache-manager": "npm:^2.1.0"
@@ -288,6 +289,22 @@ __metadata:
     vite: "npm:^4.4.7"
     vite-plugin-node: "npm:^3.0.2"
     vitest: "npm:^0.33.0"
+  languageName: unknown
+  linkType: soft
+
+"@api/wallet-module@workspace:^, @api/wallet-module@workspace:api/wallet":
+  version: 0.0.0-use.local
+  resolution: "@api/wallet-module@workspace:api/wallet"
+  dependencies:
+    "@crawler/mempool": "workspace:^"
+    "@lib/auth-nestjs": "workspace:^"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    "@nestjs/testing": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/core": 10
   languageName: unknown
   linkType: soft
 
@@ -808,19 +825,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@crawler/blockchain@workspace:crawler/blockchain":
+"@crawler/mempool@workspace:^, @crawler/mempool@workspace:crawler/mempool":
   version: 0.0.0-use.local
-  resolution: "@crawler/blockchain@workspace:crawler/blockchain"
-  languageName: unknown
-  linkType: soft
-
-"@crawler/coindesk@workspace:crawler/coindesk":
-  version: 0.0.0-use.local
-  resolution: "@crawler/coindesk@workspace:crawler/coindesk"
-  dependencies:
-    "@types/node": "npm:^20.5.0"
-    ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.1.6"
+  resolution: "@crawler/mempool@workspace:crawler/mempool"
   languageName: unknown
   linkType: soft
 
@@ -3049,13 +3056,6 @@ __metadata:
   version: 18.17.1
   resolution: "@types/node@npm:18.17.1"
   checksum: 241e93d168d422e51c5ac60695e329f4db41e0a6576568c7e01826234147d9f81ec84a69a3230c6ab635604ed1dd01398f7351fda9dec12b1457af67c36bf251
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.5.0":
-  version: 20.5.0
-  resolution: "@types/node@npm:20.5.0"
-  checksum: 0d3f4b66f6514ec2cd4d600daeac666dc16b148b576013c830333e27b9eba12be8577f243028d285e45114d5f98646bc4b89ef1f9ba47d5a5cbb55018ff046bd
   languageName: node
   linkType: hard
 
