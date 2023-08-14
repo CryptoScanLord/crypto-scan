@@ -330,6 +330,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/providers@workspace:client/app/providers"
   dependencies:
+    "@tanstack/react-query": "npm:5.0.0-beta.15"
     "@theme/provider": "workspace:^"
     "@types/react": "npm:^18.2.12"
     react-router-dom: "npm:^6.14.1"
@@ -2706,6 +2707,32 @@ __metadata:
   dependencies:
     defer-to-connect: "npm:^2.0.0"
   checksum: c29df3bcec6fc3bdec2b17981d89d9c9fc9bd7d0c9bcfe92821dc533f4440bc890ccde79971838b4ceed1921d456973c4180d7175ee1d0023ad0562240a58d95
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-core@npm:5.0.0-beta.15":
+  version: 5.0.0-beta.15
+  resolution: "@tanstack/query-core@npm:5.0.0-beta.15"
+  checksum: d91ba6ef5712b1272e738260ee3a82b6fd5bf6ba749cf1fe55a254c050686e175df871ad82ea807500376c19b18aa25d704f58cfee8f32cc03eebc8713735ead
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:5.0.0-beta.15":
+  version: 5.0.0-beta.15
+  resolution: "@tanstack/react-query@npm:5.0.0-beta.15"
+  dependencies:
+    "@tanstack/query-core": "npm:5.0.0-beta.15"
+    client-only: "npm:0.0.1"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+    react-native: "*"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 23f32bb74909b2c4cf4b33c55ec569de7c6e82dda7e295d70c05ccc50d93f7f50299e732925503856c3a5094deadc8941f5b07546c11dc5a964322762511aa24
   languageName: node
   linkType: hard
 
@@ -5379,6 +5406,13 @@ __metadata:
   version: 3.0.0
   resolution: "cli-width@npm:3.0.0"
   checksum: 8730848b04fb189666ab037a35888d191c8f05b630b1d770b0b0e4c920b47bb5cc14bddf6b8ffe5bfc66cee97c8211d4d18e756c1ffcc75d7dbe7e1186cd7826
+  languageName: node
+  linkType: hard
+
+"client-only@npm:0.0.1":
+  version: 0.0.1
+  resolution: "client-only@npm:0.0.1"
+  checksum: 0c16bf660dadb90610553c1d8946a7fdfb81d624adea073b8440b7d795d5b5b08beb3c950c6a2cf16279365a3265158a236876d92bce16423c485c322d7dfaf8
   languageName: node
   linkType: hard
 
