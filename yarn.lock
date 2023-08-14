@@ -2104,7 +2104,6 @@ __metadata:
     "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
-    "@ui/search": "workspace:^"
   peerDependencies:
     "@emotion/react": 11
     "@emotion/styled": 11
@@ -3275,7 +3274,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ui/search@workspace:^, @ui/search@workspace:client/shared/ui/search":
+"@ui/search@workspace:client/shared/ui/search":
   version: 0.0.0-use.local
   resolution: "@ui/search@workspace:client/shared/ui/search"
   dependencies:
