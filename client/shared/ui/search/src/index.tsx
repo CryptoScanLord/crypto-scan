@@ -1,6 +1,10 @@
 import { FormControl, Input, InputAdornment } from '@mui/material'
 import React, { ChangeEvent, FC } from 'react'
-import { Props } from './privateTypes'
+
+interface Props {
+  value: string
+  handleChange: (e: string) => void
+}
 
 const Search: FC<Props> = ({ value, handleChange }) => {
   return (
