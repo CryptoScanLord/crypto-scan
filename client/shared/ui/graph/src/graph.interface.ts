@@ -1,3 +1,3 @@
 export interface GraphProps {
-  data: Record<number | string, number>
+  data: Array<[string | number, number]>
 }
