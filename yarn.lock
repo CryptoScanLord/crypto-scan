@@ -232,11 +232,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@api/btc-module@workspace:^, @api/btc-module@workspace:api/btc":
+  version: 0.0.0-use.local
+  resolution: "@api/btc-module@workspace:api/btc"
+  dependencies:
+    "@lib/auth-nestjs": "workspace:^"
+    "@nestjs/cache-manager": "npm:^2.1.0"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    "@nestjs/testing": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/cache-manager": 2
+    "@nestjs/core": 10
+    cache-manager: 5
+  languageName: unknown
+  linkType: soft
+
 "@api/entrypoint@workspace:api/entrypoint":
   version: 0.0.0-use.local
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
-    "@api/hello-module": "workspace:^"
+    "@api/btc-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@lib/vite": "workspace:^"
     "@nestjs/cache-manager": "npm:^2.1.0"
@@ -270,21 +288,6 @@ __metadata:
     vite: "npm:^4.4.7"
     vite-plugin-node: "npm:^3.0.2"
     vitest: "npm:^0.33.0"
-  languageName: unknown
-  linkType: soft
-
-"@api/hello-module@workspace:^, @api/hello-module@workspace:api/hello":
-  version: 0.0.0-use.local
-  resolution: "@api/hello-module@workspace:api/hello"
-  dependencies:
-    "@lib/auth-nestjs": "workspace:^"
-    "@nestjs/common": "npm:^10.1.2"
-    "@nestjs/core": "npm:^10.1.2"
-    "@nestjs/testing": "npm:^10.1.2"
-    reflect-metadata: "npm:^0.1.13"
-    rxjs: "npm:^7.8.1"
-  peerDependencies:
-    "@nestjs/core": 10
   languageName: unknown
   linkType: soft
 

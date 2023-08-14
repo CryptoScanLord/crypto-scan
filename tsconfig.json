@@ -45,11 +45,11 @@
       "vitest/globals"
     ],
     "paths": {
+      "@api/btc-module": [
+        "api/btc"
+      ],
       "@api/entrypoint": [
         "api/entrypoint"
-      ],
-      "@api/hello-module": [
-        "api/hello"
       ],
       "@app/entrypoint": [
         "client/app/entrypoint"

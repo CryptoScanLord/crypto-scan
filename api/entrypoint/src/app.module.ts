@@ -1,9 +1,15 @@
 import { Module } from '@nestjs/common'
-import { HelloModule } from '@api/hello-module'
 import { AuthModule } from '@lib/auth-nestjs'
 import { CacheModule } from '@nestjs/cache-manager'
+import { BtcModule } from '@api/btc-module'
 
 @Module({
-  imports: [CacheModule.register(), AuthModule, HelloModule],
+  imports: [
+    CacheModule.register({
+      isGlobal: true,
+    }),
+    AuthModule,
+    BtcModule,
+  ],
 })
 export class AppModule {}
