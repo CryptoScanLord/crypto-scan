@@ -4,7 +4,12 @@ import { Box } from '@mui/material'
 import type { Datum } from '@nivo/line'
 
 const dateIntl = Intl.DateTimeFormat(navigator.language, { dateStyle: 'short', timeStyle: 'medium' })
-const numberIntl = Intl.NumberFormat(navigator.language, { currency: 'USD', style: 'currency' })
+const currencyIntl = Intl.NumberFormat(navigator.language, { currency: 'USD', style: 'currency' })
+const currencyDiffIntl = Intl.NumberFormat(navigator.language, {
+  currency: 'USD',
+  style: 'currency',
+  signDisplay: 'exceptZero',
+})
 
 export const Tooltip =
   (data: Datum[]): FC<SliceTooltipProps> =>
@@ -13,7 +18,7 @@ export const Tooltip =
     const key = point!.data.x as Date
     const value = point!.data.y as number
     const prevValue = (data[point!.index - 1]?.y ?? value) as number
-    const diff = Math.floor((1 - prevValue / value) * 10000) / 100
+    const diff = value - prevValue
 
     return (
       <Box
@@ -33,12 +38,11 @@ export const Tooltip =
           py: 0.5,
         })}
       >
-        <Box color={prevValue !== value ? (value > prevValue ? 'success.main' : 'error.main') : 'grey.500'}>
-          {value > prevValue ? '+' : ''}
-          {diff}%
+        <Box color={diff !== 0 ? (diff > 0 ? 'success.main' : 'error.main') : 'grey.500'}>
+          {currencyDiffIntl.format(diff)}
         </Box>
         <Box fontWeight={900} color='grey.700'>
-          {numberIntl.format(value)}
+          {currencyIntl.format(value)}
         </Box>
         <Box color='grey.500' fontSize='0.6rem'>
           {dateIntl.format(key)}
