@@ -17,12 +17,11 @@ export const transformTx =
     const ownOutputs = outputs.filter(walletFilter(wallet)).map(({ value }) => value)
 
     const delta = [...ownInputs.map(negate), ...ownOutputs].reduce(sum, 0)
-    const isoTime = new Date(time * 1000).toISOString()
 
     return {
       id: txid,
       delta,
-      time: isoTime,
+      time: time * 1000,
       inputs: inputs.map(({ address }) => address),
       outputs: outputs.map(({ address }) => address),
     }

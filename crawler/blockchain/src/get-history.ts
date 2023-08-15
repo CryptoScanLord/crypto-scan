@@ -1,8 +1,11 @@
 import { getOverall } from './get-overall.js'
 import { getTransactions } from './get-transactions.js'
+import * as Pub from './public-types.js'
 
-export async function getHistory(wallet: string) {
+export async function getHistory(wallet: string): Promise<Pub.History> {
   const { transactions: txs } = await getOverall(wallet)
 
-  return getTransactions(wallet, { limit: txs > 2000 ? 2000 : txs, offset: 0 })
+  const transactions = await getTransactions(wallet, { limit: txs > 2000 ? 2000 : txs, offset: 0 })
+
+  return transactions.map(({ time, delta }) => [time, delta])
 }

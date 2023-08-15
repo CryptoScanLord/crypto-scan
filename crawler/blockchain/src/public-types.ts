@@ -3,10 +3,12 @@ export interface Tx {
   delta: number
   inputs: string[]
   outputs: string[]
-  time: string
+  time: number
 }
 
 export interface Overall {
   transactions: number
   balance: number
 }
+
+export type History = Array<[time: number, delta: number]>

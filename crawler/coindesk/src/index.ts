@@ -1,2 +1,2 @@
-export * from './public-types'
-export * from './get-history'
+export * from './public-types.js'
+export * from './get-history.js'
