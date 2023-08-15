@@ -2,6 +2,8 @@
   "name": "@api/wallet-module",
   "main": "src/index.ts",
   "dependencies": {
+    "@crawler/blockchain": "workspace:^",
+    "@crawler/coindesk": "workspace:^",
     "@lib/auth-nestjs": "workspace:^"
   },
   "devDependencies": {

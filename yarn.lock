@@ -296,7 +296,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@api/wallet-module@workspace:api/wallet"
   dependencies:
-    "@crawler/mempool": "workspace:^"
+    "@crawler/blockchain": "workspace:^"
+    "@crawler/coindesk": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@nestjs/common": "npm:^10.1.2"
     "@nestjs/core": "npm:^10.1.2"
@@ -826,9 +827,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@crawler/mempool@workspace:^, @crawler/mempool@workspace:crawler/mempool":
+"@crawler/blockchain@workspace:^, @crawler/blockchain@workspace:crawler/blockchain":
   version: 0.0.0-use.local
-  resolution: "@crawler/mempool@workspace:crawler/mempool"
+  resolution: "@crawler/blockchain@workspace:crawler/blockchain"
+  languageName: unknown
+  linkType: soft
+
+"@crawler/coindesk@workspace:^, @crawler/coindesk@workspace:crawler/coindesk":
+  version: 0.0.0-use.local
+  resolution: "@crawler/coindesk@workspace:crawler/coindesk"
+  dependencies:
+    "@types/node": "npm:^20.5.0"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.1.6"
   languageName: unknown
   linkType: soft
 
@@ -2336,8 +2347,11 @@ __metadata:
   resolution: "@page/portfolio@workspace:client/pages/portfolio"
   dependencies:
     "@lib/auth-react": "workspace:^"
+    "@tanstack/react-query": "npm:5.0.0-beta.15"
     "@types/react": "npm:^18.2.17"
+    "@ui/graph": "workspace:^"
   peerDependencies:
+    "@tanstack/react-query": 5
     react: 18
     react-dom: 18
   languageName: unknown
@@ -3086,6 +3100,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.5.0":
+  version: 20.5.0
+  resolution: "@types/node@npm:20.5.0"
+  checksum: 0d3f4b66f6514ec2cd4d600daeac666dc16b148b576013c830333e27b9eba12be8577f243028d285e45114d5f98646bc4b89ef1f9ba47d5a5cbb55018ff046bd
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -3553,7 +3574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ui/graph@workspace:client/shared/ui/graph":
+"@ui/graph@workspace:^, @ui/graph@workspace:client/shared/ui/graph":
   version: 0.0.0-use.local
   resolution: "@ui/graph@workspace:client/shared/ui/graph"
   dependencies:
