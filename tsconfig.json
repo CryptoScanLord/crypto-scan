@@ -45,9 +45,6 @@
       "vitest/globals"
     ],
     "paths": {
-      "@api/btc-module": [
-        "api/btc"
-      ],
       "@api/entrypoint": [
         "api/entrypoint"
       ],

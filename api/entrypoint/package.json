@@ -7,7 +7,6 @@
     "prod": "node dist/main.mjs"
   },
   "dependencies": {
-    "@api/btc-module": "workspace:^",
     "@api/wallet-module": "workspace:^",
     "@lib/auth-nestjs": "workspace:^",
     "@nestjs/cache-manager": "^2.1.0",
