@@ -1,6 +1,9 @@
 {
   "name": "@ui/header",
   "main": "src/index.tsx",
+  "dependencies": {
+    "@ui/search": "workspace:^"
+  },
   "devDependencies": {
     "@mui/material": "^5.14.2",
     "@types/react": "^18.2.17"
