@@ -6,7 +6,7 @@
       "DOM.Iterable",
       "ESNext"
     ],
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "declaration": true,
     "removeComments": true,
@@ -96,11 +96,11 @@
       "@crawler/bis": [
         "crawler/bis"
       ],
-      "@crawler/mempool": [
-        "crawler/mempool"
+      "@crawler/blockchain": [
+        "crawler/blockchain"
       ],
-      "@crawler/mempool/private": [
-        "crawler/mempool/src/private.ts"
+      "@crawler/coindesk": [
+        "crawler/coindesk"
       ],
       "@crawler/ordinals": [
         "crawler/ordinals"
