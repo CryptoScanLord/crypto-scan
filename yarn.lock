@@ -803,9 +803,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@crawler/mempool@workspace:crawler/mempool":
+"@crawler/blockchain@workspace:crawler/blockchain":
   version: 0.0.0-use.local
-  resolution: "@crawler/mempool@workspace:crawler/mempool"
+  resolution: "@crawler/blockchain@workspace:crawler/blockchain"
+  languageName: unknown
+  linkType: soft
+
+"@crawler/coindesk@workspace:crawler/coindesk":
+  version: 0.0.0-use.local
+  resolution: "@crawler/coindesk@workspace:crawler/coindesk"
   languageName: unknown
   linkType: soft
 

@@ -1,0 +1,5 @@
+{
+  "name": "@crawler/coindesk",
+  "main": "src/index.ts",
+  "type": "module"
+}
