@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "declaration": true,
@@ -40,97 +36,36 @@
     "noStrictGenericChecks": false,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": [
-      "vite/client",
-      "vitest/globals"
-    ],
+    "types": ["vite/client", "vitest/globals"],
     "paths": {
-      "@api/entrypoint": [
-        "api/entrypoint"
-      ],
-      "@api/hello-module": [
-        "api/hello"
-      ],
-      "@app/entrypoint": [
-        "client/app/entrypoint"
-      ],
-      "@app/providers": [
-        "client/app/providers"
-      ],
-      "@app/root": [
-        "client/app/root"
-      ],
-      "@app/routes": [
-        "client/app/routes"
-      ],
-      "@page/brc-20": [
-        "client/pages/brc-20"
-      ],
-      "@page/login": [
-        "client/pages/login"
-      ],
-      "@page/nfts": [
-        "client/pages/nfts"
-      ],
-      "@page/not-found": [
-        "client/pages/not-found"
-      ],
-      "@page/portfolio": [
-        "client/pages/portfolio"
-      ],
-      "@page/transactions": [
-        "client/pages/transactions"
-      ],
-      "@theme/font": [
-        "client/shared/theme/font"
-      ],
-      "@theme/provider": [
-        "client/shared/theme/provider"
-      ],
-      "@theme/schema": [
-        "client/shared/theme/schema"
-      ],
-      "@ui/graph": [
-        "client/shared/ui/graph"
-      ],
-      "@ui/header": [
-        "client/shared/ui/header"
-      ],
-      "@ui/search": [
-        "client/shared/ui/search"
-      ],
-      "@crawler/bis": [
-        "crawler/bis"
-      ],
-      "@crawler/blockchain": [
-        "crawler/blockchain"
-      ],
-      "@crawler/coindesk": [
-        "crawler/coindesk"
-      ],
-      "@crawler/ordinals": [
-        "crawler/ordinals"
-      ],
-      "@crawler/unisat": [
-        "crawler/unisat"
-      ],
-      "@lib/auth-nestjs": [
-        "lib/auth/nestjs"
-      ],
-      "@lib/auth-react": [
-        "lib/auth/react"
-      ],
-      "@lib/vite": [
-        "lib/vite"
-      ]
+      "@api/entrypoint": ["api/entrypoint"],
+      "@api/hello-module": ["api/hello"],
+      "@app/entrypoint": ["client/app/entrypoint"],
+      "@app/providers": ["client/app/providers"],
+      "@app/root": ["client/app/root"],
+      "@app/routes": ["client/app/routes"],
+      "@page/brc-20": ["client/pages/brc-20"],
+      "@page/login": ["client/pages/login"],
+      "@page/nfts": ["client/pages/nfts"],
+      "@page/not-found": ["client/pages/not-found"],
+      "@page/portfolio": ["client/pages/portfolio"],
+      "@page/transactions": ["client/pages/transactions"],
+      "@theme/font": ["client/shared/theme/font"],
+      "@theme/provider": ["client/shared/theme/provider"],
+      "@theme/schema": ["client/shared/theme/schema"],
+      "@ui/graph": ["client/shared/ui/graph"],
+      "@ui/header": ["client/shared/ui/header"],
+      "@ui/search": ["client/shared/ui/search"],
+      "@crawler/bis": ["crawler/bis"],
+      "@crawler/blockchain": ["crawler/blockchain"],
+      "@crawler/coindesk": ["crawler/coindesk"],
+      "@crawler/ordinals": ["crawler/ordinals"],
+      "@crawler/unisat": ["crawler/unisat"],
+      "@lib/auth-nestjs": ["lib/auth/nestjs"],
+      "@lib/auth-react": ["lib/auth/react"],
+      "@lib/vite": ["lib/vite"]
     }
   },
-  "include": [
-    ".yarn/standalone/**/*",
-    "**/*",
-    "client/shared/ui/header/src/Header.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [".yarn/standalone/**/*", "**/*", "client/shared/ui/header/src/Header.tsx"],
+  "exclude": ["node_modules"]
 }
