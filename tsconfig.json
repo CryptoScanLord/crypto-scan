@@ -93,6 +93,9 @@
       "@ui/graph": [
         "client/shared/ui/graph"
       ],
+      "@ui/search": [
+        "client/shared/ui/search"
+      ],
       "@crawler/bis": [
         "crawler/bis"
       ],
