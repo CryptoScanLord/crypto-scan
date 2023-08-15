@@ -812,6 +812,10 @@ __metadata:
 "@crawler/coindesk@workspace:crawler/coindesk":
   version: 0.0.0-use.local
   resolution: "@crawler/coindesk@workspace:crawler/coindesk"
+  dependencies:
+    "@types/node": "npm:^20.5.0"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.1.6"
   languageName: unknown
   linkType: soft
 
@@ -3027,6 +3031,13 @@ __metadata:
   version: 18.17.1
   resolution: "@types/node@npm:18.17.1"
   checksum: 241e93d168d422e51c5ac60695e329f4db41e0a6576568c7e01826234147d9f81ec84a69a3230c6ab635604ed1dd01398f7351fda9dec12b1457af67c36bf251
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.5.0":
+  version: 20.5.0
+  resolution: "@types/node@npm:20.5.0"
+  checksum: 0d3f4b66f6514ec2cd4d600daeac666dc16b148b576013c830333e27b9eba12be8577f243028d285e45114d5f98646bc4b89ef1f9ba47d5a5cbb55018ff046bd
   languageName: node
   linkType: hard
 

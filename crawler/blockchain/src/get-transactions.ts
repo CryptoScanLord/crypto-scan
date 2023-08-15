@@ -8,7 +8,7 @@ export interface GetTransactionsOptions {
 }
 
 export async function getTransactions(wallet: string, options: GetTransactionsOptions): Promise<Pub.Tx[]> {
-  const url = new URL(`${wallet}/transactions`, 'https://api.blockchain.info/haskoin-store/btc/address/')
+  const url = new URL(`${wallet}/transactions/full`, 'https://api.blockchain.info/haskoin-store/btc/address/')
 
   if (options) {
     const { offset, limit } = options
