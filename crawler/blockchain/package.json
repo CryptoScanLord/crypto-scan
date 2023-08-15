@@ -1,0 +1,5 @@
+{
+  "name": "@crawler/blockchain",
+  "main": "src/index.ts",
+  "type": "module"
+}

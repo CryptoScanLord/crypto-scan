@@ -6,7 +6,7 @@
       "DOM.Iterable",
       "ESNext"
     ],
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "declaration": true,
     "removeComments": true,
