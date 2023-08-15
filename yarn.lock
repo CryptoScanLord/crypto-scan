@@ -10282,7 +10282,7 @@ __metadata:
     loose-envify: "npm:^1.4.0"
     object-assign: "npm:^4.1.1"
     react-is: "npm:^16.13.1"
-  checksum: 59ece7ca2fb9838031d73a48d4becb9a7cc1ed10e610517c7d8f19a1e02fa47f7c27d557d8a5702bec3cfeccddc853579832b43f449e54635803f277b1c78077
+  checksum: 7d959caec002bc964c86cdc461ec93108b27337dabe6192fb97d69e16a0c799a03462713868b40749bfc1caf5f57ef80ac3e4ffad3effa636ee667582a75e2c0
   languageName: node
   linkType: hard
 
