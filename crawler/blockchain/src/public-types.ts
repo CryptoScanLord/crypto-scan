@@ -11,4 +11,7 @@ export interface Overall {
   balance: number
 }
 
-export type History = Array<[time: number, delta: number]>
+export interface History {
+  balance: number
+  entries: Array<[time: number, delta: number]>
+}

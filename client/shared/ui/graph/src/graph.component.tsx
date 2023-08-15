@@ -7,7 +7,15 @@ import { Tooltip } from './tooltip.component'
 
 export const Graph: FC<GraphProps> = ({ data }) => {
   const { palette } = useTheme()
-  const mappedData = useMemo(() => data.map(([time, y]) => ({ x: new Date(time), y })), [data])
+  const mappedData = useMemo(
+    () =>
+      data
+        .map(([time, y]) => [new Date(time), y] as [Date, number])
+        .sort(([a], [b]) => a.getTime() - b.getTime())
+        .map(([time, y], idx) => [new Date(time.getTime() + idx), y])
+        .map(([x, y]) => ({ x, y })),
+    [data],
+  )
 
   return (
     <ResponsiveLine
@@ -32,11 +40,12 @@ export const Graph: FC<GraphProps> = ({ data }) => {
       axisBottom={{
         format: '%b %d',
       }}
-      curve='monotoneX'
+      curve='basis'
       enableGridX={false}
       enableGridY={false}
       enableSlices='x'
       sliceTooltip={Tooltip(mappedData)}
+      pointSize={0}
       defs={[
         linearGradientDef('gradientA', [
           { offset: 0, color: palette.primary.main },

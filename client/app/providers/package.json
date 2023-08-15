@@ -2,6 +2,7 @@
   "name": "@app/providers",
   "main": "src/index.ts",
   "dependencies": {
+    "@tanstack/react-query": "5.0.0-beta.15",
     "@theme/provider": "workspace:^"
   },
   "devDependencies": {

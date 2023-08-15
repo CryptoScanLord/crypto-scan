@@ -15,6 +15,7 @@ services:
       - PORT=8000
       - SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
       - SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
+      - CORS_ORIGIN=["http://localhost:5173"]
     entrypoint: yarn workspace @api/entrypoint dev
     ports:
       - 8000:8000

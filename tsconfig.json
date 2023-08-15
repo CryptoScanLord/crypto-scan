@@ -48,8 +48,8 @@
       "@api/entrypoint": [
         "api/entrypoint"
       ],
-      "@api/hello-module": [
-        "api/hello"
+      "@api/wallet-module": [
+        "api/wallet"
       ],
       "@app/entrypoint": [
         "client/app/entrypoint"

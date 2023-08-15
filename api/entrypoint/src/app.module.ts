@@ -1,8 +1,15 @@
 import { Module } from '@nestjs/common'
-import { HelloModule } from '@api/hello-module'
 import { AuthModule } from '@lib/auth-nestjs'
+import { CacheModule } from '@nestjs/cache-manager'
+import { WalletModule } from '@api/wallet-module'
 
 @Module({
-  imports: [AuthModule, HelloModule],
+  imports: [
+    CacheModule.register({
+      isGlobal: true,
+    }),
+    AuthModule,
+    WalletModule,
+  ],
 })
 export class AppModule {}
