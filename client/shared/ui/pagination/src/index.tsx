@@ -7,7 +7,7 @@ const Pagination: FC = () => {
 
   type routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions' | '/login'
 
-  const [value, setValue] = useState<routes | null>(pathname)
+  const [value, setValue] = useState<routes | null>(pathname as routes)
 
   const handleChange = (event: MouseEvent<HTMLElement>, newPage: routes | null) => {
     setValue(newPage)
@@ -15,7 +15,7 @@ const Pagination: FC = () => {
 
   useEffect(() => {
     if (value === null) {
-      setValue(pathname)
+      setValue(pathname as routes)
     }
   }, [value])
 
