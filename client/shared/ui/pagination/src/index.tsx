@@ -1,23 +1,21 @@
 import React, { FC, MouseEvent, useState, useEffect } from 'react'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Pagination: FC = () => {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
 
-  type routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions' | '/login'
+  type routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions'
 
   const [value, setValue] = useState<routes | null>(pathname as routes)
 
   const handleChange = (event: MouseEvent<HTMLElement>, newPage: routes | null) => {
-    setValue(newPage)
-  }
-
-  useEffect(() => {
-    if (value === null) {
-      setValue(pathname as routes)
+    if (newPage !== null) {
+      setValue(newPage)
+      navigate(newPage)
     }
-  }, [value])
+  }
 
   return (
     <ToggleButtonGroup value={value} exclusive onChange={handleChange} aria-label='change page'>
@@ -32,9 +30,6 @@ const Pagination: FC = () => {
       </ToggleButton>
       <ToggleButton value='/transactions' aria-label='transactions page'>
         Transactions
-      </ToggleButton>
-      <ToggleButton value='/login' aria-label='login page'>
-        login
       </ToggleButton>
     </ToggleButtonGroup>
   )
