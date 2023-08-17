@@ -6,7 +6,7 @@ const Pagination: FC = () => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
-  type routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions'
+  type Routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions'
 
   const [value, setValue] = useState<routes | null>(pathname as routes)
 
