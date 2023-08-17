@@ -1,0 +1,17 @@
+{
+  "name": "@ui/pagination",
+  "main": "src/index.tsx",
+  "devDependencies": {
+    "@mui/material": "^5.14.2",
+    "@types/react": "^18.2.17",
+    "react-router-dom": "^6.14.1"
+  },
+  "peerDependencies": {
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "@mui/material": "5",
+    "react": "18",
+    "react-dom": "18",
+    "react-router-dom": "6"
+  }
+}

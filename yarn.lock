@@ -3434,6 +3434,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@ui/pagination@workspace:client/shared/ui/pagination":
+  version: 0.0.0-use.local
+  resolution: "@ui/pagination@workspace:client/shared/ui/pagination"
+  dependencies:
+    "@mui/material": "npm:^5.14.2"
+    "@types/react": "npm:^18.2.17"
+    react-router-dom: "npm:^6.14.1"
+  peerDependencies:
+    "@emotion/react": 11
+    "@emotion/styled": 11
+    "@mui/material": 5
+    react: 18
+    react-dom: 18
+    react-router-dom: 6
+  languageName: unknown
+  linkType: soft
+
 "@ui/search@workspace:^, @ui/search@workspace:client/shared/ui/search":
   version: 0.0.0-use.local
   resolution: "@ui/search@workspace:client/shared/ui/search"

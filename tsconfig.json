@@ -96,6 +96,9 @@
       "@ui/header": [
         "client/shared/ui/header"
       ],
+      "@ui/pagination": [
+        "client/shared/ui/pagination"
+      ],
       "@ui/search": [
         "client/shared/ui/search"
       ],
