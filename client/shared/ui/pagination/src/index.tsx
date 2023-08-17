@@ -8,9 +8,9 @@ const Pagination: FC = () => {
 
   type Routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions'
 
-  const [value, setValue] = useState<routes | null>(pathname as routes)
+  const [value, setValue] = useState<Routes | null>(pathname as Routes)
 
-  const handleChange = (event: MouseEvent<HTMLElement>, newPage: routes | null) => {
+  const handleChange = (event: MouseEvent<HTMLElement>, newPage: Routes | null) => {
     if (newPage !== null) {
       setValue(newPage)
       navigate(newPage)
