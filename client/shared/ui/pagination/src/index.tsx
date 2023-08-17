@@ -1,12 +1,11 @@
 import React, { FC, MouseEvent, useState } from 'react'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Routes } from './privateTypes'
 
 const Pagination: FC = () => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
-
-  type Routes = '/portfolio' | '/nfts' | '/brc-20' | '/transactions'
 
   const [value, setValue] = useState<Routes | null>(pathname as Routes)
 
