@@ -2156,6 +2156,7 @@ __metadata:
     "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
+    "@ui/pagination": "workspace:^"
   peerDependencies:
     "@emotion/react": 11
     "@emotion/styled": 11
@@ -3434,7 +3435,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ui/pagination@workspace:client/shared/ui/pagination":
+"@ui/pagination@workspace:^, @ui/pagination@workspace:client/shared/ui/pagination":
   version: 0.0.0-use.local
   resolution: "@ui/pagination@workspace:client/shared/ui/pagination"
   dependencies:
