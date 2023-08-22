@@ -1,6 +1,8 @@
 import type { ThemeOptions } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
 import { MuiInput } from './input'
+import { MuiPaper, MuiTableCell, MuiTableRow } from './table'
+import { MuiPagination, MuiPaginationItem } from './pagination'
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -71,6 +73,11 @@ export const palette = {
 const components = {
   components: {
     MuiInput,
+    MuiPagination,
+    MuiPaginationItem,
+    MuiTableCell,
+    MuiTableRow,
+    MuiPaper,
   },
 } satisfies ThemeOptions
 

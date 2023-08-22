@@ -3466,6 +3466,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@ui/table@workspace:client/shared/ui/table":
+  version: 0.0.0-use.local
+  resolution: "@ui/table@workspace:client/shared/ui/table"
+  dependencies:
+    "@emotion/react": "npm:^11.11.1"
+    "@emotion/styled": "npm:^11.11.0"
+    "@mui/material": "npm:^5.14.4"
+    "@types/react": "npm:^18.2.20"
+    "@ui/search": "workspace:^"
+  peerDependencies:
+    "@mui/material": 5
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
 "@vitejs/plugin-react@npm:^4.0.3":
   version: 4.0.4
   resolution: "@vitejs/plugin-react@npm:4.0.4"
