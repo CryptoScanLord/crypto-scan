@@ -1,7 +1,7 @@
 import { ButtonBase, ButtonBaseProps } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
-interface Props extends ButtonBaseProps {
+interface PaginationButtonProps extends ButtonBaseProps {
   active: boolean
 }
 
