@@ -1,7 +1,5 @@
 export interface TableProps {
-  data: {
-    [key: string]: string | number
-  }[]
+  data: Record<string, string | number>[]
   headerCells: string[]
   title: string
   subtitle: string

@@ -1,23 +1,21 @@
-import React, { FC } from 'react'
-import { TableProps } from './table.interface'
-import {
-  Table as MuiTable,
-  Paper,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Box,
-  Typography,
-} from '@mui/material'
+import { type FC, useState } from 'react'
+import type { TableProps } from './table.interface'
+import MuiTable from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableRow from '@mui/material/TableRow'
+import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
+import TableHead from '@mui/material/TableHead'
+import Typography from '@mui/material/Typography'
 import Pagination from './pagination.component'
 import Search from '@ui/search'
 
 export const Table: FC<TableProps> = ({ data, headerCells, title, subtitle }) => {
-  const [rowsPerPage] = React.useState(7)
-  const [searchQuery, setSearchQuery] = React.useState('')
-  const [page, setPage] = React.useState(1)
+  const [rowsPerPage] = useState(7)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [page, setPage] = useState(1)
 
   const handleSearchQueryChange = (value: string) => {
     setSearchQuery(value)
