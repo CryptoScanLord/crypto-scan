@@ -102,6 +102,9 @@
       "@ui/search": [
         "client/shared/ui/search"
       ],
+      "@ui/table": [
+        "client/shared/ui/table"
+      ],
       "@crawler/bis": [
         "crawler/bis"
       ],
