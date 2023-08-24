@@ -11,6 +11,7 @@ declare module '@mui/material/styles' {
 }
 
 const primary = '#7b61ff'
+const lightPrimary = '#1B224A'
 const text = '#f4f4fb'
 const background = '#060b27'
 const paper = '#0a0f2c'
@@ -48,6 +49,7 @@ export const palette = {
   palette: {
     primary: {
       main: primary,
+      light: lightPrimary,
     },
     error: {
       main: red,

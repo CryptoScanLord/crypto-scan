@@ -1,36 +1,28 @@
-import React, { FC, MouseEvent, useState } from 'react'
-import { ToggleButton, ToggleButtonGroup } from '@mui/material'
+import { FC } from 'react'
+import Box from '@mui/material/Box'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Routes } from './privateTypes'
+import { PaginationButton } from './paginationButton'
 
 const Pagination: FC = () => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
-  const [value, setValue] = useState<Routes | null>(pathname as Routes)
-
-  const handleChange = (event: MouseEvent<HTMLElement>, newPage: Routes | null) => {
-    if (newPage !== null) {
-      setValue(newPage)
-      navigate(newPage)
-    }
-  }
-
   return (
-    <ToggleButtonGroup value={value} exclusive onChange={handleChange} aria-label='change page'>
-      <ToggleButton value='/portfolio' aria-label='portfolio page'>
+    <Box display='flex' padding='7px' border='1px solid #1e2340' borderRadius='10px' gap='5px'>
+      <PaginationButton active={pathname === Routes.portfolio} onClick={() => navigate(Routes.portfolio)}>
         Portfolio
-      </ToggleButton>
-      <ToggleButton value='/nfts' aria-label='nfts page'>
+      </PaginationButton>
+      <PaginationButton active={pathname === Routes.nfts} onClick={() => navigate(Routes.nfts)}>
         NFTs
-      </ToggleButton>
-      <ToggleButton value='/brc-20' aria-label='brc-20 page'>
+      </PaginationButton>
+      <PaginationButton active={pathname === Routes.brc20} onClick={() => navigate(Routes.brc20)}>
         BRC-20
-      </ToggleButton>
-      <ToggleButton value='/transactions' aria-label='transactions page'>
+      </PaginationButton>
+      <PaginationButton active={pathname === Routes.transactions} onClick={() => navigate(Routes.transactions)}>
         Transactions
-      </ToggleButton>
-    </ToggleButtonGroup>
+      </PaginationButton>
+    </Box>
   )
 }
 
