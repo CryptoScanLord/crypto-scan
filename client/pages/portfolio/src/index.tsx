@@ -3,7 +3,7 @@ import { useAuthGuard } from '@lib/auth-react'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
 
-export const PortfolioPage: FC = () => {
+const PortfolioPage: FC = () => {
   useAuthGuard()
 
   const { data: history } = useQuery({
@@ -18,3 +18,4 @@ export const PortfolioPage: FC = () => {
     </div>
   )
 }
+export default PortfolioPage

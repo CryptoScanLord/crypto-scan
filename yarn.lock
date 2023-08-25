@@ -347,6 +347,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/routes@workspace:client/app/routes"
   dependencies:
+    "@mui/material": "npm:^5.14.2"
     "@page/brc-20": "workspace:^"
     "@page/login": "workspace:^"
     "@page/nfts": "workspace:^"
@@ -358,6 +359,7 @@ __metadata:
   peerDependencies:
     "@emotion/react": 11
     "@emotion/styled": 11
+    "@mui/material": 5
     react: 18
     react-dom: 18
     react-router-dom: 6
@@ -2181,10 +2183,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@page/not-found@workspace:client/pages/not-found"
   dependencies:
+    "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
+    react-router-dom: "npm:^6.14.1"
   peerDependencies:
+    "@emotion/react": 11
+    "@emotion/styled": 11
+    "@mui/material": 5
     react: 18
     react-dom: 18
+    react-router-dom: 6
   languageName: unknown
   linkType: soft
 
