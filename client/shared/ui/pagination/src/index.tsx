@@ -9,7 +9,7 @@ const Pagination: FC = () => {
   const navigate = useNavigate()
 
   return (
-    <Box display='flex' padding='7px' border='1px solid #1e2340' borderRadius='10px' gap='5px'>
+    <Box display='inline-flex' padding='7px' border='1px solid #1e2340' borderRadius='10px' gap='5px'>
       <PaginationButton active={pathname === Routes.portfolio} onClick={() => navigate(Routes.portfolio)}>
         Portfolio
       </PaginationButton>
