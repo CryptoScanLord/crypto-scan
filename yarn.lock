@@ -2157,6 +2157,7 @@ __metadata:
   dependencies:
     "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
+    "@page/search": "workspace:^"
     "@types/react": "npm:^18.2.17"
   peerDependencies:
     "@emotion/react": 11
@@ -2206,6 +2207,24 @@ __metadata:
     "@ui/graph": "workspace:^"
   peerDependencies:
     "@tanstack/react-query": 5
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/search@workspace:^, @page/search@workspace:client/pages/search":
+  version: 0.0.0-use.local
+  resolution: "@page/search@workspace:client/pages/search"
+  dependencies:
+    "@lib/auth-react": "workspace:^"
+    "@mui/material": "npm:^5.14.2"
+    "@types/react": "npm:^18.2.17"
+    "@ui/container": "workspace:^"
+    "@ui/search": "workspace:^"
+  peerDependencies:
+    "@emotion/react": 11
+    "@emotion/styled": 11
+    "@mui/material": 5
     react: 18
     react-dom: 18
   languageName: unknown
@@ -3409,7 +3428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ui/container@workspace:client/shared/ui/container":
+"@ui/container@workspace:^, @ui/container@workspace:client/shared/ui/container":
   version: 0.0.0-use.local
   resolution: "@ui/container@workspace:client/shared/ui/container"
   dependencies:
