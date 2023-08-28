@@ -90,6 +90,9 @@
       "@theme/schema": [
         "client/shared/theme/schema"
       ],
+      "@ui/container": [
+        "client/shared/ui/container"
+      ],
       "@ui/graph": [
         "client/shared/ui/graph"
       ],
