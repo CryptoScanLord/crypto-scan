@@ -18,7 +18,7 @@ export const Routes: FC = () => (
     }
   >
     <DOMRoutes>
-      <Route path='/' element={<PortfolioPage />} />
+      <Route path='/portfolio' element={<PortfolioPage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/nfts' element={<NFTsPage />} />
       <Route path='/brc-20' element={<BRC20Page />} />
