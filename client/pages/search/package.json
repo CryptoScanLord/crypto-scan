@@ -1,9 +1,10 @@
 {
-  "name": "@page/login",
+  "name": "@page/search",
   "main": "src/index.tsx",
   "dependencies": {
     "@lib/auth-react": "workspace:^",
-    "@page/search": "workspace:^"
+    "@ui/container": "workspace:^",
+    "@ui/search": "workspace:^"
   },
   "devDependencies": {
     "@mui/material": "^5.14.2",

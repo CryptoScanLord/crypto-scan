@@ -78,6 +78,9 @@
       "@page/portfolio": [
         "client/pages/portfolio"
       ],
+      "@page/search": [
+        "client/pages/search"
+      ],
       "@page/transactions": [
         "client/pages/transactions"
       ],
