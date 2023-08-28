@@ -1,10 +1,10 @@
-import { Box } from '@mui/material'
+import Container from '@mui/material/Container'
 import { FC, PropsWithChildren } from 'react'
 
-const Container: FC<PropsWithChildren> = ({ children }) => (
-  <Box maxWidth='1200px' margin='0 auto' display='flex' justifyContent='center' flexDirection='column'>
+const PageContainer: FC<PropsWithChildren> = ({ children }) => (
+  <Container component='div' sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
     {children}
-  </Box>
+  </Container>
 )
 
-export default Container
+export default PageContainer
