@@ -3,17 +3,18 @@
   "main": "src/index.tsx",
   "dependencies": {
     "@lib/auth-react": "workspace:^",
+    "@mui/material": "^5.14.7",
     "@ui/container": "workspace:^",
     "@ui/search": "workspace:^"
   },
   "devDependencies": {
-    "@mui/material": "^5.14.2",
+    "@mui/icons-material": "^5.14.6",
     "@types/react": "^18.2.17"
   },
   "peerDependencies": {
     "@emotion/react": "11",
     "@emotion/styled": "11",
-    "@mui/material": "5",
+    "@mui/icons-material": "5",
     "react": "18",
     "react-dom": "18"
   }
