@@ -2365,7 +2365,6 @@ __metadata:
   dependencies:
     "@lib/auth-react": "workspace:^"
     "@mui/material": "npm:^5.14.2"
-    "@page/search": "workspace:^"
     "@types/react": "npm:^18.2.17"
   peerDependencies:
     "@emotion/react": 11
@@ -2420,7 +2419,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@page/search@workspace:^, @page/search@workspace:client/pages/search":
+"@page/search@workspace:client/pages/search":
   version: 0.0.0-use.local
   resolution: "@page/search@workspace:client/pages/search"
   dependencies:
