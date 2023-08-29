@@ -353,6 +353,7 @@ __metadata:
     "@page/nfts": "workspace:^"
     "@page/not-found": "workspace:^"
     "@page/portfolio": "workspace:^"
+    "@page/search": "workspace:^"
     "@page/transactions": "workspace:^"
     "@types/react": "npm:^18.2.12"
     react-router-dom: "npm:^6.14.1"
@@ -2419,7 +2420,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@page/search@workspace:client/pages/search":
+"@page/search@workspace:^, @page/search@workspace:client/pages/search":
   version: 0.0.0-use.local
   resolution: "@page/search@workspace:client/pages/search"
   dependencies:

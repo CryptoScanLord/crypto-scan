@@ -7,6 +7,7 @@
     "@page/nfts": "workspace:^",
     "@page/not-found": "workspace:^",
     "@page/portfolio": "workspace:^",
+    "@page/search": "workspace:^",
     "@page/transactions": "workspace:^"
   },
   "devDependencies": {
