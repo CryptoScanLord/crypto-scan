@@ -5,6 +5,7 @@ import { NFTsPage } from '@page/nfts'
 import { BRC20Page } from '@page/brc-20'
 import { NotFoundPage } from '@page/not-found'
 import { TransactionsPage } from '@page/transactions'
+import { SearchPage } from '@page/search'
 import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -18,6 +19,7 @@ export const Routes: FC = () => (
     }
   >
     <DOMRoutes>
+      <Route path='/' element={<SearchPage />} />
       <Route path='/portfolio' element={<PortfolioPage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/nfts' element={<NFTsPage />} />
