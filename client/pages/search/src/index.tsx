@@ -5,8 +5,11 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import SearchIcon from '@mui/icons-material/Search'
+import { useAuthGuard } from '@lib/auth-react'
 
 export const SearchPage = () => {
+  useAuthGuard()
+
   const [wallet, setWallet] = useState<string>('')
 
   const handleClick = () => {
