@@ -24,11 +24,15 @@ const PortfolioPage: FC = () => {
     queryFn: () => getOverall('' /* params here */).then((res) => res.balance),
   })
 
-  return isGraphLoading || isBalanceLoading ? (
-    <PageContainer sx={{ width: '100dvw', height: '100dvh', display: 'flex', alignItems: 'center' }}>
-      <CircularProgress />
-    </PageContainer>
-  ) : (
+  if (isGraphLoading || isBalanceLoading) {
+    return (
+      <PageContainer sx={{ width: '100dvw', height: '100dvh', display: 'flex', alignItems: 'center' }}>
+        <CircularProgress />
+      </PageContainer>
+    )
+  }
+
+  return (
     <PageContainer sx={{ gap: '0px', alignItems: 'center' }}>
       <Box>
         <Box display='flex' flexDirection='row' alignItems='end' width='max-width' justifyContent='space-between'>
