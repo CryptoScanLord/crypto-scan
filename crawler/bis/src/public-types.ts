@@ -32,6 +32,9 @@ export interface Sales {
 export interface Volume {
   lastDay: string
 }
+export interface MaxPrice {
+  maxPrice: number
+}
 
 export type NftData = {
   tokenId: string
