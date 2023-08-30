@@ -6,7 +6,7 @@ import { Graph } from '@ui/graph'
 import PageContainer from '@ui/container'
 import { Box, Typography } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()
@@ -21,9 +21,7 @@ const PortfolioPage: FC = () => {
 
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
-    queryFn: () => {
-      return getOverall('' /* params here */).then((res) => res.balance)
-    },
+    queryFn: () => getOverall('' /* params here */).then((res) => res.balance),
   })
 
   return isGraphLoading || isBalanceLoading ? (
