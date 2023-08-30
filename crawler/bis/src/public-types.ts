@@ -29,6 +29,9 @@ export interface Sales {
   salePrice: number
   tokenNum: number
 }
+export interface Volume {
+  lastDay: string
+}
 
 export type NftData = {
   tokenId: string
