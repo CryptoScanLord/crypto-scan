@@ -22,6 +22,21 @@ export interface Trait {
   value: string | number
 }
 
+export interface Sales {
+  token_id: string
+  old_wallet: string
+  new_wallet: string
+  block_height: number
+  psbt_price: number
+  new_satpoint: string
+  ts: string
+  token_num: number
+  sats_name?: string
+  content_type: string
+  item_name?: string
+  sats_original_id?: string
+}
+
 export interface NftDataApi {
   token_id: string
   token_num: number

@@ -21,6 +21,14 @@ export interface Trait {
   trait: string
   value: string | number
 }
+export interface Sales {
+  tokenId: string
+  oldWallet: string
+  newWallet: string
+  itemName?: string
+  salePrice: number
+  tokenNum: number
+}
 
 export type NftData = {
   tokenId: string
