@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom'
 const PortfolioPage: FC = () => {
   useAuthGuard()
 
-  const params = useParams()
+  // const params = useParams()
 
   const { data: history, isLoading: isGraphLoading } = useQuery({
     queryKey: ['wallet_history'],
@@ -21,8 +21,8 @@ const PortfolioPage: FC = () => {
 
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
-    queryFn: async () => {
-      return await getOverall('' /* params here */).then((res) => res.balance)
+    queryFn: () => {
+      return getOverall('' /* params here */).then((res) => res.balance)
     },
   })
 
