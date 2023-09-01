@@ -21,7 +21,6 @@ export async function getMaxPrice(collectionSlug: string): Promise<Pub.MaxPrice>
     if (!res[0]) {
       break
     } else {
-      console.log(i)
       maxPrice = res.reduce(
         (maxPeak: Prv.CollectionActivity, peak: Prv.CollectionActivity) =>
           (maxPeak?.psbt_price ?? 0) > (peak.psbt_price ?? 0) ? maxPeak : peak,
