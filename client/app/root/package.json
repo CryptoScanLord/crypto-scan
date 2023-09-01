@@ -4,6 +4,7 @@
   "dependencies": {
     "@app/providers": "workspace:^",
     "@app/routes": "workspace:^",
+    "@ui/container": "workspace:^",
     "@ui/header": "workspace:^"
   },
   "devDependencies": {
