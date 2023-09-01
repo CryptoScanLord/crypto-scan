@@ -1,6 +1,6 @@
 import * as Prv from './private-types.js'
 import * as Pub from './public-types.js'
-import { transformWalletActivity } from './transform'
+import { transformWalletActivity } from './transform.js'
 
 export async function getWalletActivity(wallet: string): Promise<Pub.Sales[]> {
   const data: Pub.Sales[] = []

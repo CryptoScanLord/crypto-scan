@@ -3,7 +3,7 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "ts-node --esm src/get-max-price.ts"
+    "start": "ts-node --esm src/index.ts"
   },
   "devDependencies": {
     "@types/node": "^20.5.0",
