@@ -42,7 +42,7 @@ export interface CollectionActivity {
   old_wallet: string
   new_wallet: string
   block_height: number
-  psbt_price: number
+  psbt_price?: number
   new_satpoint: string
   ts: string
 }
