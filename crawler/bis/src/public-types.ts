@@ -33,7 +33,7 @@ export interface Volume {
   lastDay: string
 }
 export interface MaxPrice {
-  maxPrice: number
+  maxPrice?: number
 }
 
 export type NftData = {
