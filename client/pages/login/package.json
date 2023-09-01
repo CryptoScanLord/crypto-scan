@@ -2,7 +2,8 @@
   "name": "@page/login",
   "main": "src/index.tsx",
   "dependencies": {
-    "@lib/auth-react": "workspace:^"
+    "@lib/auth-react": "workspace:^",
+    "@page/transactions": "workspace:^"
   },
   "devDependencies": {
     "@mui/material": "^5.14.2",
