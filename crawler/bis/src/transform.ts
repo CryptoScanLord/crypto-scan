@@ -54,3 +54,13 @@ export const transformData = (nft: Prv.NftDataApi) => {
     traits: transformTraits(nft.traits),
   } satisfies Pub.NftData
 }
+
+export const transformWalletActivity = (item: Prv.Sales) =>
+  ({
+    tokenId: item.token_id,
+    oldWallet: item.old_wallet,
+    newWallet: item.new_wallet,
+    itemName: item?.item_name,
+    tokenNum: item.token_num,
+    salePrice: item.psbt_price,
+  }) satisfies Pub.Sales
