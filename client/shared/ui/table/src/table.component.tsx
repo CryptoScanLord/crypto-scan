@@ -75,6 +75,7 @@ export const Table: FC<TableProps> = ({ data, headerCells, title, subtitle }) =>
                         ) : (
                           value
                         )}
+                        {typeof value === 'function' && value}
                       </TableCell>
                     ) : null,
                   )}
