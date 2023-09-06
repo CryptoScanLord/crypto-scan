@@ -1,11 +1,5 @@
-import { ReactNode } from 'react'
-
-type Component = {
-  component: ReactNode
-}
-
 export interface TableProps {
-  data: Record<string, string | number | Component>[]
+  data: Record<string, string | number | JSX.Element>[]
   headerCells: string[]
   title: string
   subtitle: string

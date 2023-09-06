@@ -5,7 +5,8 @@ import { useQuery } from '@tanstack/react-query'
 import { getTransactions } from '@crawler/blockchain'
 import CircularProgress from '@mui/material/CircularProgress'
 import PageContainer from '@ui/container'
-import { Link } from 'react-router-dom'
+import { MyLink } from './MyLink'
+import { Clue } from './Clue'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()
@@ -19,25 +20,25 @@ export const TransactionsPage: FC = () => {
             const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
             const from =
               el.inputs.length > 1 ? (
-                `${el.inputs.length} exits`
+                <Clue text={el.inputs} exits={el.inputs.length} />
               ) : (
-                <Link to={`/${el.inputs[0]}`}>
+                <MyLink to={`/${el.inputs[0]}`}>
                   {el.inputs[0]?.slice(0, 4)}-{el.inputs[0]?.slice(-4)}
-                </Link>
+                </MyLink>
               )
             const to =
               el.outputs.length > 1 ? (
-                `${el.outputs.length} exits`
+                <Clue text={el.outputs} exits={el.outputs.length} />
               ) : (
-                <Link style={{ textDecoration: 'none' }} to={`/${el.outputs[0]}`}>
+                <MyLink to={`/${el.outputs[0]}`}>
                   {el.outputs[0]?.slice(0, 4)}-{el.outputs[0]?.slice(-4)}
-                </Link>
+                </MyLink>
               )
             return {
               hash: (
-                <Link to={`https://www.blockchain.com/explorer/transactions/btc/${el.id}`}>
+                <MyLink to={`https://www.blockchain.com/explorer/transactions/btc/${el.id}`}>
                   {el.id.slice(0, 4)}-{el.id.slice(-4)}
-                </Link>
+                </MyLink>
               ),
               method: method,
               from: from,
@@ -57,7 +58,7 @@ export const TransactionsPage: FC = () => {
   return (
     <PageContainer sx={{ height: '100dvh' }}>
       <Table
-        data={[]}
+        data={transactions ? transactions : []}
         headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
         subtitle=''
         title='Transactions'
