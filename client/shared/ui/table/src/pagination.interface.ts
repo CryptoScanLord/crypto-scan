@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
 export interface PaginationProps {
-  rows: Record<string, string | number>[]
+  rows: Record<string, string | number | JSX.Element>[]
   rowsPerPage: number
   setPage: Dispatch<SetStateAction<number>>
 }

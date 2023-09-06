@@ -12,7 +12,8 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.2",
     "@tanstack/react-query": "5.0.0-beta.15",
-    "@types/react": "^18.2.17"
+    "@types/react": "^18.2.17",
+    "react-router-dom": "^6.14.1"
   },
   "peerDependencies": {
     "@emotion/react": "11",
@@ -20,6 +21,7 @@
     "@mui/material": "5",
     "@tanstack/react-query": "5",
     "react": "18",
-    "react-dom": "18"
+    "react-dom": "18",
+    "react-router-dom": "6"
   }
 }
