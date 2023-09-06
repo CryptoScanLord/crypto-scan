@@ -1,6 +1,5 @@
 import Tooltip from '@mui/material/Tooltip'
 import Box from '@mui/material/Box'
-import React from 'react'
 
 interface ClueProps {
   text: string[]
@@ -10,10 +9,10 @@ interface ClueProps {
 export const Clue = ({ text, exits }: ClueProps) => (
   <Tooltip
     title={text.map((el) => (
-      <React.Fragment key={el}>
+      <Box key={Math.random()}>
         {el}
         {`\n`}
-      </React.Fragment>
+      </Box>
     ))}
     arrow
   >
