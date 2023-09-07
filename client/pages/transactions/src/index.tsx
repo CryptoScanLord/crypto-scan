@@ -16,38 +16,37 @@ export const TransactionsPage: FC = () => {
       const res = await getTransactions('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3', {
         limit: 0,
         offset: 0,
-      }).then(
-        async (data) =>
-          await data.map((el) => {
-            const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
-            const from =
-              el.inputs.length > 1 ? (
-                <Clue text={el.inputs} exits={el.inputs.length} />
-              ) : (
-                <MyLink to={`/${el.inputs[0]}`}>
-                  {el.inputs[0]?.slice(0, 4)}-{el.inputs[0]?.slice(-4)}
-                </MyLink>
-              )
-            const to =
-              el.outputs.length > 1 ? (
-                <Clue text={el.outputs} exits={el.outputs.length} />
-              ) : (
-                <MyLink to={`/${el.outputs[0]}`}>
-                  {el.outputs[0]?.slice(0, 4)}-{el.outputs[0]?.slice(-4)}
-                </MyLink>
-              )
-            return {
-              hash: (
-                <MyLink to={`https://www.blockchain.com/explorer/transactions/btc/${el.id}`}>
-                  {el.id.slice(0, 4)}-{el.id.slice(-4)}
-                </MyLink>
-              ),
-              method: method,
-              from: from,
-              to: to,
-              value: `${el.delta / 100000000} BTC`,
-            }
-          }),
+      }).then(async (data) =>
+        data.map((el) => {
+          const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
+          const from =
+            el.inputs.length > 1 ? (
+              <Clue text={el.inputs} exits={el.inputs.length} />
+            ) : (
+              <MyLink to={`/${el.inputs[0]}`}>
+                {el.inputs[0]?.slice(0, 4)}-{el.inputs[0]?.slice(-4)}
+              </MyLink>
+            )
+          const to =
+            el.outputs.length > 1 ? (
+              <Clue text={el.outputs} exits={el.outputs.length} />
+            ) : (
+              <MyLink to={`/${el.outputs[0]}`}>
+                {el.outputs[0]?.slice(0, 4)}-{el.outputs[0]?.slice(-4)}
+              </MyLink>
+            )
+          return {
+            hash: (
+              <MyLink to={`https://www.blockchain.com/explorer/transactions/btc/${el.id}`}>
+                {el.id.slice(0, 4)}-{el.id.slice(-4)}
+              </MyLink>
+            ),
+            method: method,
+            from,
+            to,
+            value: `${el.delta / 100000000} BTC`,
+          }
+        }),
       )
       return res
     },
