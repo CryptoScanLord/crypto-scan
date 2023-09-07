@@ -16,6 +16,6 @@ export const Clue = ({ text, exits }: ClueProps) => (
     ))}
     arrow
   >
-    <Box>{exits} exits</Box>
+    <Box width='max-content'>{exits} exits</Box>
   </Tooltip>
 )

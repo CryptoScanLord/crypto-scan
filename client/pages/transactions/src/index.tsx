@@ -13,10 +13,13 @@ export const TransactionsPage: FC = () => {
 
   const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
     queryKey: ['wallet_history'],
-    queryFn: () =>
-      getTransactions('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3', { limit: 0, offset: 0 }).then(
-        (data) =>
-          data.map((el) => {
+    queryFn: async () => {
+      const res = await getTransactions('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3', {
+        limit: 0,
+        offset: 0,
+      }).then(
+        async (data) =>
+          await data.map((el) => {
             const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
             const from =
               el.inputs.length > 1 ? (
@@ -46,14 +49,17 @@ export const TransactionsPage: FC = () => {
               value: `${el.delta / 100000000} BTC`,
             }
           }),
-      ),
+      )
+      return res
+    },
   })
 
-  isTransactionsLoading && (
-    <PageContainer sx={{ width: '100dvw', height: '100dvh', display: 'flex', alignItems: 'center' }}>
-      <CircularProgress />
-    </PageContainer>
-  )
+  if (isTransactionsLoading)
+    return (
+      <PageContainer sx={{ width: '100dvw', height: '100dvh', display: 'flex', alignItems: 'center' }}>
+        <CircularProgress />
+      </PageContainer>
+    )
 
   return (
     <PageContainer sx={{ height: '100dvh' }}>
