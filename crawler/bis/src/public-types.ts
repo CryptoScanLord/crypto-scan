@@ -30,7 +30,7 @@ export interface Sales {
   tokenNum: number
 }
 export interface Volume {
-  lastDay: string
+  lastDay: number
 }
 export interface MaxPrice {
   maxPrice?: number
