@@ -3,14 +3,18 @@
   "main": "src/index.tsx",
   "dependencies": {
     "@app/providers": "workspace:^",
-    "@app/routes": "workspace:^"
+    "@app/routes": "workspace:^",
+    "@ui/container": "workspace:^",
+    "@ui/header": "workspace:^"
   },
   "devDependencies": {
+    "@mui/material": "^5.14.5",
     "@types/react": "^18.2.12"
   },
   "peerDependencies": {
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "@mui/material": "5",
     "react": "18",
     "react-dom": "18"
   }

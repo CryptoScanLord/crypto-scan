@@ -334,10 +334,14 @@ __metadata:
   dependencies:
     "@app/providers": "workspace:^"
     "@app/routes": "workspace:^"
+    "@mui/material": "npm:^5.14.5"
     "@types/react": "npm:^18.2.12"
+    "@ui/container": "workspace:^"
+    "@ui/header": "workspace:^"
   peerDependencies:
     "@emotion/react": 11
     "@emotion/styled": 11
+    "@mui/material": 5
     react: 18
     react-dom: 18
   languageName: unknown
@@ -1728,8 +1732,8 @@ __metadata:
   linkType: hard
 
 "@mui/icons-material@npm:^5.14.6":
-  version: 5.14.6
-  resolution: "@mui/icons-material@npm:5.14.6"
+  version: 5.14.7
+  resolution: "@mui/icons-material@npm:5.14.7"
   dependencies:
     "@babel/runtime": "npm:^7.22.10"
   peerDependencies:
@@ -1739,11 +1743,11 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 7a5494b5c1298edad4eb3b56bee91ab27387f9132d74a21b69f0eb24d1545673fc9a333057e59266257e12cc7ea9ff28e943c7e81a7ffee277185786c2a01306
+  checksum: 797b1b7ac6278f5cfd7a9d86a319674f727e6341af53467e475cde81620b97a8f791933eeba4eb10a9674b1db8f6ff438d9752c36788fb1227b3bac9434b2052
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.14.2, @mui/material@npm:^5.14.4":
+"@mui/material@npm:^5.14.2, @mui/material@npm:^5.14.4, @mui/material@npm:^5.14.5":
   version: 5.14.5
   resolution: "@mui/material@npm:5.14.5"
   dependencies:
@@ -3682,7 +3686,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ui/header@workspace:client/shared/ui/header":
+"@ui/header@workspace:^, @ui/header@workspace:client/shared/ui/header":
   version: 0.0.0-use.local
   resolution: "@ui/header@workspace:client/shared/ui/header"
   dependencies:

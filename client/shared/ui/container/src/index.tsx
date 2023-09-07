@@ -1,11 +1,9 @@
-import Container from '@mui/material/Container'
+import MuiContainer from '@mui/material/Container'
 import { FC, PropsWithChildren } from 'react'
 import { ContainerProps } from '@mui/material/Container'
 
-const PageContainer: FC<PropsWithChildren<ContainerProps>> = ({ children, sx }) => (
-  <Container component='div' sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: 1, ...sx }}>
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({ children, sx }) => (
+  <MuiContainer component='div' sx={{ display: 'flex', flexDirection: 'column', gap: 1, minHeight: '100dvh', ...sx }}>
     {children}
-  </Container>
+  </MuiContainer>
 )
-
-export default PageContainer

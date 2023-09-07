@@ -7,7 +7,7 @@ import Button from '@mui/material/Button'
 export const NotFoundPage: FC = () => {
   const navigate = useNavigate()
   return (
-    <Box height='100dvh' display='flex' justifyContent='center' flexDirection='column' alignItems='center' gap='15px'>
+    <Box display='flex' justifyContent='center' flexDirection='column' alignItems='center' gap='15px' flexGrow={1}>
       <Typography variant='h1' fontWeight='bold'>
         404
       </Typography>

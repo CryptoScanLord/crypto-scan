@@ -3,15 +3,11 @@ import { useAuthGuard } from '@lib/auth-react'
 import { getOverall } from '@crawler/blockchain'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
-import PageContainer from '@ui/container'
 import { Box, Typography } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
-// import { useParams } from 'react-router-dom'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()
-
-  // const params = useParams()
 
   const { data: history, isLoading: isGraphLoading } = useQuery({
     queryKey: ['wallet_history'],
@@ -25,33 +21,26 @@ const PortfolioPage: FC = () => {
   })
 
   if (isGraphLoading || isBalanceLoading) {
-    return (
-      <PageContainer sx={{ width: '100dvw', height: '100dvh', display: 'flex', alignItems: 'center' }}>
-        <CircularProgress />
-      </PageContainer>
-    )
+    return <CircularProgress />
   }
 
   return (
-    <PageContainer sx={{ gap: '0px', alignItems: 'center' }}>
-      <Box>
-        <Box display='flex' flexDirection='row' alignItems='end' width='max-width' justifyContent='space-between'>
-          <Typography variant='h5'>Portfolio</Typography>
-          <Typography variant='body1'>Balacne: {balance ? balance / 100000000 : 0} BTC</Typography>
-        </Box>
-        <div
-          style={{
-            width: '90vw',
-            height: '90vh',
-            background: `#050424c0`,
-            borderRadius: '10px',
-            padding: '10px',
-          }}
-        >
-          <Graph data={history ?? []} />
-        </div>
+    <Box flexGrow={1} display='flex' flexDirection='column' py={4}>
+      <Box display='flex' flexDirection='row' alignItems='end' width='max-width' justifyContent='space-between'>
+        <Typography variant='h5'>Portfolio</Typography>
+        <Typography variant='body1'>Balance: {balance ? balance / 100000000 : 0} BTC</Typography>
       </Box>
-    </PageContainer>
+      <Box
+        sx={{
+          flexGrow: 1,
+          background: `#050424c0`,
+          borderRadius: '10px',
+          padding: '10px',
+        }}
+      >
+        <Graph data={history ?? []} />
+      </Box>
+    </Box>
   )
 }
 export default PortfolioPage
