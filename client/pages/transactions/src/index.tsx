@@ -4,7 +4,6 @@ import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import { getTransactions } from '@crawler/blockchain'
 import CircularProgress from '@mui/material/CircularProgress'
-import PageContainer from '@ui/container'
 import { MyLink } from './MyLink'
 import { Clue } from './Clue'
 
@@ -54,21 +53,14 @@ export const TransactionsPage: FC = () => {
     },
   })
 
-  if (isTransactionsLoading)
-    return (
-      <PageContainer sx={{ width: '100dvw', height: '100dvh', display: 'flex', alignItems: 'center' }}>
-        <CircularProgress />
-      </PageContainer>
-    )
+  if (isTransactionsLoading) return <CircularProgress />
 
   return (
-    <PageContainer sx={{ height: '100dvh' }}>
-      <Table
-        data={transactions ? transactions : []}
-        headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
-        subtitle=''
-        title='Transactions'
-      />
-    </PageContainer>
+    <Table
+      data={transactions ? transactions : []}
+      headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
+      subtitle=''
+      title='Transactions'
+    />
   )
 }

@@ -4,7 +4,6 @@
   "dependencies": {
     "@crawler/blockchain": "workspace:^",
     "@lib/auth-react": "workspace:^",
-    "@ui/container": "workspace:^",
     "@ui/table": "workspace:^"
   },
   "devDependencies": {
