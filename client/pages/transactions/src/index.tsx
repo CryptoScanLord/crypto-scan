@@ -41,7 +41,7 @@ export const TransactionsPage: FC = () => {
                 {el.id.slice(0, 4)}-{el.id.slice(-4)}
               </MyLink>
             ),
-            method: method,
+            method,
             from,
             to,
             value: `${el.delta / 100000000} BTC`,
@@ -56,7 +56,7 @@ export const TransactionsPage: FC = () => {
 
   return (
     <Table
-      data={transactions ? transactions : []}
+      data={transactions ?? []}
       headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
       subtitle=''
       title='Transactions'
