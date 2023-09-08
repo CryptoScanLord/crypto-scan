@@ -6,6 +6,6 @@ export async function getVolume(collectionSlug: string): Promise<Pub.Volume> {
     (res) => res.json(),
   )) satisfies Promise<Prv.Collection>
   return {
-    lastDay: res.sale_info.last_1_day,
+    lastDay: parseInt(res.sale_info.last_1_day, 10),
   } satisfies Pub.Volume
 }
