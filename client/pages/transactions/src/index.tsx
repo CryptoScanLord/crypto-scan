@@ -6,8 +6,6 @@ import { getTransactions } from '@crawler/blockchain'
 import CircularProgress from '@mui/material/CircularProgress'
 import { MyLink } from './MyLink'
 import { Clue } from './Clue'
-import PageContainer from '@ui/container'
-import Header from '@ui/header'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()
@@ -54,22 +52,14 @@ export const TransactionsPage: FC = () => {
     },
   })
 
-  if (isTransactionsLoading)
-    return (
-      <PageContainer sx={{ width: '100dwh', height: '100dvh', display: 'flex', alignItems: 'center' }}>
-        <CircularProgress />
-      </PageContainer>
-    )
+  if (isTransactionsLoading) return <CircularProgress />
 
   return (
-    <PageContainer>
-      <Header />
-      <Table
-        data={transactions ?? []}
-        headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
-        subtitle=''
-        title='Transactions'
-      />
-    </PageContainer>
+    <Table
+      data={transactions ?? []}
+      headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
+      subtitle=''
+      title='Transactions'
+    />
   )
 }

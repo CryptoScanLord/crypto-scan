@@ -2463,8 +2463,6 @@ __metadata:
     "@mui/material": "npm:^5.14.2"
     "@tanstack/react-query": "npm:5.0.0-beta.15"
     "@types/react": "npm:^18.2.17"
-    "@ui/container": "workspace:^"
-    "@ui/header": "workspace:^"
     "@ui/table": "workspace:^"
     react-router-dom: "npm:^6.14.1"
   peerDependencies:
@@ -3696,7 +3694,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ui/header@workspace:^, @ui/header@workspace:client/shared/ui/header":
+"@ui/header@workspace:client/shared/ui/header":
   version: 0.0.0-use.local
   resolution: "@ui/header@workspace:client/shared/ui/header"
   dependencies:
