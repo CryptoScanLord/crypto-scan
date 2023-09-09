@@ -1,10 +1,7 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
-type Component = {
-  component: ReactNode
-}
 export interface PaginationProps {
-  rows: Record<string, string | number | Component>[]
+  rows: Record<string, string | number | JSX.Element>[]
   rowsPerPage: number
   setPage: Dispatch<SetStateAction<number>>
 }
