@@ -48,6 +48,9 @@
       "@api/entrypoint": [
         "api/entrypoint"
       ],
+      "@api/tokens-module": [
+        "api/tokens"
+      ],
       "@api/wallet-module": [
         "api/wallet"
       ],

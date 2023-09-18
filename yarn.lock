@@ -236,6 +236,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
+    "@api/tokens-module": "workspace:^"
     "@api/wallet-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@lib/vite": "workspace:^"
@@ -270,6 +271,26 @@ __metadata:
     vite: "npm:^4.4.7"
     vite-plugin-node: "npm:^3.0.2"
     vitest: "npm:^0.33.0"
+  languageName: unknown
+  linkType: soft
+
+"@api/tokens-module@workspace:^, @api/tokens-module@workspace:api/tokens":
+  version: 0.0.0-use.local
+  resolution: "@api/tokens-module@workspace:api/tokens"
+  dependencies:
+    "@crawler/ordinals": "workspace:^"
+    "@crawler/unisat": "workspace:^"
+    "@lib/auth-nestjs": "workspace:^"
+    "@nestjs/cache-manager": "npm:^2.1.0"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    "@nestjs/testing": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/cache-manager": 2
+    "@nestjs/core": 10
+    cache-manager: 5
   languageName: unknown
   linkType: soft
 
@@ -847,13 +868,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@crawler/ordinals@workspace:crawler/ordinals":
+"@crawler/ordinals@workspace:^, @crawler/ordinals@workspace:crawler/ordinals":
   version: 0.0.0-use.local
   resolution: "@crawler/ordinals@workspace:crawler/ordinals"
   languageName: unknown
   linkType: soft
 
-"@crawler/unisat@workspace:crawler/unisat":
+"@crawler/unisat@workspace:^, @crawler/unisat@workspace:crawler/unisat":
   version: 0.0.0-use.local
   resolution: "@crawler/unisat@workspace:crawler/unisat"
   languageName: unknown
