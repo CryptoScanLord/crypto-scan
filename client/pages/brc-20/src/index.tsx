@@ -17,5 +17,12 @@ export const BRC20Page: FC = () => {
 
   console.log(tokens)
 
-  return <Table data={[]} headerCells={['№', 'Name', 'Price']} title='BRC-20' subtitle='' />
+  return (
+    <Table
+      data={[]}
+      headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
+      title='BRC-20'
+      subtitle=''
+    />
+  )
 }
