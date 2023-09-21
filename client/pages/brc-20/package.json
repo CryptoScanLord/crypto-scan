@@ -2,6 +2,7 @@
   "name": "@page/brc-20",
   "main": "src/index.tsx",
   "dependencies": {
+    "@crawler/ordinals": "workspace:^",
     "@lib/auth-react": "workspace:^"
   },
   "devDependencies": {
