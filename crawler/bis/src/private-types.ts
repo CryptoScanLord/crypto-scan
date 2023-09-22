@@ -124,3 +124,9 @@ export interface NftDataApi {
   floor_price_ordinalsmarket?: number
   traits: Trait[]
 }
+
+export interface Volume {
+  sale_7d: string
+  sale_24h: string
+  total_sale: string
+}
