@@ -847,7 +847,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@crawler/ordinals@workspace:crawler/ordinals":
+"@crawler/ordinals@workspace:^, @crawler/ordinals@workspace:crawler/ordinals":
   version: 0.0.0-use.local
   resolution: "@crawler/ordinals@workspace:crawler/ordinals"
   languageName: unknown
@@ -2361,6 +2361,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@page/brc-20@workspace:client/pages/brc-20"
   dependencies:
+    "@crawler/ordinals": "workspace:^"
     "@lib/auth-react": "workspace:^"
     "@types/react": "npm:^18.2.17"
   peerDependencies:
