@@ -1,4 +1,3 @@
-import { getTokenPrice } from './getTokenPrice'
 import { WalletRes } from './privateTypes'
 
 export async function getTokens(wallet: string, volume: Record<string, string>) {
