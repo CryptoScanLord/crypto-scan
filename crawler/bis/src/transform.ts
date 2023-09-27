@@ -47,7 +47,7 @@ export const transformData = (nft: Prv.NftDataApi) => {
     itemName: nft.item_name,
     metadata: nft?.metadata ? transformMetadata(nft.metadata) : undefined,
     collectionName: nft.collection_name,
-    collectionSlug: nft.collections_slug,
+    collectionSlug: nft.collection_slug,
     blockHeight: nft.block_height,
     magicedenListingPrice: nft.magiceden_listing_price,
     magicedenFloorPrice: nft.floor_price_magiceden,
