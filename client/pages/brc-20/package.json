@@ -3,7 +3,6 @@
   "main": "src/index.tsx",
   "dependencies": {
     "@crawler/ordinals": "workspace:^",
-    "@crawler/unisat": "workspace:^",
     "@lib/auth-react": "workspace:^",
     "@ui/table": "workspace:^"
   },

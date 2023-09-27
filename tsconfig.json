@@ -48,6 +48,9 @@
       "@api/entrypoint": [
         "api/entrypoint"
       ],
+      "@api/volume-module": [
+        "api/volume"
+      ],
       "@api/wallet-module": [
         "api/wallet"
       ],
