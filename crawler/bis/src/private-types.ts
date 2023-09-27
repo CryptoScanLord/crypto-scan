@@ -103,7 +103,7 @@ export interface NftDataApi {
   item_name?: string
   metadata?: Metadata
   collection_name?: string
-  collections_slug?: string
+  collection_slug?: string
   block_height: number
   satpoint: string
   tags: number[]

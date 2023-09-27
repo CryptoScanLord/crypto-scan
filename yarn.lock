@@ -236,6 +236,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
+    "@api/nfts-module": "workspace:^"
     "@api/wallet-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@lib/vite": "workspace:^"
@@ -270,6 +271,20 @@ __metadata:
     vite: "npm:^4.4.7"
     vite-plugin-node: "npm:^3.0.2"
     vitest: "npm:^0.33.0"
+  languageName: unknown
+  linkType: soft
+
+"@api/nfts-module@workspace:^, @api/nfts-module@workspace:api/nfts":
+  version: 0.0.0-use.local
+  resolution: "@api/nfts-module@workspace:api/nfts"
+  dependencies:
+    "@crawler/bis": "workspace:^"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/core": 10
   languageName: unknown
   linkType: soft
 
@@ -820,7 +835,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@crawler/bis@workspace:crawler/bis":
+"@crawler/bis@workspace:^, @crawler/bis@workspace:crawler/bis":
   version: 0.0.0-use.local
   resolution: "@crawler/bis@workspace:crawler/bis"
   dependencies:
