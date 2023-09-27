@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { useAuthGuard } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
@@ -17,12 +17,8 @@ export const BRC20Page: FC = () => {
     },
   })
 
-
-
   if (isTokensLoading) {
-    return (
-      <CircularProgress />
-    )
+    return <CircularProgress />
   }
 
   return (
