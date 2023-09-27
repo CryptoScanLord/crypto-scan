@@ -3,6 +3,7 @@ import { useAuthGuard } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import { getTokens } from '@crawler/unisat'
+import { CircularProgress } from '@mui/material'
 
 export const BRC20Page: FC = () => {
   useAuthGuard()
@@ -15,7 +16,9 @@ export const BRC20Page: FC = () => {
     },
   })
 
-  console.log(tokens)
+  if (isTokensLoading) {
+    return <CircularProgress />
+  }
 
   return (
     <Table
