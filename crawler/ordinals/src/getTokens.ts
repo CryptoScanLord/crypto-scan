@@ -1,6 +1,6 @@
-import { Volume, WalletRes } from './privateTypes'
+import { WalletRes } from './privateTypes'
 
-export async function getTokens(wallet: string, volume: Volume) {
+export async function getTokens(wallet: string) {
   const res: WalletRes = await fetch(`https://turbo.ordinalswallet.com/wallet/${wallet}`).then((data) => data.json())
   const filtered = res.brc20.filter((el) => el.available_balance > 0)
   const data = filtered.map(async (el) => {

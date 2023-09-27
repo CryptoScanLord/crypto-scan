@@ -237,6 +237,7 @@ __metadata:
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
     "@api/nfts-module": "workspace:^"
+    "@api/volume-module": "workspace:^"
     "@api/wallet-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@lib/vite": "workspace:^"
@@ -285,6 +286,24 @@ __metadata:
     rxjs: "npm:^7.8.1"
   peerDependencies:
     "@nestjs/core": 10
+  languageName: unknown
+  linkType: soft
+
+"@api/volume-module@workspace:^, @api/volume-module@workspace:api/volume":
+  version: 0.0.0-use.local
+  resolution: "@api/volume-module@workspace:api/volume"
+  dependencies:
+    "@crawler/bis": "workspace:^"
+    "@nestjs/cache-manager": "npm:^2.1.0"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    "@nestjs/testing": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/cache-manager": 2
+    "@nestjs/core": 10
+    cache-manager: 5
   languageName: unknown
   linkType: soft
 
@@ -865,6 +884,8 @@ __metadata:
 "@crawler/ordinals@workspace:^, @crawler/ordinals@workspace:crawler/ordinals":
   version: 0.0.0-use.local
   resolution: "@crawler/ordinals@workspace:crawler/ordinals"
+  dependencies:
+    "@crawler/bis": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -2378,6 +2399,8 @@ __metadata:
   dependencies:
     "@crawler/ordinals": "workspace:^"
     "@crawler/unisat": "workspace:^"
+    "@emotion/react": "npm:^11.11.1"
+    "@emotion/styled": "npm:^11.11.0"
     "@emotion/react": "npm:^11.11.1"
     "@emotion/styled": "npm:^11.11.0"
     "@lib/auth-react": "workspace:^"

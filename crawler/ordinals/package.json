@@ -1,4 +1,7 @@
 {
   "name": "@crawler/ordinals",
-  "main": "src/index.ts"
+  "main": "src/index.ts",
+  "dependencies": {
+    "@crawler/bis": "workspace:^"
+  }
 }

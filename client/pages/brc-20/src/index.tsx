@@ -11,8 +11,9 @@ export const BRC20Page: FC = () => {
   const { data: tokens, isLoading: isTokensLoading } = useQuery({
     queryKey: ['brc_20'],
     queryFn: async () => {
-      const res = await getTokens('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3').then((data) => data)
-      return res
+      const res = await getTokens('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3')
+      console.log(res)
+      return Promise.all(res)
     },
   })
 
@@ -22,7 +23,7 @@ export const BRC20Page: FC = () => {
 
   return (
     <Table
-      data={[]}
+      data={tokens ?? []}
       headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
       title='BRC-20'
       subtitle=''

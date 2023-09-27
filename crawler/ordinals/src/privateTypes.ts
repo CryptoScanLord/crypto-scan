@@ -66,9 +66,3 @@ export interface Outpoint {
   sat_offset: number
   sats: number
 }
-
-export interface Volume {
-  sale_7d: string
-  sale_24h: string
-  total_sale: string
-}
