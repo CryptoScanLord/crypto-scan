@@ -8,7 +8,6 @@ export async function getTokens(wallet: string) {
       `${import.meta.env.PROD ? `` : `http://localhost:8000`}/brc-20/${el.ticker.toLowerCase()}/volume`,
     )
       .then((data) => data.json())
-      .catch((e) => console.log(e))
     return {
       name: el.ticker,
       amount: el.available_balance,
@@ -18,6 +17,5 @@ export async function getTokens(wallet: string) {
       volumeAll: Number(volume.allVolume) / 100000000,
     }
   })
-  console.log(data)
   return data
 }
