@@ -51,6 +51,9 @@
       "@api/nfts-module": [
         "api/nfts"
       ],
+      "@api/volume-module": [
+        "api/volume"
+      ],
       "@api/wallet-module": [
         "api/wallet"
       ],

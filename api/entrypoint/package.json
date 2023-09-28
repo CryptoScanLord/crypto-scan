@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@api/nfts-module": "workspace:^",
+    "@api/volume-module": "workspace:^",
     "@api/wallet-module": "workspace:^",
     "@lib/auth-nestjs": "workspace:^",
     "@nestjs/cache-manager": "^2.1.0",

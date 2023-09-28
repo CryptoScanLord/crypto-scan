@@ -32,6 +32,13 @@ export interface Sales {
 export interface Volume {
   lastDay: number
 }
+
+export interface VolumeRes {
+  sale_7d: string
+  sale_24h: string
+  total_sale: string
+}
+
 export interface MaxPrice {
   maxPrice?: number
 }
