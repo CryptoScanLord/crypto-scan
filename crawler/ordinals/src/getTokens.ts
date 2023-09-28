@@ -6,8 +6,7 @@ export async function getTokens(wallet: string) {
   const data = filtered.map(async (el) => {
     const volume: { volume24: string; allVolume: string } = await fetch(
       `${import.meta.env.PROD ? `` : `http://localhost:8000`}/brc-20/${el.ticker.toLowerCase()}/volume`,
-    )
-      .then((data) => data.json())
+    ).then((data) => data.json())
     return {
       name: el.ticker,
       amount: el.available_balance,
