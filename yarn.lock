@@ -280,6 +280,7 @@ __metadata:
   resolution: "@api/nfts-module@workspace:api/nfts"
   dependencies:
     "@crawler/bis": "workspace:^"
+    "@lib/auth-nestjs": "workspace:^"
     "@nestjs/common": "npm:^10.1.2"
     "@nestjs/core": "npm:^10.1.2"
     reflect-metadata: "npm:^0.1.13"

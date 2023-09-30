@@ -1,9 +1,11 @@
-import { Controller, Get, Param } from '@nestjs/common'
+import { Controller, Get, Param, UseGuards } from '@nestjs/common'
 import { getNFTs, getWalletActivity } from '@crawler/bis'
+import { RoleGuard, SupabaseGuard } from '@lib/auth-nestjs'
 
 @Controller('nfts/:wallet')
 export class NftsController {
   @Get()
+  @UseGuards(SupabaseGuard, RoleGuard)
   async getNfts(@Param('wallet') wallet: string) {
     const nfts = await getNFTs(wallet)
     const walletActivity = await getWalletActivity(wallet)
