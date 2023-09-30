@@ -32,7 +32,8 @@ export default defineConfig({
   define: {
     ...env(
       'SUPABASE_URL',
-      'SUPABASE_KEY'
+      'SUPABASE_KEY',
+      'ROLE_GUARD_TOKEN'
     ),
   }
 })

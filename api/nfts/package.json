@@ -2,7 +2,8 @@
   "name": "@api/nfts-module",
   "main": "src/index.ts",
   "dependencies": {
-    "@crawler/bis": "workspace:^"
+    "@crawler/bis": "workspace:^",
+    "@lib/auth-nestjs": "workspace:^"
   },
   "devDependencies": {
     "@nestjs/common": "^10.1.2",
