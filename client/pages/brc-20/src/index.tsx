@@ -4,15 +4,18 @@ import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import { getTokens } from '@crawler/ordinals'
 import { CircularProgress } from '@mui/material'
+import { useParams } from 'react-router-dom'
 
 export const BRC20Page: FC = () => {
   useAuthGuard()
 
+  const params = useParams()
+
   const { data: tokens, isLoading: isTokensLoading } = useQuery({
     queryKey: ['brc_20'],
     queryFn: async () => {
-      const res = await getTokens('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3')
-      return Promise.all(res)
+      const res = await fetch(`${import.meta.env.PROD ? `` : `http://localhost:8000`}/transactions/${params['wallet']}`).then(data => data.json())
+      return res
     },
   })
 

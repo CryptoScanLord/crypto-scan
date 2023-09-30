@@ -4,6 +4,8 @@ import { CacheModule } from '@nestjs/cache-manager'
 import { WalletModule } from '@api/wallet-module'
 import { NftsModule } from '@api/nfts-module'
 import { VolumeModule } from '@api/volume-module'
+import { TxsModule } from '@api/transactions-module'
+import { TokensModule } from '@api/tokens-module'
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { VolumeModule } from '@api/volume-module'
     WalletModule,
     NftsModule,
     VolumeModule,
+    TxsModule,
+    TokensModule
   ],
 })
 export class AppModule {}

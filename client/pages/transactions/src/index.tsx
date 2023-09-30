@@ -6,17 +6,17 @@ import { getTransactions } from '@crawler/blockchain'
 import CircularProgress from '@mui/material/CircularProgress'
 import { MyLink } from './MyLink'
 import { Clue } from './Clue'
+import { useParams } from 'react-router-dom'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()
 
+  const params = useParams()
+
   const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: async () => {
-      const res = await getTransactions('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3', {
-        limit: 0,
-        offset: 0,
-      }).then(async (data) =>
+      const res = await fetch(`${import.meta.env.PROD ? `` : `http://localhost:8000`}/transactions/${params['wallet']}`).then(data => data.json()).then(async (data) =>
         data.map((el) => {
           const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
           const from =

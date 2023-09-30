@@ -237,6 +237,8 @@ __metadata:
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
     "@api/nfts-module": "workspace:^"
+    "@api/tokens-module": "workspace:^"
+    "@api/transactions-module": "workspace:^"
     "@api/volume-module": "workspace:^"
     "@api/wallet-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
@@ -280,6 +282,36 @@ __metadata:
   resolution: "@api/nfts-module@workspace:api/nfts"
   dependencies:
     "@crawler/bis": "workspace:^"
+    "@lib/auth-nestjs": "workspace:^"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/core": 10
+  languageName: unknown
+  linkType: soft
+
+"@api/tokens-module@workspace:^, @api/tokens-module@workspace:api/tokens":
+  version: 0.0.0-use.local
+  resolution: "@api/tokens-module@workspace:api/tokens"
+  dependencies:
+    "@crawler/ordinals": "workspace:^"
+    "@lib/auth-nestjs": "workspace:^"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/core": 10
+  languageName: unknown
+  linkType: soft
+
+"@api/transactions-module@workspace:^, @api/transactions-module@workspace:api/transactions":
+  version: 0.0.0-use.local
+  resolution: "@api/transactions-module@workspace:api/transactions"
+  dependencies:
+    "@crawler/blockchain": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
     "@nestjs/common": "npm:^10.1.2"
     "@nestjs/core": "npm:^10.1.2"

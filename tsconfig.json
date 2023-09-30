@@ -51,6 +51,12 @@
       "@api/nfts-module": [
         "api/nfts"
       ],
+      "@api/tokens-module": [
+        "api/tokens"
+      ],
+      "@api/transactions-module": [
+        "api/transactions"
+      ],
       "@api/volume-module": [
         "api/volume"
       ],
