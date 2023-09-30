@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { getNFTs, getVolume, getWalletActivity } from '@crawler/bis'
+import { getNFTs, getWalletActivity } from '@crawler/bis'
 
 @Controller('nfts/:wallet')
 export class NftsController {
@@ -19,7 +19,7 @@ export class NftsController {
           imageUrl: imageUrl ?? undefined,
           totalSpent: activity?.salePrice ?? undefined,
           floorPrice: magicedenFloorPrice ?? undefined,
-          volume: collectionSlug ? await getVolume(collectionSlug).then(({ lastDay }) => lastDay) : undefined,
+          // volume: collectionSlug ? await getVolume(collectionSlug).then(({ lastDay }) => lastDay) : undefined,
         }
       }),
     )
