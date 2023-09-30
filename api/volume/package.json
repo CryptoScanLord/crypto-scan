@@ -2,6 +2,7 @@
   "name": "@api/volume-module",
   "main": "src/index.ts",
   "dependencies": {
+    "@lib/auth-nestjs": "workspace:^",
     "@crawler/bis": "workspace:^"
   },
   "devDependencies": {

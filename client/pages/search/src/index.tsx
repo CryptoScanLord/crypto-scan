@@ -4,13 +4,10 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import SearchIcon from '@mui/icons-material/Search'
-import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
+import { useAuthGuard } from '@lib/auth-react'
 
 export const SearchPage = () => {
   useAuthGuard()
-
-  const session = useSuspendSession()
-  console.log(session)
 
   const [wallet, setWallet] = useState<string>('')
 

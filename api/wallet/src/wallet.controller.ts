@@ -1,7 +1,8 @@
-import { Controller, Get, InternalServerErrorException, Param, UseInterceptors } from '@nestjs/common'
+import { Controller, Get, InternalServerErrorException, Param, UseGuards, UseInterceptors } from '@nestjs/common'
 import { getHistory } from '@crawler/blockchain'
 import { getPriceHistory } from '@crawler/coindesk'
 import { CacheInterceptor, CacheTTL } from '@nestjs/cache-manager'
+import { RoleGuard, SupabaseGuard } from '@lib/auth-nestjs'
 
 const DAY = 24 * 60 * 60 * 1000
 
@@ -10,6 +11,7 @@ export class WalletController {
   @Get('graph')
   @UseInterceptors(CacheInterceptor)
   @CacheTTL(60 * 1000)
+  @UseGuards(SupabaseGuard, RoleGuard)
   async getGraph(@Param('wallet') wallet: string) {
     const actualPrice = await fetch('https://ordapi.bestinslot.xyz/v1/btc_price').then((res) => res.text().then(Number))
 
