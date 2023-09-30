@@ -19,7 +19,7 @@ export class RoleGuard implements CanActivate {
 
     const { provider_id: id } = user.user_metadata
 
-    const member = await fetch(`https://discord.com/api/v10//guilds/1123676140842778654/members/${id}`, {
+    const member = await fetch(`https://discord.com/api/v10/guilds/1123676140842778654/members/${id}`, {
       headers: {
         Authorization: `Bot ${import.meta.env['ROLE_GUARD_TOKEN']}`,
       },
