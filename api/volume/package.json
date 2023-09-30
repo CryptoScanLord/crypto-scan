@@ -2,8 +2,8 @@
   "name": "@api/volume-module",
   "main": "src/index.ts",
   "dependencies": {
-    "@lib/auth-nestjs": "workspace:^",
-    "@crawler/bis": "workspace:^"
+    "@crawler/bis": "workspace:^",
+    "@lib/auth-nestjs": "workspace:^"
   },
   "devDependencies": {
     "@nestjs/cache-manager": "^2.1.0",
