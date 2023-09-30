@@ -1,24 +1,38 @@
 import { FC } from 'react'
-import { useAuthGuard } from '@lib/auth-react'
+import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
 import { getOverall } from '@crawler/blockchain'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
 import { Box, Typography } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
+import { useNavigate } from 'react-router-dom'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()
+  const { access_token: token } = useSuspendSession()
+  const navigate = useNavigate()
 
   const { data: history, isLoading: isGraphLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
-      fetch('http://localhost:8000/wallet/1FfmbHfnpaZjKFvyi1okTjJJusN455paPH/graph').then((res) => res.json()),
+      fetch('http://localhost:8000/wallet/1FfmbHfnpaZjKFvyi1okTjJJusN455paPH/graph', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then(async (res) => ({
+        data: await res.json(),
+        status: res.status,
+      })),
   })
 
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
     queryFn: () => getOverall('' /* params here */).then((res) => res.balance),
   })
+
+  if (history?.status === 403) {
+    navigate('/not-authorized')
+  }
 
   if (isGraphLoading || isBalanceLoading) {
     return <CircularProgress />
@@ -38,7 +52,7 @@ const PortfolioPage: FC = () => {
           padding: '10px',
         }}
       >
-        <Graph data={history ?? []} />
+        <Graph data={history?.data ?? []} />
       </Box>
     </Box>
   )
