@@ -19,7 +19,7 @@ export const NFTsPage: FC = () => {
   return (
     <Table
       data={data}
-      headerCells={['Inscription', 'Collection Name', 'Image Url', 'Total Spent', 'Floor Price', 'Volume']}
+      headerCells={['Inscription', 'Collection Name', 'Image Url', 'Total Spent', 'Floor Price']}
       subtitle=''
       title='NFTs'
     />
