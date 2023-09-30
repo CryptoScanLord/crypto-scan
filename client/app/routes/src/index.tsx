@@ -8,6 +8,7 @@ import { TransactionsPage } from '@page/transactions'
 import { SearchPage } from '@page/search'
 import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress'
+import { NotAuthorizedPage } from '@page/not-authorized'
 
 const PortfolioPage = lazy(() => import('@page/portfolio'))
 export const Routes: FC = () => (
@@ -25,6 +26,7 @@ export const Routes: FC = () => (
       <Route path='/nfts' element={<NFTsPage />} />
       <Route path='/brc-20' element={<BRC20Page />} />
       <Route path='/transactions' element={<TransactionsPage />} />
+      <Route path='/not-authorized' element={<NotAuthorizedPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </DOMRoutes>
   </Suspense>
