@@ -1,1 +1,1 @@
-import * from './tokens.module'
+export * from './tokens.module'

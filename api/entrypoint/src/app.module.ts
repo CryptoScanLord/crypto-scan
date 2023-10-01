@@ -17,7 +17,7 @@ import { TokensModule } from '@api/tokens-module'
     NftsModule,
     VolumeModule,
     TxsModule,
-    TokensModule
+    TokensModule,
   ],
 })
 export class AppModule {}

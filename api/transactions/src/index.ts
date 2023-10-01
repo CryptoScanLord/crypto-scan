@@ -1,1 +1,1 @@
-import * from './transactions.module'
+export * from './transactions.module'

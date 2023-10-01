@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common'
-import {TokensController } from './tokens.controller'
+import { TokensController } from './tokens.controller'
 
 @Module({
   controllers: [TokensController],
