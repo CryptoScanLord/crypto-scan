@@ -1,6 +1,6 @@
 import { Controller, Get, Param, UseGuards } from '@nestjs/common'
 import { RoleGuard, SupabaseGuard } from '@lib/auth-nestjs'
-import {getTransactions} from '@crawler/blockchain'
+import { getTransactions } from '@crawler/blockchain'
 
 @Controller('transactions')
 export class TxsController {
@@ -8,8 +8,8 @@ export class TxsController {
   @UseGuards(SupabaseGuard, RoleGuard)
   async getTxs(@Param('wallet') wallet: string) {
     const res = await getTransactions(wallet, {
-        limit: 0,
-        offset: 0,
+      limit: 0,
+      offset: 0,
     })
     return res
   }
