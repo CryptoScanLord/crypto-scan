@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useAuthGuard } from '@lib/auth-react'
+import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -10,12 +10,20 @@ import { useParams } from 'react-router-dom'
 export const TransactionsPage: FC = () => {
   useAuthGuard()
 
+  const { access_token: token } = useSuspendSession()
   const params = useParams()
 
   const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: async () => {
-      const res = await fetch(`${import.meta.env.PROD ? `` : `http://localhost:8000`}/transactions/${params['wallet']}`)
+      const res = await fetch(
+        `${import.meta.env.PROD ? `` : `http://localhost:8000`}/transactions/${params['wallet']}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
         .then((data) => data.json())
         .then(async (data) =>
           data.map((el: any) => {
