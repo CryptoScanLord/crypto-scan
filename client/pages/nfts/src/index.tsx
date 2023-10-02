@@ -3,16 +3,15 @@ import { useAuthGuard } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import CircularProgress from '@mui/material/CircularProgress'
+import { useParams } from 'react-router-dom'
 
 export const NFTsPage: FC = () => {
   useAuthGuard()
+  const params = useParams()
 
   const { data, isLoading } = useQuery({
     queryKey: ['nfts'],
-    queryFn: () =>
-      fetch('http://localhost:8000/nfts/bc1pa0q6l7nyej0dh588swm49j3ddgevgyuxe75s2qal8lv0drnw8epqde2pe2').then((res) =>
-        res.json(),
-      ),
+    queryFn: () => fetch(`http://localhost:8000/nfts/${params['wallet']}`).then((res) => res.json()),
   })
 
   if (isLoading) return <CircularProgress />

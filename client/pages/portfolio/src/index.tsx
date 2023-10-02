@@ -5,19 +5,21 @@ import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
 import { Box, Typography } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
+import { useParams } from 'react-router-dom'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()
+  const params = useParams()
 
   const { data: history, isLoading: isGraphLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
-      fetch('http://localhost:8000/wallet/1FfmbHfnpaZjKFvyi1okTjJJusN455paPH/graph').then((res) => res.json()),
+      fetch(`http://localhost:8000/wallet/${params['wallet']}/graph`).then((res) => res.json()),
   })
 
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
-    queryFn: () => getOverall('' /* params here */).then((res) => res.balance),
+    queryFn: () => getOverall(`${params['wallet']}`).then((res) => res.balance),
   })
 
   if (isGraphLoading || isBalanceLoading) {
