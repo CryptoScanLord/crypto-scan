@@ -16,7 +16,8 @@ export const NFTsPage: FC = () => {
     queryFn: () => fetch(new URL(`nfts/${wallet}`, import.meta.env['API_URL']), {
       headers: {
         Authorization: `Bearer ${token}`,
-      }).then((res) => res.json()),
+      },
+    ).then((res) => res.json()),
   })
 
   if (isLoading) return <CircularProgress />
