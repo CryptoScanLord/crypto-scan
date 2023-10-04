@@ -56,7 +56,7 @@ const PortfolioPage: FC = () => {
             padding: '10px',
           }}
         >
-          <Graph data={history ?? []} />
+          <Graph data={data?.data ?? []} />
         </Box>
       </Box>
     </Container>
