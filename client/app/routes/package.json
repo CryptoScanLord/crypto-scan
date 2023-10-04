@@ -5,6 +5,7 @@
     "@page/brc-20": "workspace:^",
     "@page/login": "workspace:^",
     "@page/nfts": "workspace:^",
+    "@page/not-authorized": "workspace:^",
     "@page/not-found": "workspace:^",
     "@page/portfolio": "workspace:^",
     "@page/search": "workspace:^",
