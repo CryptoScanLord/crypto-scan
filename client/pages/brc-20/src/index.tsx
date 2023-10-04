@@ -18,7 +18,7 @@ export const BRC20Page: FC = () => {
     queryKey: ['brc_20'],
     queryFn: async () => {
       const res = await fetch(
-        `${import.meta.env.PROD ? `` : `http://localhost:8000`}/transactions/${params['wallet']}`,
+        new URL(`transactions/${wallet}`, import.meta.env.API_URL)
         {
           headers: {
             Authorization: `Bearer ${token}`,
