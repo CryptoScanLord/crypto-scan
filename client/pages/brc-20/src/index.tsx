@@ -11,14 +11,14 @@ export const BRC20Page: FC = () => {
   useAuthGuard()
 
   const { access_token: token } = useSuspendSession()
-  const params = useParams()
+  const { wallet } = useParams()
   const navigate = useNavigate()
 
   const { data: tokens, isLoading: isTokensLoading } = useQuery({
     queryKey: ['brc_20'],
     queryFn: async () => {
       const res = await fetch(
-        new URL(`transactions/${wallet}`, import.meta.env.API_URL)
+        new URL(`tokens/${wallet}`, import.meta.env.API_URL),
         {
           headers: {
             Authorization: `Bearer ${token}`,

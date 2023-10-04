@@ -13,12 +13,13 @@ const PortfolioPage: FC = () => {
   useAuthGuard()
 
   const { access_token: token } = useSuspendSession()
-  const params = useParams()
+  const { wallet } = useParams()
 
   const { data: history, isLoading: isGraphLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
-      fetch(`http://localhost:8000/wallet/${params['wallet']}/graph`, {
+      fetch(
+        new URL(`wallet/${wallet}/graph`, import.meta.env.API_URL), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,7 +28,12 @@ const PortfolioPage: FC = () => {
 
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
-    queryFn: () => getOverall(`${params['wallet']}`).then((res) => res.balance),
+    queryFn: () => fetch(
+      new URL(`overall/${wallet}`, import.meta.env.API_URL), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json()),
   })
 
   if (isGraphLoading || isBalanceLoading) {

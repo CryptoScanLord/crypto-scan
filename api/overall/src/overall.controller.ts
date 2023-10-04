@@ -1,13 +1,13 @@
 import { Controller, Get, Param, UseGuards } from '@nestjs/common'
 import { RoleGuard, SupabaseGuard } from '@lib/auth-nestjs'
-import { getTokens } from '@crawler/ordinals'
+import { getOverall } from '@crawler/blockchain'
 
-@Controller('tokens')
-export class TokensController {
+@Controller('overall')
+export class OverallController {
   @Get('/:wallet')
   @UseGuards(SupabaseGuard, RoleGuard)
-  async getTokens(@Param('wallet') wallet: string) {
-    const res = await getTokens(wallet)
+  async getOverallBalance(@Param('wallet') wallet: string) {
+    const res = await getOverall(wallet)
     return res
   }
 }

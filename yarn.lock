@@ -237,6 +237,7 @@ __metadata:
   resolution: "@api/entrypoint@workspace:api/entrypoint"
   dependencies:
     "@api/nfts-module": "workspace:^"
+    "@api/overall-module": "workspace:^"
     "@api/tokens-module": "workspace:^"
     "@api/transactions-module": "workspace:^"
     "@api/volume-module": "workspace:^"
@@ -289,6 +290,25 @@ __metadata:
     rxjs: "npm:^7.8.1"
   peerDependencies:
     "@nestjs/core": 10
+  languageName: unknown
+  linkType: soft
+
+"@api/overall-module@workspace:^, @api/overall-module@workspace:api/overall":
+  version: 0.0.0-use.local
+  resolution: "@api/overall-module@workspace:api/overall"
+  dependencies:
+    "@crawler/blockchain": "workspace:^"
+    "@lib/auth-nestjs": "workspace:^"
+    "@nestjs/cache-manager": "npm:^2.1.0"
+    "@nestjs/common": "npm:^10.1.2"
+    "@nestjs/core": "npm:^10.1.2"
+    "@nestjs/testing": "npm:^10.1.2"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/cache-manager": 2
+    "@nestjs/core": 10
+    cache-manager: 5
   languageName: unknown
   linkType: soft
 

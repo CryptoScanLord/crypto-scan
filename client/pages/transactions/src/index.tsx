@@ -13,14 +13,14 @@ export const TransactionsPage: FC = () => {
   useAuthGuard()
 
   const { access_token: token } = useSuspendSession()
-  const params = useParams()
+  const { wallet } = useParams()
   const navigate = useNavigate()
 
   const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: async () => {
       const res = await fetch(
-        `${import.meta.env.PROD ? `` : `http://localhost:8000`}/transactions/${params['wallet']}`,
+        new URL(`transactions/${wallet}`, import.meta.env.API_URL),
         {
           headers: {
             Authorization: `Bearer ${token}`,

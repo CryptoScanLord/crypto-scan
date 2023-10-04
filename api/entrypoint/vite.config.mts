@@ -35,6 +35,7 @@ export default defineConfig({
       'SUPABASE_KEY',
       'ROLE_GUARD_TOKEN',
       'PASS_ROLE_ID',
+        'API_URL',
     ),
   }
 })

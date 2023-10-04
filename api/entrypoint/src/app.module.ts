@@ -6,6 +6,7 @@ import { NftsModule } from '@api/nfts-module'
 import { VolumeModule } from '@api/volume-module'
 import { TxsModule } from '@api/transactions-module'
 import { TokensModule } from '@api/tokens-module'
+import { OverallModule } from '@api/overall-module'
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { TokensModule } from '@api/tokens-module'
     VolumeModule,
     TxsModule,
     TokensModule,
+    OverallModule,
   ],
 })
 export class AppModule {}
