@@ -33,7 +33,8 @@ export default defineConfig({
     ...env(
       'SUPABASE_URL',
       'SUPABASE_KEY',
-      'ROLE_GUARD_TOKEN'
+      'ROLE_GUARD_TOKEN',
+      'PASS_ROLE_ID',
     ),
   }
 })
