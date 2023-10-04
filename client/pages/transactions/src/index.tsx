@@ -19,14 +19,11 @@ export const TransactionsPage: FC = () => {
   const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: async () => {
-      const res = await fetch(
-        new URL(`transactions/${wallet}`, import.meta.env['API_URL']),
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const res = await fetch(new URL(`transactions/${wallet}`, import.meta.env['API_URL']), {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      )
+      })
         .then((data) => data.json())
         .then(async (data) =>
           data.map((el: any) => {

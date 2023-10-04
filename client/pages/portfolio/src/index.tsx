@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
-import { getOverall } from '@crawler/blockchain'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
 import { Box, Typography } from '@mui/material'
@@ -18,8 +17,7 @@ const PortfolioPage: FC = () => {
   const { data: history, isLoading: isGraphLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
-      fetch(
-        new URL(`wallet/${wallet}/graph`, import.meta.env['API_URL']), {
+      fetch(new URL(`wallet/${wallet}/graph`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,8 +26,8 @@ const PortfolioPage: FC = () => {
 
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
-    queryFn: () => fetch(
-      new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
+    queryFn: () =>
+      fetch(new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
