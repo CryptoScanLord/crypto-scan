@@ -9,11 +9,14 @@ import Pagination from '@ui/pagination'
 
 export const NFTsPage: FC = () => {
   useAuthGuard()
-  const params = useParams()
+  const { wallet } = useParams()
 
   const { data, isLoading } = useQuery({
     queryKey: ['nfts'],
-    queryFn: () => fetch(`http://localhost:8000/nfts/${params['wallet']}`).then((res) => res.json()),
+    queryFn: () => fetch(new URL(`nfts/${wallet}`, import.meta.env['API_URL']), {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }).then((res) => res.json()),
   })
 
   if (isLoading) return <CircularProgress />

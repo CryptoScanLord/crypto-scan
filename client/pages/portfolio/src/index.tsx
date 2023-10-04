@@ -19,7 +19,7 @@ const PortfolioPage: FC = () => {
     queryKey: ['wallet_history'],
     queryFn: () =>
       fetch(
-        new URL(`wallet/${wallet}/graph`, import.meta.env.API_URL), {
+        new URL(`wallet/${wallet}/graph`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -29,7 +29,7 @@ const PortfolioPage: FC = () => {
   const { data: balance, isLoading: isBalanceLoading } = useQuery({
     queryKey: ['balance'],
     queryFn: () => fetch(
-      new URL(`overall/${wallet}`, import.meta.env.API_URL), {
+      new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

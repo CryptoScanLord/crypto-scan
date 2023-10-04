@@ -18,7 +18,7 @@ export const BRC20Page: FC = () => {
     queryKey: ['brc_20'],
     queryFn: async () => {
       const res = await fetch(
-        new URL(`tokens/${wallet}`, import.meta.env.API_URL),
+        new URL(`tokens/${wallet}`, import.meta.env['API_URL']),
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -20,7 +20,7 @@ export const TransactionsPage: FC = () => {
     queryKey: ['wallet_history'],
     queryFn: async () => {
       const res = await fetch(
-        new URL(`transactions/${wallet}`, import.meta.env.API_URL),
+        new URL(`transactions/${wallet}`, import.meta.env['API_URL']),
         {
           headers: {
             Authorization: `Bearer ${token}`,
