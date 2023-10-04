@@ -6,6 +6,8 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { MyLink } from './MyLink'
 import { Clue } from './Clue'
 import { useParams, useNavigate } from 'react-router-dom'
+import { Container } from '@ui/container'
+import Pagination from '@ui/pagination'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()
@@ -69,11 +71,14 @@ export const TransactionsPage: FC = () => {
   if (isTransactionsLoading) return <CircularProgress />
 
   return (
-    <Table
-      data={transactions ?? []}
-      headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
-      subtitle=''
-      title='Transactions'
-    />
+    <Container>
+      <Pagination />
+      <Table
+        data={transactions ?? []}
+        headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
+        subtitle=''
+        title='Transactions'
+      />
+    </Container>
   )
 }

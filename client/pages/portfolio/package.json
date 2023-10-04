@@ -5,7 +5,8 @@
     "@crawler/blockchain": "workspace:^",
     "@lib/auth-react": "workspace:^",
     "@ui/container": "workspace:^",
-    "@ui/graph": "workspace:^"
+    "@ui/graph": "workspace:^",
+    "@ui/pagination": "workspace:^"
   },
   "devDependencies": {
     "@mui/material": "^5.14.2",

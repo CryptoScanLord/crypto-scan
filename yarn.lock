@@ -2439,6 +2439,8 @@ __metadata:
     "@mui/material": "npm:^5.14.2"
     "@tanstack/react-query": "npm:5.0.0-beta.15"
     "@types/react": "npm:^18.2.17"
+    "@ui/container": "workspace:^"
+    "@ui/pagination": "workspace:^"
     "@ui/table": "workspace:^"
     react-router-dom: "npm:^6.14.1"
   peerDependencies:
@@ -2478,6 +2480,8 @@ __metadata:
     "@mui/material": "npm:^5.14.2"
     "@tanstack/react-query": "npm:5.0.0-beta.15"
     "@types/react": "npm:^18.2.17"
+    "@ui/container": "workspace:^"
+    "@ui/pagination": "workspace:^"
     "@ui/table": "workspace:^"
     react-router-dom: "npm:^6.14.1"
   peerDependencies:
@@ -2519,6 +2523,7 @@ __metadata:
     "@types/react": "npm:^18.2.17"
     "@ui/container": "workspace:^"
     "@ui/graph": "workspace:^"
+    "@ui/pagination": "workspace:^"
     react-router-dom: "npm:^6.14.1"
   peerDependencies:
     "@emotion/react": 11
@@ -2563,6 +2568,8 @@ __metadata:
     "@mui/material": "npm:^5.14.2"
     "@tanstack/react-query": "npm:5.0.0-beta.15"
     "@types/react": "npm:^18.2.17"
+    "@ui/container": "workspace:^"
+    "@ui/pagination": "workspace:^"
     "@ui/table": "workspace:^"
     react-router-dom: "npm:^6.14.1"
   peerDependencies:
@@ -3810,7 +3817,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ui/pagination@workspace:client/shared/ui/pagination":
+"@ui/pagination@workspace:^, @ui/pagination@workspace:client/shared/ui/pagination":
   version: 0.0.0-use.local
   resolution: "@ui/pagination@workspace:client/shared/ui/pagination"
   dependencies:

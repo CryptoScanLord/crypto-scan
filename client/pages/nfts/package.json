@@ -3,6 +3,8 @@
   "main": "src/index.tsx",
   "dependencies": {
     "@lib/auth-react": "workspace:^",
+    "@ui/container": "workspace:^",
+    "@ui/pagination": "workspace:^",
     "@ui/table": "workspace:^"
   },
   "devDependencies": {
