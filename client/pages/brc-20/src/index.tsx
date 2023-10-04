@@ -4,6 +4,8 @@ import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import { getTokens } from '@crawler/ordinals'
 import { CircularProgress } from '@mui/material'
+import Pagination from '@ui/pagination'
+import { Container } from '@ui/container'
 
 export const BRC20Page: FC = () => {
   useAuthGuard()
@@ -21,11 +23,14 @@ export const BRC20Page: FC = () => {
   }
 
   return (
-    <Table
-      data={tokens ?? []}
-      headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
-      title='BRC-20'
-      subtitle=''
-    />
+    <Container>
+      <Pagination />
+      <Table
+        data={tokens ?? []}
+        headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
+        title='BRC-20'
+        subtitle=''
+      />
+    </Container>
   )
 }
