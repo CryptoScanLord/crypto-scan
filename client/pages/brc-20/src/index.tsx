@@ -16,14 +16,15 @@ export const BRC20Page: FC = () => {
 
   const { data: tokens, isLoading: isTokensLoading } = useQuery({
     queryKey: ['brc_20'],
-    queryFn: async () => {
-      const res = await fetch(new URL(`tokens/${wallet}`, import.meta.env['API_URL']), {
+    queryFn: () =>
+      fetch(new URL(`tokens/${wallet}`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }).then((data) => data.json())
-      return res
-    },
+      }).then(async (res: any) => ({
+        data: await res.json(),
+        status: res.status,
+      })),
   })
 
   if (tokens?.status === 403) {
@@ -38,7 +39,7 @@ export const BRC20Page: FC = () => {
     <Container>
       <Pagination />
       <Table
-        data={tokens ?? []}
+        data={tokens?.data}
         headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
         title='BRC-20'
         subtitle=''

@@ -24,9 +24,12 @@ export const TransactionsPage: FC = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((data) => data.json())
-        .then(async (data) =>
-          data.map((el: any) => {
+        .then(async (res) => ({
+          data: await res.json(),
+          status: res.status,
+        }))
+        .then(async (res) =>
+          res.data.map((el: any) => {
             const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
             const from =
               el.inputs.length > 1 ? (
@@ -71,7 +74,7 @@ export const TransactionsPage: FC = () => {
     <Container>
       <Pagination />
       <Table
-        data={transactions ?? []}
+        data={transactions?.data}
         headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
         subtitle=''
         title='Transactions'

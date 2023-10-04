@@ -11,7 +11,6 @@ import Pagination from '@ui/pagination'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()
-  const { access_token: token } = useSuspendSession()
   const navigate = useNavigate()
 
   const { access_token: token } = useSuspendSession()
