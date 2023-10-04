@@ -5,13 +5,14 @@ import { useQuery } from '@tanstack/react-query'
 import CircularProgress from '@mui/material/CircularProgress'
 import { MyLink } from './MyLink'
 import { Clue } from './Clue'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()
 
   const { access_token: token } = useSuspendSession()
   const params = useParams()
+  const navigate = useNavigate()
 
   const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
     queryKey: ['wallet_history'],
@@ -60,6 +61,10 @@ export const TransactionsPage: FC = () => {
       return res
     },
   })
+
+  if (transactions?.status === 403) {
+    navigate('/not-authorized')
+  }
 
   if (isTransactionsLoading) return <CircularProgress />
 

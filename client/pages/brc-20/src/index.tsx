@@ -3,13 +3,14 @@ import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import { CircularProgress } from '@mui/material'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 export const BRC20Page: FC = () => {
   useAuthGuard()
 
   const { access_token: token } = useSuspendSession()
   const params = useParams()
+  const navigate = useNavigate()
 
   const { data: tokens, isLoading: isTokensLoading } = useQuery({
     queryKey: ['brc_20'],
@@ -25,6 +26,10 @@ export const BRC20Page: FC = () => {
       return res
     },
   })
+
+  if (tokens?.status === 403) {
+    navigate('/not-authorized')
+  }
 
   if (isTokensLoading) {
     return <CircularProgress />
