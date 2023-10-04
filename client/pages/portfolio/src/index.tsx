@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
-import { getOverall } from '@crawler/blockchain'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
 import { Box, Typography } from '@mui/material'

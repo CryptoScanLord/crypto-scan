@@ -1,6 +1,5 @@
 import { FC, lazy, Suspense } from 'react'
 import { Route, Routes as DOMRoutes } from 'react-router-dom'
-import { LoginPage } from '@page/login'
 import { NFTsPage } from '@page/nfts'
 import { BRC20Page } from '@page/brc-20'
 import { NotFoundPage } from '@page/not-found'
