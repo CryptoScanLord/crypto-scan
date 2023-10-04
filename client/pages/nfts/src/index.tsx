@@ -33,7 +33,7 @@ export const NFTsPage: FC = () => {
     <Container>
       <Pagination />
       <Table
-        data={data}
+        data={data?.data}
         headerCells={['Inscription', 'Collection Name', 'Image Url', 'Total Spent', 'Floor Price']}
         subtitle=''
         title='NFTs'
