@@ -87,6 +87,9 @@
       "@page/nfts": [
         "client/pages/nfts"
       ],
+      "@page/not-authorized": [
+        "client/pages/not-authorized"
+      ],
       "@page/not-found": [
         "client/pages/not-found"
       ],
