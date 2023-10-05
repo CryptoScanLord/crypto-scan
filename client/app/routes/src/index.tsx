@@ -1,5 +1,6 @@
 import { FC, lazy, Suspense } from 'react'
 import { Route, Routes as DOMRoutes } from 'react-router-dom'
+import { LoginPage } from '@page/login'
 import { NFTsPage } from '@page/nfts'
 import { BRC20Page } from '@page/brc-20'
 import { NotFoundPage } from '@page/not-found'
@@ -21,6 +22,7 @@ export const Routes: FC = () => (
     <DOMRoutes>
       <Route path='/' element={<SearchPage />} />
       <Route path='/portfolio/:wallet' element={<PortfolioPage />} />
+        <Route path='/login' element={<LoginPage />} />
       <Route path='/nfts/:wallet' element={<NFTsPage />} />
       <Route path='/brc-20/:wallet' element={<BRC20Page />} />
       <Route path='/transactions/:wallet' element={<TransactionsPage />} />

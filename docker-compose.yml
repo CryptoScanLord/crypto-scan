@@ -17,7 +17,7 @@ services:
       - SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
       - CORS_ORIGIN=["http://localhost:5173"]
       - ROLE_GUARD_TOKEN=MTEzNTQ4MTUxMDY5MTA4NjQwNg.GeAT7r.h_7crCNl4Mm7vFconZGMooLWxb25nA16dbF47s
-      - PASS_ROLE_ID=1157670924070424616
+      - PASS_ROLE_ID=1155617925076627548
       - API_URL=http://localhost:8000/
     entrypoint: yarn workspace @api/entrypoint dev
     ports:

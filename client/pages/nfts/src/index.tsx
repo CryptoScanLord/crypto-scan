@@ -25,6 +25,8 @@ export const NFTsPage: FC = () => {
       })),
   })
 
+    console.log(import.meta.env['API_URL'])
+
   if (data?.status === 403) {
     navigate('/not-authorized')
   }
