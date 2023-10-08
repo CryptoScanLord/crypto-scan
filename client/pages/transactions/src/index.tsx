@@ -16,20 +16,17 @@ export const TransactionsPage: FC = () => {
   const { wallet } = useParams()
   const navigate = useNavigate()
 
-  const { data: transactions, isLoading: isTransactionsLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['wallet_history'],
-    queryFn: async () => {
-      const res = await fetch(new URL(`transactions/${wallet}`, import.meta.env['API_URL']), {
+    queryFn: async () =>
+      fetch(new URL(`transactions/${wallet}`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then(async (res) => ({
-          data: await res.json(),
-          status: res.status,
-        }))
+        .then((res) => res.json())
         .then(async (res) =>
-          res.data.map((el: any) => {
+          res.map((el: any) => {
             const method = el.delta > 0 ? 'Incoming' : 'Outgoing'
             const from =
               el.inputs.length > 1 ? (
@@ -59,22 +56,22 @@ export const TransactionsPage: FC = () => {
               value: `${el.delta / 100000000} BTC`,
             }
           }),
-        )
-      return res
-    },
+        ),
   })
 
-  if (transactions?.status === 403) {
-    navigate('/not-authorized')
+  if (!data) {
+    return <CircularProgress />
   }
 
-  if (isTransactionsLoading) return <CircularProgress />
+  if (data?.status === 403) {
+    navigate('/not-authorized')
+  }
 
   return (
     <Container>
       <Pagination />
       <Table
-        data={transactions?.data}
+        data={data}
         headerCells={['Transaction hash', 'Method', 'From', 'To', 'Value']}
         subtitle=''
         title='Transactions'

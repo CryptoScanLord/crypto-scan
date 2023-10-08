@@ -15,20 +15,17 @@ const PortfolioPage: FC = () => {
   const { access_token: token } = useSuspendSession()
   const { wallet } = useParams()
 
-  const { data: history, isLoading: isGraphLoading } = useQuery({
+  const { data: history } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
       fetch(new URL(`wallet/${wallet}/graph`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }).then(async (res) => ({
-        data: await res.json(),
-        status: res.status,
-      })),
+      }).then((res) => res.json()),
   })
 
-  const { data: balance, isLoading: isBalanceLoading } = useQuery({
+  const { data: balance } = useQuery({
     queryKey: ['balance'],
     queryFn: () =>
       fetch(new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
@@ -38,12 +35,12 @@ const PortfolioPage: FC = () => {
       }).then((res) => res.json()),
   })
 
-  if (history?.status === 403) {
-    navigate('/not-authorized')
+  if (!history || !balance) {
+    return <CircularProgress />
   }
 
-  if (isGraphLoading || isBalanceLoading) {
-    return <CircularProgress />
+  if (history?.status === 403 || balance?.status === 403) {
+    navigate('/not-authorized')
   }
 
   return (

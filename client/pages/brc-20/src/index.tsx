@@ -14,32 +14,29 @@ export const BRC20Page: FC = () => {
   const { wallet } = useParams()
   const navigate = useNavigate()
 
-  const { data: tokens, isLoading: isTokensLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['brc_20'],
     queryFn: () =>
       fetch(new URL(`tokens/${wallet}`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }).then(async (res: any) => ({
-        data: await res.json(),
-        status: res.status,
-      })),
+      }).then((res) => res.json()),
   })
 
-  if (tokens?.status === 403) {
-    navigate('/not-authorized')
+  if (!data) {
+    return <CircularProgress />
   }
 
-  if (isTokensLoading) {
-    return <CircularProgress />
+  if (data?.status === 403) {
+    navigate('/not-authorized')
   }
 
   return (
     <Container>
       <Pagination />
       <Table
-        data={tokens?.data}
+        data={data}
         headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
         title='BRC-20'
         subtitle=''
