@@ -25,7 +25,7 @@ const PortfolioPage: FC = () => {
       }).then((res) => res.json()),
   })
 
-  const { data: balance } = useQuery({
+  const { data: overall } = useQuery({
     queryKey: ['balance'],
     queryFn: () =>
       fetch(new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
@@ -35,11 +35,11 @@ const PortfolioPage: FC = () => {
       }).then((res) => res.json()),
   })
 
-  if (!history || !balance) {
+  if (!history || !overall) {
     return <CircularProgress />
   }
 
-  if (history?.status === 403 || balance?.status === 403) {
+  if (history?.status === 403 || overall?.status === 403) {
     navigate('/not-authorized')
   }
 
@@ -49,7 +49,7 @@ const PortfolioPage: FC = () => {
       <Box flexGrow={1} display='flex' flexDirection='column' py={4}>
         <Box display='flex' flexDirection='row' alignItems='end' width='max-width' justifyContent='space-between'>
           <Typography variant='h5'>Portfolio</Typography>
-          <Typography variant='body1'>Balance: {balance ? balance / 100000000 : 0} BTC</Typography>
+          <Typography variant='body1'>Balance: {overall.balance / 100000000} BTC</Typography>
         </Box>
         <Box
           sx={{
@@ -59,10 +59,11 @@ const PortfolioPage: FC = () => {
             padding: '10px',
           }}
         >
-          <Graph data={history?.data ?? []} />
+          <Graph data={history ?? []} />
         </Box>
       </Box>
     </Container>
   )
 }
+
 export default PortfolioPage
