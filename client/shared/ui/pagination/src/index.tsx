@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { Routes } from './privateTypes'
 import { PaginationButton } from './paginationButton'
 
-const Pagination: FC = () => {
+export const Pagination: FC = () => {
   const { pathname } = useLocation()
   const { wallet } = useParams()
   const navigate = useNavigate()
@@ -40,5 +40,3 @@ const Pagination: FC = () => {
     </Box>
   )
 }
-
-export default Pagination

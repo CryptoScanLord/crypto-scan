@@ -7,7 +7,6 @@ export class OverallController {
   @Get('/:wallet')
   @UseGuards(SupabaseGuard, RoleGuard)
   async getOverallBalance(@Param('wallet') wallet: string) {
-    const res = await getOverall(wallet)
-    return res
+    return getOverall(wallet)
   }
 }

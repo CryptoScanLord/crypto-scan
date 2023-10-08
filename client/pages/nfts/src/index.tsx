@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Container } from '@ui/container'
-import Pagination from '@ui/pagination'
+import { Pagination } from '@ui/pagination'
 
 export const NFTsPage: FC = () => {
   useAuthGuard()

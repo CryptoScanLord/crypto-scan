@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Search from '@ui/search'
+import { Search } from '@ui/search'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'

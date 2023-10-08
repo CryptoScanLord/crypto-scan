@@ -1,6 +1,7 @@
 {
   "name": "@page/nfts",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@lib/auth-react": "workspace:^",
     "@ui/container": "workspace:^",

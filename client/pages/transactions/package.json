@@ -1,6 +1,7 @@
 {
   "name": "@page/transactions",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@crawler/blockchain": "workspace:^",
     "@lib/auth-react": "workspace:^",

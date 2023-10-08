@@ -1,6 +1,7 @@
 {
   "name": "@app/routes",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@page/brc-20": "workspace:^",
     "@page/login": "workspace:^",

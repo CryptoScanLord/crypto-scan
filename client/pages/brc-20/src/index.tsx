@@ -2,9 +2,9 @@ import { FC } from 'react'
 import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
-import { CircularProgress } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
 import { useParams, useNavigate } from 'react-router-dom'
-import Pagination from '@ui/pagination'
+import { Pagination } from '@ui/pagination'
 import { Container } from '@ui/container'
 
 export const BRC20Page: FC = () => {

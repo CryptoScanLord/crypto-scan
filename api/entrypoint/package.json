@@ -1,5 +1,6 @@
 {
   "name": "@api/entrypoint",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "test": "vitest run",

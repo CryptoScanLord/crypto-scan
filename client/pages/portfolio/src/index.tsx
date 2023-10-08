@@ -2,11 +2,12 @@ import { FC } from 'react'
 import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
-import { Box, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Container } from '@ui/container'
-import Pagination from '@ui/pagination'
+import { Pagination } from '@ui/pagination'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()

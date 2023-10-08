@@ -1,6 +1,7 @@
 {
   "name": "@ui/graph",
   "main": "src/index.ts",
+  "type": "module",
   "dependencies": {
     "@nivo/core": "0.81.0",
     "@nivo/generators": "0.81.0",

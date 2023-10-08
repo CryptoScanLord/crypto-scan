@@ -1,4 +1,4 @@
-import type { ThemeOptions } from '@mui/material'
+import type { ThemeOptions } from '@mui/material/styles'
 import { createTheme } from '@mui/material/styles'
 import { MuiInput } from './input'
 import { MuiPaper, MuiTableCell, MuiTableRow } from './table'

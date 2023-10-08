@@ -7,7 +7,6 @@ export class TokensController {
   @Get('/:wallet')
   @UseGuards(SupabaseGuard, RoleGuard)
   async getTokens(@Param('wallet') wallet: string) {
-    const res = await getTokens(wallet)
-    return res
+    return getTokens(wallet)
   }
 }

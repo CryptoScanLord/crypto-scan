@@ -1,6 +1,7 @@
 {
   "name": "@theme/provider",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@theme/font": "workspace:^",
     "@theme/schema": "workspace:^"

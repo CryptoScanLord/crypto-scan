@@ -1,6 +1,7 @@
 {
   "name": "@page/search",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@lib/auth-react": "workspace:^",
     "@mui/material": "^5.14.7",

@@ -1,9 +1,9 @@
 import { type FC, ChangeEvent, useCallback } from 'react'
 import type { PaginationProps } from './pagination.interface'
-import { PaginationItem } from '@mui/material'
-import { Pagination as MuiPagination } from '@mui/material'
+import PaginationItem from '@mui/material/PaginationItem'
+import MuiPagination from '@mui/material/Pagination'
 
-const Pagination: FC<PaginationProps> = ({ rows, setPage, rowsPerPage }) => {
+export const Pagination: FC<PaginationProps> = ({ rows, setPage, rowsPerPage }) => {
   const handleChange = useCallback(
     (event: ChangeEvent<unknown>, value: number) => {
       setPage(value)
@@ -19,5 +19,3 @@ const Pagination: FC<PaginationProps> = ({ rows, setPage, rowsPerPage }) => {
     />
   )
 }
-
-export default Pagination

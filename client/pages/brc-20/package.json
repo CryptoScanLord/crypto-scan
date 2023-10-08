@@ -1,6 +1,7 @@
 {
   "name": "@page/brc-20",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@crawler/ordinals": "workspace:^",
     "@crawler/unisat": "workspace:^",

@@ -1,6 +1,7 @@
 {
   "name": "@api/wallet-module",
   "main": "src/index.ts",
+  "type": "module",
   "dependencies": {
     "@crawler/blockchain": "workspace:^",
     "@crawler/coindesk": "workspace:^",

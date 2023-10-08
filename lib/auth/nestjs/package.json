@@ -1,6 +1,7 @@
 {
   "name": "@lib/auth-nestjs",
   "main": "src/index.ts",
+  "type": "module",
   "dependencies": {
     "@nestjs/common": "^10.1.2",
     "@nestjs/passport": "^10.0.0",

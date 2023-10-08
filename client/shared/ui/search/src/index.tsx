@@ -1,12 +1,14 @@
-import { FormControl, Input, InputAdornment } from '@mui/material'
-import React, { ChangeEvent, FC } from 'react'
+import FormControl from '@mui/material/FormControl'
+import Input from '@mui/material/Input'
+import InputAdornment from '@mui/material/InputAdornment'
+import { ChangeEvent, FC } from 'react'
 
-interface Props {
+export interface SearchProps {
   value: string
   handleChange: (e: string) => void
 }
 
-const Search: FC<Props> = ({ value, handleChange }) => (
+export const Search: FC<SearchProps> = ({ value, handleChange }) => (
   <FormControl>
     <Input
       value={value}
@@ -29,5 +31,3 @@ const Search: FC<Props> = ({ value, handleChange }) => (
     />
   </FormControl>
 )
-
-export default Search

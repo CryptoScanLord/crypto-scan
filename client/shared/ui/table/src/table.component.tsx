@@ -9,8 +9,8 @@ import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import TableHead from '@mui/material/TableHead'
 import Typography from '@mui/material/Typography'
-import Pagination from './pagination.component'
-import Search from '@ui/search'
+import { Pagination } from './pagination.component'
+import { Search } from '@ui/search'
 
 export const Table: FC<TableProps> = ({ data, headerCells, title, subtitle }) => {
   const [rowsPerPage] = useState(7)

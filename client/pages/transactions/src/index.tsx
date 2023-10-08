@@ -7,7 +7,7 @@ import { MyLink } from './MyLink'
 import { Clue } from './Clue'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Container } from '@ui/container'
-import Pagination from '@ui/pagination'
+import { Pagination } from '@ui/pagination'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()

@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import type { SliceTooltipProps } from '@nivo/line'
-import { Box } from '@mui/material'
+import Box from '@mui/material/Box'
 import type { Datum } from '@nivo/line'
 
 const dateIntl = Intl.DateTimeFormat(navigator.language, { dateStyle: 'short', timeStyle: 'medium' })
