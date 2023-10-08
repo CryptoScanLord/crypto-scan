@@ -4,8 +4,8 @@ import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Container } from '@ui/container'
 import { Pagination } from '@ui/pagination'
+import Box from '@mui/material/Box'
 
 export const NFTsPage: FC = () => {
   useAuthGuard()
@@ -35,7 +35,7 @@ export const NFTsPage: FC = () => {
   }
 
   return (
-    <Container>
+    <Box flexGrow={1}>
       <Pagination />
       <Table
         data={data}
@@ -43,6 +43,6 @@ export const NFTsPage: FC = () => {
         subtitle=''
         title='NFTs'
       />
-    </Container>
+    </Box>
   )
 }

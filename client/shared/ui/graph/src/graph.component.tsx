@@ -31,7 +31,6 @@ export const Graph: FC<GraphProps> = ({ data }) => {
       yScale={{
         type: 'linear',
         stacked: true,
-        nice: 2,
       }}
       xScale={{
         type: 'time',

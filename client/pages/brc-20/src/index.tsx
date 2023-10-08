@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Pagination } from '@ui/pagination'
-import { Container } from '@ui/container'
+import Box from '@mui/material/Box'
 
 export const BRC20Page: FC = () => {
   useAuthGuard()
@@ -33,7 +33,7 @@ export const BRC20Page: FC = () => {
   }
 
   return (
-    <Container>
+    <Box flexGrow={1}>
       <Pagination />
       <Table
         data={data}
@@ -41,6 +41,6 @@ export const BRC20Page: FC = () => {
         title='BRC-20'
         subtitle=''
       />
-    </Container>
+    </Box>
   )
 }
