@@ -1,32 +1,42 @@
 import { FC } from 'react'
-import { useAuthGuard } from '@lib/auth-react'
+import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
 import { Table } from '@ui/table'
 import { useQuery } from '@tanstack/react-query'
-import { getTokens } from '@crawler/ordinals'
-import { CircularProgress } from '@mui/material'
-import Pagination from '@ui/pagination'
+import CircularProgress from '@mui/material/CircularProgress'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Pagination } from '@ui/pagination'
 import { Container } from '@ui/container'
 
 export const BRC20Page: FC = () => {
   useAuthGuard()
 
-  const { data: tokens, isLoading: isTokensLoading } = useQuery({
+  const { access_token: token } = useSuspendSession()
+  const { wallet } = useParams()
+  const navigate = useNavigate()
+
+  const { data } = useQuery({
     queryKey: ['brc_20'],
-    queryFn: async () => {
-      const res = await getTokens('bc1pcavtlcul2rcapxdr5dngafkcqcktv3wuj6rdqj40k952kqnf8qhqwrsax3')
-      return Promise.all(res)
-    },
+    queryFn: () =>
+      fetch(new URL(`tokens/${wallet}`, import.meta.env['API_URL']), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json()),
   })
 
-  if (isTokensLoading) {
+  if (!data) {
     return <CircularProgress />
+  }
+
+  if (data?.status === 403) {
+    navigate('/not-authorized')
   }
 
   return (
     <Container>
       <Pagination />
       <Table
-        data={tokens ?? []}
+        data={data}
         headerCells={['Name', 'Amount', 'Floor price', 'Amount spent', 'Volume 24H', 'Volume total']}
         title='BRC-20'
         subtitle=''

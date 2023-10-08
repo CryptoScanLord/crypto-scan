@@ -1,23 +1,18 @@
 {
-  "name": "@api/wallet-module",
+  "name": "@api/tokens-module",
   "main": "src/index.ts",
   "type": "module",
   "dependencies": {
-    "@crawler/blockchain": "workspace:^",
-    "@crawler/coindesk": "workspace:^",
+    "@crawler/ordinals": "workspace:^",
     "@lib/auth-nestjs": "workspace:^"
   },
   "devDependencies": {
-    "@nestjs/cache-manager": "^2.1.0",
     "@nestjs/common": "^10.1.2",
     "@nestjs/core": "^10.1.2",
-    "@nestjs/testing": "^10.1.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
   "peerDependencies": {
-    "@nestjs/cache-manager": "2",
-    "@nestjs/core": "10",
-    "cache-manager": "5"
+    "@nestjs/core": "10"
   }
 }

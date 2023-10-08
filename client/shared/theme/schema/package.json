@@ -1,6 +1,7 @@
 {
   "name": "@theme/schema",
   "main": "src/index.ts",
+  "type": "module",
   "devDependencies": {
     "@mui/material": "^5.14.2"
   },

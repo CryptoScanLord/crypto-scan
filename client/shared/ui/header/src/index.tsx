@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react'
-import { Box, Typography } from '@mui/material'
-import Search from '@ui/search'
+import { FC, useState } from 'react'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import { Search } from '@ui/search'
 
-const Header: FC = () => {
+export const Header: FC = () => {
   const [wallet, setWallet] = useState<string>('')
   return (
     <Box width='100%' height='100px' display='flex' alignItems='center' justifyContent='space-between'>
@@ -11,5 +12,3 @@ const Header: FC = () => {
     </Box>
   )
 }
-
-export default Header

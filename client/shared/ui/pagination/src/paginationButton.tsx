@@ -1,4 +1,4 @@
-import { ButtonBase, ButtonBaseProps } from '@mui/material'
+import ButtonBase, { type ButtonBaseProps } from '@mui/material/ButtonBase'
 import { styled } from '@mui/material/styles'
 
 interface PaginationButtonProps extends ButtonBaseProps {

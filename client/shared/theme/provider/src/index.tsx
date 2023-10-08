@@ -1,5 +1,6 @@
 import type { FC, PropsWithChildren } from 'react'
-import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@mui/material'
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 import { schema } from '@theme/schema'
 import { FontStyles } from '@theme/font'
 

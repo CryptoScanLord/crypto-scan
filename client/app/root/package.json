@@ -1,6 +1,7 @@
 {
   "name": "@app/root",
   "main": "src/index.tsx",
+  "type": "module",
   "dependencies": {
     "@app/providers": "workspace:^",
     "@app/routes": "workspace:^",

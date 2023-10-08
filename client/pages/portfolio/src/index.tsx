@@ -1,43 +1,47 @@
 import { FC } from 'react'
 import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
-import { getOverall } from '@crawler/blockchain'
 import { useQuery } from '@tanstack/react-query'
 import { Graph } from '@ui/graph'
-import { Box, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import CircularProgress from '@mui/material/CircularProgress'
-import { useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Container } from '@ui/container'
-import Pagination from '@ui/pagination'
+import { Pagination } from '@ui/pagination'
 
 const PortfolioPage: FC = () => {
   useAuthGuard()
-  const { access_token: token } = useSuspendSession()
   const navigate = useNavigate()
 
-  const { data: history, isLoading: isGraphLoading } = useQuery({
+  const { access_token: token } = useSuspendSession()
+  const { wallet } = useParams()
+
+  const { data: history } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
-      fetch('http://localhost:8000/wallet/1FfmbHfnpaZjKFvyi1okTjJJusN455paPH/graph', {
+      fetch(new URL(`wallet/${wallet}/graph`, import.meta.env['API_URL']), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }).then(async (res) => ({
-        data: await res.json(),
-        status: res.status,
-      })),
+      }).then((res) => res.json()),
   })
 
-  const { data: balance, isLoading: isBalanceLoading } = useQuery({
+  const { data: overall } = useQuery({
     queryKey: ['balance'],
-    queryFn: () => getOverall('' /* params here */).then((res) => res.balance),
+    queryFn: () =>
+      fetch(new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json()),
   })
 
-  if (history?.status === 403) {
-    navigate('/not-authorized')
+  if (!history || !overall) {
+    return <CircularProgress />
   }
 
-  if (isGraphLoading || isBalanceLoading) {
-    return <CircularProgress />
+  if (history?.status === 403 || overall?.status === 403) {
+    navigate('/not-authorized')
   }
 
   return (
@@ -46,7 +50,7 @@ const PortfolioPage: FC = () => {
       <Box flexGrow={1} display='flex' flexDirection='column' py={4}>
         <Box display='flex' flexDirection='row' alignItems='end' width='max-width' justifyContent='space-between'>
           <Typography variant='h5'>Portfolio</Typography>
-          <Typography variant='body1'>Balance: {balance ? balance / 100000000 : 0} BTC</Typography>
+          <Typography variant='body1'>Balance: {overall.balance / 100000000} BTC</Typography>
         </Box>
         <Box
           sx={{
@@ -56,10 +60,11 @@ const PortfolioPage: FC = () => {
             padding: '10px',
           }}
         >
-          <Graph data={history?.data ?? []} />
+          <Graph data={history ?? []} />
         </Box>
       </Box>
     </Container>
   )
 }
+
 export default PortfolioPage
