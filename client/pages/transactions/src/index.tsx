@@ -6,8 +6,8 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { MyLink } from './MyLink'
 import { Clue } from './Clue'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Container } from '@ui/container'
 import { Pagination } from '@ui/pagination'
+import Box from '@mui/material/Box'
 
 export const TransactionsPage: FC = () => {
   useAuthGuard()
@@ -68,7 +68,7 @@ export const TransactionsPage: FC = () => {
   }
 
   return (
-    <Container>
+    <Box flexGrow={1}>
       <Pagination />
       <Table
         data={data}
@@ -76,6 +76,6 @@ export const TransactionsPage: FC = () => {
         subtitle=''
         title='Transactions'
       />
-    </Container>
+    </Box>
   )
 }

@@ -6,7 +6,6 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Container } from '@ui/container'
 import { Pagination } from '@ui/pagination'
 
 const PortfolioPage: FC = () => {
@@ -45,7 +44,7 @@ const PortfolioPage: FC = () => {
   }
 
   return (
-    <Container>
+    <Box flexGrow={1} display='flex' flexDirection='column'>
       <Pagination />
       <Box flexGrow={1} display='flex' flexDirection='column' py={4}>
         <Box display='flex' flexDirection='row' alignItems='end' width='max-width' justifyContent='space-between'>
@@ -54,6 +53,7 @@ const PortfolioPage: FC = () => {
         </Box>
         <Box
           sx={{
+            height: '687px',
             flexGrow: 1,
             background: `#050424c0`,
             borderRadius: '10px',
@@ -63,7 +63,7 @@ const PortfolioPage: FC = () => {
           <Graph data={history ?? []} />
         </Box>
       </Box>
-    </Container>
+    </Box>
   )
 }
 
