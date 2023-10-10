@@ -19,7 +19,7 @@ export const NFTsPage: FC = () => {
   const { data } = useQuery({
     queryKey: ['nfts'],
     queryFn: () =>
-      fetch(new URL(`nfts/${wallet}`, import.meta.env['API_URL']), {
+      fetch(new URL(`nfts/${wallet}`, import.meta.env.ORDI_API_URL), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -21,10 +21,10 @@ export class RoleGuard implements CanActivate {
 
     const member = await fetch(`https://discord.com/api/v10/guilds/1123676140842778654/members/${id}`, {
       headers: {
-        Authorization: `Bot ${import.meta.env['ROLE_GUARD_TOKEN']}`,
+        Authorization: `Bot ${process.env.ORDI_ROLE_GUARD_TOKEN}`,
       },
     }).then((res) => res.json())
 
-    return member?.roles?.includes?.(import.meta.env['PASS_ROLE_ID'])
+    return member?.roles?.includes?.(process.env.ORDI_PASS_ROLE_ID)
   }
 }

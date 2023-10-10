@@ -1,9 +1,8 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
-import * as process from 'process'
 
-const PORT = Number(process.env['PORT'] ?? 8000)
-const CORS_ORIGIN = process.env['CORS_ORIGIN'] ?? JSON.stringify('https://studio.apollographql.com')
+const PORT = Number(process.env.ORDI_PORT ?? 8000)
+const CORS_ORIGIN = process.env.ORDI_CORS ?? JSON.stringify('http://localhost:5173')
 
 export async function factory() {
   const app = await NestFactory.create(AppModule)

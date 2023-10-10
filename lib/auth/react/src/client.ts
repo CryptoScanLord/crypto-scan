@@ -15,8 +15,8 @@ export function createClient<
   SchemaName extends string & keyof Database = 'public' extends keyof Database ? 'public' : string & keyof Database,
   Schema extends GenericSchema = Database[SchemaName] extends GenericSchema ? Database[SchemaName] : any,
 >({
-  supabaseUrl = import.meta.env['SUPABASE_URL'],
-  supabaseKey = import.meta.env['SUPABASE_ANON_KEY'],
+  supabaseUrl = import.meta.env.ORDI_SUPABASE_URL,
+  supabaseKey = import.meta.env.ORDI_SUPABASE_ANON_KEY,
   options,
   cookieOptions,
   isSingleton = true,

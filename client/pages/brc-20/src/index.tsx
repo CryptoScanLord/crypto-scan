@@ -17,7 +17,7 @@ export const BRC20Page: FC = () => {
   const { data } = useQuery({
     queryKey: ['brc_20'],
     queryFn: () =>
-      fetch(new URL(`tokens/${wallet}`, import.meta.env['API_URL']), {
+      fetch(new URL(`tokens/${wallet}`, import.meta.env.ORDI_API_URL), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

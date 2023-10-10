@@ -149,9 +149,6 @@
       ],
       "@lib/auth-react": [
         "lib/auth/react"
-      ],
-      "@lib/vite": [
-        "lib/vite"
       ]
     }
   },

@@ -75,4 +75,12 @@ docker compose --profile dev down
 
 # 3. Развёртывание
 
-*В процессе...*
+#### Соберите образы
+```bash
+docker compose --profile prod build
+```
+
+#### Поднимите сервисы
+```bash
+docker compose --profile prod up
+```

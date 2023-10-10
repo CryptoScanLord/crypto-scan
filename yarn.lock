@@ -243,7 +243,6 @@ __metadata:
     "@api/volume-module": "workspace:^"
     "@api/wallet-module": "workspace:^"
     "@lib/auth-nestjs": "workspace:^"
-    "@lib/vite": "workspace:^"
     "@nestjs/cache-manager": "npm:^2.1.0"
     "@nestjs/cli": "npm:^10.0.0"
     "@nestjs/common": "npm:^10.0.0"
@@ -388,7 +387,6 @@ __metadata:
     "@app/root": "workspace:^"
     "@emotion/react": "npm:^11.11.1"
     "@emotion/styled": "npm:^11.11.0"
-    "@lib/vite": "workspace:^"
     "@mui/material": "npm:^5.14.2"
     "@types/react": "npm:^18.2.17"
     "@types/react-dom": "npm:^18.2.7"
@@ -1725,12 +1723,6 @@ __metadata:
     react: 18
     react-dom: 18
     react-router-dom: 6
-  languageName: unknown
-  linkType: soft
-
-"@lib/vite@workspace:^, @lib/vite@workspace:lib/vite":
-  version: 0.0.0-use.local
-  resolution: "@lib/vite@workspace:lib/vite"
   languageName: unknown
   linkType: soft
 

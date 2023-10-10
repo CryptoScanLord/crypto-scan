@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { env } from '@lib/vite'
 
 export default defineConfig({
   plugins: [react()],
@@ -10,12 +9,5 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  define: {
-    ...env(
-      'SUPABASE_URL',
-      'SUPABASE_ANON_KEY',
-      'PUBLIC_URL',
-        'API_URL'
-    ),
-  },
+  envPrefix: 'ORDI',
 })

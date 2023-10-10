@@ -19,7 +19,7 @@ export const TransactionsPage: FC = () => {
   const { data } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: async () =>
-      fetch(new URL(`transactions/${wallet}`, import.meta.env['API_URL']), {
+      fetch(new URL(`transactions/${wallet}`, import.meta.env.ORDI_API_URL), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

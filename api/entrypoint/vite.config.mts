@@ -2,12 +2,11 @@
 
 import { defineConfig } from 'vite'
 import { VitePluginNode as node } from 'vite-plugin-node'
-import { env } from '@lib/vite'
 
 export default defineConfig({
   server: {
     host: '0.0.0.0',
-    port: Number(process.env['PORT'] ?? 8000),
+    port: Number(process.env['ORDI_PORT'] ?? 8000),
   },
   plugins: [
     ...node({
@@ -29,13 +28,5 @@ export default defineConfig({
       interopDefault: true
     }
   },
-  define: {
-    ...env(
-      'SUPABASE_URL',
-      'SUPABASE_KEY',
-      'ROLE_GUARD_TOKEN',
-      'PASS_ROLE_ID',
-        'API_URL',
-    ),
-  }
+  envPrefix: 'ORDI',
 })
