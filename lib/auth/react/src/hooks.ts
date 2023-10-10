@@ -1,7 +1,10 @@
-import { useCallback, useEffect } from 'react'
-import { createClient } from './client'
+import { useCallback }       from 'react'
+import { useEffect }         from 'react'
+
+import { useNavigate }       from 'react-router-dom'
+
+import { createClient }      from './client'
 import { useSuspendSession } from './session'
-import { useNavigate } from 'react-router-dom'
 
 export function useLogin() {
   const supabase = createClient()

@@ -1,8 +1,9 @@
-import { FC } from 'react'
+import { FC }          from 'react'
+
+import Box             from '@mui/material/Box'
+import Button          from '@mui/material/Button'
+import Typography      from '@mui/material/Typography'
 import { useNavigate } from 'react-router-dom'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 
 export const NotAuthorizedPage: FC = () => {
   const navigate = useNavigate()

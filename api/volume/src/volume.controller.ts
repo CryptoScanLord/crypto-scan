@@ -1,6 +1,11 @@
-import { Controller, Get, Param, UseGuards } from '@nestjs/common'
-import { VolumeRes } from '@crawler/bis'
-import { RoleGuard, SupabaseGuard } from '@lib/auth-nestjs'
+import { Controller }    from '@nestjs/common'
+import { Get }           from '@nestjs/common'
+import { Param }         from '@nestjs/common'
+import { UseGuards }     from '@nestjs/common'
+
+import { VolumeRes }     from '@crawler/bis'
+import { RoleGuard }     from '@lib/auth-nestjs'
+import { SupabaseGuard } from '@lib/auth-nestjs'
 
 @Controller('brc-20')
 export class VolumeController {

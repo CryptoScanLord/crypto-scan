@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common'
-import { PassportStrategy } from '@nestjs/passport'
-import { SupabaseAuthStrategy } from './passport'
-import { ExtractJwt } from 'passport-jwt'
-import type { Request } from 'express'
+import      { Injectable }           from '@nestjs/common'
+import      { PassportStrategy }     from '@nestjs/passport'
+import type { Request }              from 'express'
+import      { ExtractJwt }           from 'passport-jwt'
+
+import      { SupabaseAuthStrategy } from './passport'
 
 @Injectable()
 export class SupabaseStrategy extends PassportStrategy(SupabaseAuthStrategy, 'supabase') {

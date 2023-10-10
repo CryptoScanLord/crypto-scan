@@ -1,12 +1,9 @@
-import {
-  BrowserCookieAuthStorageAdapter,
-  CookieOptionsWithName,
-  SupabaseClientOptionsWithoutAuth,
-  createSupabaseClient,
-} from '@supabase/auth-helpers-shared'
-
-import type { SupabaseClient } from '@supabase/supabase-js'
-import type { GenericSchema } from '@supabase/supabase-js/dist/module/lib/types'
+import      { BrowserCookieAuthStorageAdapter }  from '@supabase/auth-helpers-shared'
+import      { CookieOptionsWithName }            from '@supabase/auth-helpers-shared'
+import      { createSupabaseClient }             from '@supabase/auth-helpers-shared'
+import      { SupabaseClientOptionsWithoutAuth } from '@supabase/auth-helpers-shared'
+import type { SupabaseClient }                   from '@supabase/supabase-js'
+import type { GenericSchema }                    from '@supabase/supabase-js/dist/module/lib/types'
 
 let supabase: any
 

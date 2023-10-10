@@ -1,7 +1,9 @@
-import FormControl from '@mui/material/FormControl'
-import Input from '@mui/material/Input'
-import InputAdornment from '@mui/material/InputAdornment'
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent } from 'react'
+import { FC }          from 'react'
+
+import FormControl     from '@mui/material/FormControl'
+import Input           from '@mui/material/Input'
+import InputAdornment  from '@mui/material/InputAdornment'
 
 export interface SearchProps {
   value: string

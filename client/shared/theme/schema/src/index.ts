@@ -1,9 +1,13 @@
-import type { ThemeOptions } from '@mui/material/styles'
-import { createTheme } from '@mui/material/styles'
-import { MuiInput } from './input'
-import { MuiPaper, MuiTableCell, MuiTableRow } from './table'
-import { MuiPagination, MuiPaginationItem } from './pagination'
-import { MuiButton } from './button'
+import type { ThemeOptions }      from '@mui/material/styles'
+import      { createTheme }       from '@mui/material/styles'
+
+import      { MuiButton }         from './button'
+import      { MuiInput }          from './input'
+import      { MuiPagination }     from './pagination'
+import      { MuiPaginationItem } from './pagination'
+import      { MuiPaper }          from './table'
+import      { MuiTableCell }      from './table'
+import      { MuiTableRow }       from './table'
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {

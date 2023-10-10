@@ -1,7 +1,10 @@
-import { FC, useState } from 'react'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import { Search } from '@ui/search'
+import { FC }       from 'react'
+import { useState } from 'react'
+
+import Box          from '@mui/material/Box'
+import Typography   from '@mui/material/Typography'
+
+import { Search }   from '@ui/search'
 
 export const Header: FC = () => {
   const [wallet, setWallet] = useState<string>('')

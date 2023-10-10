@@ -1,9 +1,14 @@
-import { Request } from 'express'
+import { AuthUser }               from '@supabase/supabase-js'
+import { createClient }           from '@supabase/supabase-js'
+import { SupabaseClient }         from '@supabase/supabase-js'
+import { SupabaseClientOptions }  from '@supabase/supabase-js'
+import { UserResponse }           from '@supabase/supabase-js'
+import { Request }                from 'express'
 import { JwtFromRequestFunction } from 'passport-jwt'
-import { Strategy } from 'passport-strategy'
+import { Strategy }               from 'passport-strategy'
 
-import { AuthUser, createClient, SupabaseClient, SupabaseClientOptions, UserResponse } from '@supabase/supabase-js'
-import { UNAUTHORIZED, SUPABASE_AUTH } from './constants'
+import { SUPABASE_AUTH }          from './constants'
+import { UNAUTHORIZED }           from './constants'
 
 export interface SupabaseAuthStrategyOptions {
   supabaseUrl: string

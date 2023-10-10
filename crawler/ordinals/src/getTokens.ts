@@ -1,5 +1,6 @@
-import { WalletRes } from './privateTypes'
 import { VolumeRes } from '@crawler/bis'
+
+import { WalletRes } from './privateTypes'
 
 export async function getTokens(wallet: string) {
   const res: WalletRes = await fetch(`https://turbo.ordinalswallet.com/wallet/${wallet}`).then((data) => data.json())

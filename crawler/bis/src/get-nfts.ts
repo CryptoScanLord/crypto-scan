@@ -1,6 +1,6 @@
-import * as Prv from './private-types.js'
+import * as Prv          from './private-types.js'
+import { NftDataApi }    from './private-types.js'
 import { transformData } from './transform.js'
-import { NftDataApi } from './private-types.js'
 
 export async function getNFTs(wallet: string) {
   const baseUrl = 'https://ordapi.bestinslot.xyz/v1/'

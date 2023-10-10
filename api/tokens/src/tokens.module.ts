@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common'
+import { Module }           from '@nestjs/common'
+
 import { TokensController } from './tokens.controller'
 
 @Module({

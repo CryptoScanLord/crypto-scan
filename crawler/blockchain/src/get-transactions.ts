@@ -1,5 +1,5 @@
-import * as Prv from './private-types.js'
-import * as Pub from './public-types.js'
+import * as Prv        from './private-types.js'
+import * as Pub        from './public-types.js'
 import { transformTx } from './transform.js'
 
 export interface GetTransactionsOptions {

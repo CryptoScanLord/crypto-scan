@@ -1,8 +1,12 @@
-import { FC } from 'react'
-import Box from '@mui/material/Box'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
-import { Routes } from './privateTypes'
+import { FC }               from 'react'
+
+import Box                  from '@mui/material/Box'
+import { useLocation }      from 'react-router-dom'
+import { useNavigate }      from 'react-router-dom'
+import { useParams }        from 'react-router-dom'
+
 import { PaginationButton } from './paginationButton'
+import { Routes }           from './privateTypes'
 
 export const Pagination: FC = () => {
   const { pathname } = useLocation()

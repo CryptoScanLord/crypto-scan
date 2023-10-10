@@ -1,6 +1,11 @@
-import { Controller, Get, Param, UseGuards } from '@nestjs/common'
-import { RoleGuard, SupabaseGuard } from '@lib/auth-nestjs'
-import { getTokens } from '@crawler/ordinals'
+import { Controller }    from '@nestjs/common'
+import { Get }           from '@nestjs/common'
+import { Param }         from '@nestjs/common'
+import { UseGuards }     from '@nestjs/common'
+
+import { getTokens }     from '@crawler/ordinals'
+import { RoleGuard }     from '@lib/auth-nestjs'
+import { SupabaseGuard } from '@lib/auth-nestjs'
 
 @Controller('tokens')
 export class TokensController {
