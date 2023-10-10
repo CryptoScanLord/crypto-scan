@@ -28,7 +28,7 @@ export const BRC20Page: FC = () => {
     return <CircularProgress />
   }
 
-  if (data?.status === 403) {
+  if (data?.statusCode === 403) {
     navigate('/not-authorized')
   }
 
