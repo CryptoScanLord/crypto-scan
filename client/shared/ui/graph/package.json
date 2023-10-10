@@ -9,8 +9,8 @@
     "prop-types": "^15.8.1"
   },
   "devDependencies": {
-    "@mui/material": "^5.14.4",
-    "@types/react": "^18.2.20"
+    "@mui/material": "^5.14.12",
+    "@types/react": "^18.2.27"
   },
   "peerDependencies": {
     "@mui/material": "5",

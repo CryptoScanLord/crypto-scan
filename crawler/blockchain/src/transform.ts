@@ -5,13 +5,11 @@ const negate = (value: number) => -value
 
 const sum = (a: number, b: number) => a + b
 
-const walletFilter =
-  (wallet: string) =>
+const walletFilter = (wallet: string) =>
   ({ address }: Prv.Port) =>
     wallet === address
 
-export const transformTx =
-  (wallet: string) =>
+export const transformTx = (wallet: string) =>
   ({ inputs, outputs, txid, time }: Prv.Tx): Pub.Tx => {
     const ownInputs = inputs.filter(walletFilter(wallet)).map(({ value }) => value)
     const ownOutputs = outputs.filter(walletFilter(wallet)).map(({ value }) => value)

@@ -1,7 +1,8 @@
-import type { FC } from 'react'
+import type { FC }                from 'react'
+
+import      Box                   from '@mui/material/Box'
 import type { SliceTooltipProps } from '@nivo/line'
-import Box from '@mui/material/Box'
-import type { Datum } from '@nivo/line'
+import type { Datum }             from '@nivo/line'
 
 const dateIntl = Intl.DateTimeFormat(navigator.language, { dateStyle: 'short', timeStyle: 'medium' })
 const currencyIntl = Intl.NumberFormat(navigator.language, { currency: 'USD', style: 'currency' })
@@ -11,8 +12,7 @@ const currencyDiffIntl = Intl.NumberFormat(navigator.language, {
   signDisplay: 'exceptZero',
 })
 
-export const Tooltip =
-  (data: Datum[]): FC<SliceTooltipProps> =>
+export const Tooltip = (data: Datum[]): FC<SliceTooltipProps> =>
   ({ slice }) => {
     const [point] = slice.points
     const key = point!.data.x as Date

@@ -1,16 +1,20 @@
-import { type FC, useState } from 'react'
+import type { FC }         from 'react'
+import      { useState }   from 'react'
+
+import      Box            from '@mui/material/Box'
+import      Paper          from '@mui/material/Paper'
+import      MuiTable       from '@mui/material/Table'
+import      TableBody      from '@mui/material/TableBody'
+import      TableCell      from '@mui/material/TableCell'
+import      TableContainer from '@mui/material/TableContainer'
+import      TableHead      from '@mui/material/TableHead'
+import      TableRow       from '@mui/material/TableRow'
+import      Typography     from '@mui/material/Typography'
+
+import      { Search }     from '@ui/search'
+
+import      { Pagination } from './pagination.component'
 import type { TableProps } from './table.interface'
-import MuiTable from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableRow from '@mui/material/TableRow'
-import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper'
-import TableHead from '@mui/material/TableHead'
-import Typography from '@mui/material/Typography'
-import { Pagination } from './pagination.component'
-import { Search } from '@ui/search'
 
 export const Table: FC<TableProps> = ({ data, headerCells, title, subtitle }) => {
   const [rowsPerPage] = useState(7)
@@ -27,8 +31,7 @@ export const Table: FC<TableProps> = ({ data, headerCells, title, subtitle }) =>
         return false
       }
       return value.toString().toLowerCase().includes(searchQuery.toLowerCase())
-    }),
-  )
+    }))
   const transformedData = filteredData.map((elem, index) => ({ id: index, ...elem }))
 
   return (
@@ -77,8 +80,7 @@ export const Table: FC<TableProps> = ({ data, headerCells, title, subtitle }) =>
                         )}
                         {typeof value === 'function' && value}
                       </TableCell>
-                    ) : null,
-                  )}
+                    ) : null)}
                 </TableRow>
               ))}
             </>

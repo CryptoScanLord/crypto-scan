@@ -1,5 +1,5 @@
-import * as Prv from './private-types.js'
-import * as Pub from './public-types.js'
+import * as Prv                    from './private-types.js'
+import * as Pub                    from './public-types.js'
 import { transformWalletActivity } from './transform.js'
 
 export async function getWalletActivity(wallet: string): Promise<Pub.Sales[]> {
@@ -7,8 +7,7 @@ export async function getWalletActivity(wallet: string): Promise<Pub.Sales[]> {
 
   for (let i = 1; ; i++) {
     const res = (await fetch(`https://ordapi.bestinslot.xyz/v1/get_wallet_activity/${wallet}/8/${i}/0}`).then((res) =>
-      res.json(),
-    )) satisfies Promise<Prv.Sales[]>
+      res.json())) satisfies Promise<Prv.Sales[]>
     if (!res[0]) {
       break
     } else {

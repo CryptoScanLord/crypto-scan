@@ -1,6 +1,8 @@
-import { FC } from 'react'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
+import { FC }       from 'react'
+
+import Box          from '@mui/material/Box'
+import Button       from '@mui/material/Button'
+
 import { useLogin } from '@lib/auth-react'
 
 export const LoginPage: FC = () => {

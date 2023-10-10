@@ -1,5 +1,6 @@
-import type { FC } from 'react'
-import { ThemeProvider } from '@theme/provider'
+import type { FC }            from 'react'
+
+import      { ThemeProvider } from '@theme/provider'
 
 export const withTheme = (Component: FC) => () => (
   <ThemeProvider>

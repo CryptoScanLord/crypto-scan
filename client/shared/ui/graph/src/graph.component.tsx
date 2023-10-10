@@ -1,9 +1,12 @@
-import { type FC, useMemo } from 'react'
-import type { GraphProps } from './graph.interface'
-import { ResponsiveLine } from '@nivo/line'
-import { linearGradientDef } from '@nivo/core'
-import { useTheme } from '@mui/material/styles'
-import { Tooltip } from './tooltip.component'
+import type { FC }                from 'react'
+import      { useMemo }           from 'react'
+
+import      { useTheme }          from '@mui/material/styles'
+import      { linearGradientDef } from '@nivo/core'
+import      { ResponsiveLine }    from '@nivo/line'
+
+import type { GraphProps }        from './graph.interface'
+import      { Tooltip }           from './tooltip.component'
 
 export const Graph: FC<GraphProps> = ({ data }) => {
   const { palette } = useTheme()

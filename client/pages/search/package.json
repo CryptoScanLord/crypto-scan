@@ -4,14 +4,14 @@
   "type": "module",
   "dependencies": {
     "@lib/auth-react": "workspace:^",
-    "@mui/material": "^5.14.7",
+    "@mui/material": "^5.14.12",
     "@ui/container": "workspace:^",
     "@ui/search": "workspace:^"
   },
   "devDependencies": {
-    "@mui/icons-material": "^5.14.6",
-    "@types/react": "^18.2.17",
-    "react-router-dom": "^6.14.1"
+    "@mui/icons-material": "^5.14.12",
+    "@types/react": "^18.2.27",
+    "react-router-dom": "^6.16.0"
   },
   "peerDependencies": {
     "@emotion/react": "11",

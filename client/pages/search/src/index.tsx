@@ -1,11 +1,13 @@
-import { useState } from 'react'
-import { Search } from '@ui/search'
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import SearchIcon from '@mui/icons-material/Search'
+import { useState }     from 'react'
+
+import SearchIcon       from '@mui/icons-material/Search'
+import Box              from '@mui/material/Box'
+import Button           from '@mui/material/Button'
+import Typography       from '@mui/material/Typography'
+import { useNavigate }  from 'react-router-dom'
+
 import { useAuthGuard } from '@lib/auth-react'
-import { useNavigate } from 'react-router-dom'
+import { Search }       from '@ui/search'
 
 export const SearchPage = () => {
   useAuthGuard()

@@ -3,8 +3,8 @@
   "main": "src/index.tsx",
   "type": "module",
   "devDependencies": {
-    "@mui/material": "^5.14.2",
-    "@types/react": "^18.2.17"
+    "@mui/material": "^5.14.12",
+    "@types/react": "^18.2.27"
   },
   "peerDependencies": {
     "@emotion/react": "11",

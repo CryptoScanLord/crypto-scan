@@ -1,8 +1,11 @@
-import { createClient } from './client'
-import { suspend } from 'suspend-react'
-import { useEffect, useState } from 'react'
-import type { AuthError } from '@supabase/supabase-js'
-import type { Session } from '@supabase/auth-helpers-react'
+import      { useEffect }    from 'react'
+import      { useState }     from 'react'
+
+import type { Session }      from '@supabase/auth-helpers-react'
+import type { AuthError }    from '@supabase/supabase-js'
+import      { suspend }      from 'suspend-react'
+
+import      { createClient } from './client'
 
 export function useSuspendSession() {
   const supabase = createClient()

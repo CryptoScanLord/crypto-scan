@@ -1,6 +1,6 @@
-import { getOverall } from './get-overall.js'
+import { getOverall }      from './get-overall.js'
 import { getTransactions } from './get-transactions.js'
-import * as Pub from './public-types.js'
+import * as Pub            from './public-types.js'
 
 export async function getHistory(wallet: string): Promise<Pub.History> {
   const { transactions: txs, balance } = await getOverall(wallet)

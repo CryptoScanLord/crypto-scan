@@ -1,11 +1,15 @@
-import { FC } from 'react'
-import { useAuthGuard, useSuspendSession } from '@lib/auth-react'
-import { Table } from '@ui/table'
-import { useQuery } from '@tanstack/react-query'
-import CircularProgress from '@mui/material/CircularProgress'
-import { useNavigate, useParams } from 'react-router-dom'
-import { Pagination } from '@ui/pagination'
-import Box from '@mui/material/Box'
+import { FC }                from 'react'
+
+import Box                   from '@mui/material/Box'
+import CircularProgress      from '@mui/material/CircularProgress'
+import { useQuery }          from '@tanstack/react-query'
+import { useNavigate }       from 'react-router-dom'
+import { useParams }         from 'react-router-dom'
+
+import { useAuthGuard }      from '@lib/auth-react'
+import { useSuspendSession } from '@lib/auth-react'
+import { Pagination }        from '@ui/pagination'
+import { Table }             from '@ui/table'
 
 export const NFTsPage: FC = () => {
   useAuthGuard()

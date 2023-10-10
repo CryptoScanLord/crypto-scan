@@ -13,9 +13,9 @@
     "@page/transactions": "workspace:^"
   },
   "devDependencies": {
-    "@mui/material": "^5.14.2",
-    "@types/react": "^18.2.12",
-    "react-router-dom": "^6.14.1"
+    "@mui/material": "^5.14.12",
+    "@types/react": "^18.2.27",
+    "react-router-dom": "^6.16.0"
   },
   "peerDependencies": {
     "@emotion/react": "11",
