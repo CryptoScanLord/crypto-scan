@@ -6,9 +6,9 @@
     "start": "ts-node --esm src/index.ts"
   },
   "devDependencies": {
-    "@types/node": "^20.8.4",
-    "@yarnpkg/pnpify": "^4.0.0-rc.53",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "@types/node": "20.8.4",
+    "@yarnpkg/pnpify": "4.0.0-rc.53",
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2"
   }
 }
