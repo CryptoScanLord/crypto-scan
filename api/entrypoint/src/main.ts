@@ -1,15 +1,21 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
+import { cert, key } from './tls'
 
 const PORT = Number(process.env.ORDI_PORT ?? 8000)
 const CORS_ORIGIN = process.env.ORDI_CORS ?? JSON.stringify('http://localhost:5173')
 
 export async function factory() {
-  const app = await NestFactory.create(AppModule)
+  const app = await NestFactory.create(AppModule, {
+    httpsOptions: {
+      cert,
+      key,
+    },
+  })
 
   app.enableCors({
     origin: JSON.parse(CORS_ORIGIN),
-    methods: 'POST',
+    methods: ['POST', 'GET'],
     allowedHeaders: 'Content-Type, Accept, Authorization',
     credentials: true,
   })
