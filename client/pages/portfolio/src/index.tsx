@@ -39,7 +39,9 @@ const PortfolioPage: FC = () => {
     return <CircularProgress />
   }
 
-  if (history?.status === 403 || overall?.status === 403) {
+  console.log(history)
+
+  if (history?.statusCode === 403 || overall?.statusCode === 403) {
     navigate('/not-authorized')
   }
 

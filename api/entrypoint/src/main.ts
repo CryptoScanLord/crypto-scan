@@ -1,22 +1,14 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { cert, key } from './tls'
-import type { NestFastifyApplication } from '@nestjs/platform-fastify'
-import { FastifyAdapter } from '@nestjs/platform-fastify'
 
 const PORT = Number(process.env.ORDI_PORT ?? 8000)
 const CORS_ORIGIN = process.env.ORDI_CORS ?? JSON.stringify('http://localhost:5173')
 
 export async function factory() {
-  const app = await NestFactory.create<NestFastifyApplication>(
-    AppModule,
-    new FastifyAdapter({
-      https: {
-        cert,
-        key,
-      },
-    }),
-  )
+  const app = await NestFactory.create(AppModule, {
+    httpsOptions: import.meta.env.PROD ? { cert, key } : undefined!,
+  })
 
   app.enableCors({
     origin: JSON.parse(CORS_ORIGIN),
