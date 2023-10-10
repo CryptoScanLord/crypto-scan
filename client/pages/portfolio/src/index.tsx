@@ -18,7 +18,7 @@ const PortfolioPage: FC = () => {
   const { data: history } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: () =>
-      fetch(new URL(`wallet/${wallet}/graph`, import.meta.env['API_URL']), {
+      fetch(new URL(`wallet/${wallet}/graph`, import.meta.env.ORDI_API_URL), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,7 +28,7 @@ const PortfolioPage: FC = () => {
   const { data: overall } = useQuery({
     queryKey: ['balance'],
     queryFn: () =>
-      fetch(new URL(`overall/${wallet}`, import.meta.env['API_URL']), {
+      fetch(new URL(`overall/${wallet}`, import.meta.env.ORDI_API_URL), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

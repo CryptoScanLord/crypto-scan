@@ -8,8 +8,8 @@ import type { Request } from 'express'
 export class SupabaseStrategy extends PassportStrategy(SupabaseAuthStrategy, 'supabase') {
   public constructor() {
     super({
-      supabaseUrl: import.meta.env['SUPABASE_URL'],
-      supabaseKey: import.meta.env['SUPABASE_KEY'],
+      supabaseUrl: process.env.ORDI_SUPABASE_URL,
+      supabaseKey: process.env.ORDI_SUPABASE_KEY,
       supabaseOptions: {},
       extractor: ExtractJwt.fromAuthHeaderAsBearerToken(),
     })

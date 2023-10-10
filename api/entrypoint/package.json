@@ -5,7 +5,7 @@
     "dev": "vite",
     "test": "vitest run",
     "build": "vite build",
-    "prod": "node dist/main.mjs"
+    "prod": "node dist/main.js"
   },
   "dependencies": {
     "@api/nfts-module": "workspace:^",
@@ -24,7 +24,6 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@lib/vite": "workspace:^",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",

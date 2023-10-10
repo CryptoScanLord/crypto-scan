@@ -5,19 +5,20 @@ services:
     volumes:
       - ./:/workspace
     entrypoint: yarn
-    profiles: [ ]
+    profiles: [ 'dev' ]
+
   api-dev:
     image: node:19
     working_dir: /workspace
     volumes:
       - ./:/workspace
     environment:
-      - PORT=8000
-      - SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
-      - SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
-      - CORS_ORIGIN=["http://localhost:5173"]
-      - ROLE_GUARD_TOKEN=MTEzNTQ4MTUxMDY5MTA4NjQwNg.GeAT7r.h_7crCNl4Mm7vFconZGMooLWxb25nA16dbF47s
-      - PASS_ROLE_ID=1155617925076627548
+      - ORDI_PORT=8000
+      - ORDI_SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
+      - ORDI_SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
+      - ORDI_CORS_ORIGIN=["http://localhost:5173"]
+      - ORDI_ROLE_GUARD_TOKEN=MTEzNTQ4MTUxMDY5MTA4NjQwNg.GeAT7r.h_7crCNl4Mm7vFconZGMooLWxb25nA16dbF47s
+      - ORDI_PASS_ROLE_ID=1155617925076627548
     entrypoint: yarn workspace @api/entrypoint dev
     ports:
       - 8000:8000
@@ -25,6 +26,7 @@ services:
       yarn:
         condition: service_completed_successfully
     profiles: [ 'dev' ]
+
   client-dev:
     image: node:19
     working_dir: /workspace
@@ -32,10 +34,10 @@ services:
       - ./:/workspace
     entrypoint: yarn workspace @app/entrypoint dev
     environment:
-      - SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
-      - SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
-      - PUBLIC_URL=https://localhost:5173/
-      - API_URL=http://localhost:8000/
+      - ORDI_SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
+      - ORDI_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
+      - ORDI_PUBLIC_URL=https://localhost:5173/
+      - ORDI_API_URL=http://localhost:8000/
     ports:
       - 5173:5173
     depends_on:
@@ -44,3 +46,18 @@ services:
       api-dev:
         condition: service_started
     profiles: [ 'dev' ]
+
+  api-prod:
+    build:
+      context: .
+      dockerfile: api.dockerfile
+    environment:
+      - ORDI_PORT=8000
+      - ORDI_SUPABASE_URL=https://jopajmdkkjcksytoleoq.supabase.co
+      - ORDI_SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcGFqbWRra2pja3N5dG9sZW9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3OTAwNTQsImV4cCI6MjAwNjM2NjA1NH0.ncqCsQSn1Rch4R4QAE1KPXBv_xDj7l0eb3zSAlT-mUY
+      - ORDI_CORS_ORIGIN=["https://www.orditracker.space"]
+      - ORDI_ROLE_GUARD_TOKEN=MTEzNTQ4MTUxMDY5MTA4NjQwNg.GeAT7r.h_7crCNl4Mm7vFconZGMooLWxb25nA16dbF47s
+      - ORDI_PASS_ROLE_ID=1155617925076627548
+    ports:
+      - 8000:8000
+    profiles: [ 'prod' ]
