@@ -3,12 +3,12 @@
   "main": "src/index.ts",
   "type": "module",
   "dependencies": {
-    "@tanstack/react-query": "5.0.0-beta.15",
+    "@tanstack/react-query": "5.0.0-beta.35",
     "@theme/provider": "workspace:^"
   },
   "devDependencies": {
-    "@types/react": "^18.2.12",
-    "react-router-dom": "^6.14.1"
+    "@types/react": "^18.2.27",
+    "react-router-dom": "^6.16.0"
   },
   "peerDependencies": {
     "@emotion/react": "11",

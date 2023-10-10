@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import { defineConfig } from 'vite'
 import { VitePluginNode as node } from 'vite-plugin-node'
 
@@ -19,14 +17,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['@nestjs/websockets', '@nestjs/microservices'],
     include: ['./src/main.ts'],
-  },
-  test: {
-    environment: 'node',
-    globals: true,
-    root: '../../',
-    deps: {
-      interopDefault: true
-    }
   },
   envPrefix: 'ORDI',
 })

@@ -12,10 +12,10 @@
   "devDependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.2",
-    "@tanstack/react-query": "5.0.0-beta.15",
-    "@types/react": "^18.2.17",
-    "react-router-dom": "^6.14.1"
+    "@mui/material": "^5.14.12",
+    "@tanstack/react-query": "5.0.0-beta.35",
+    "@types/react": "^18.2.27",
+    "react-router-dom": "^6.16.0"
   },
   "peerDependencies": {
     "@emotion/react": "11",
