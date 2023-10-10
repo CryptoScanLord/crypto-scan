@@ -60,4 +60,5 @@ services:
       - ORDI_PASS_ROLE_ID=1155617925076627548
     ports:
       - 80:8000
+      - 443:443
     profiles: [ 'prod' ]
