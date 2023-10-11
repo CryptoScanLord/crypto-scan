@@ -28,6 +28,8 @@ export const BRC20Page: FC = () => {
       }).then((res) => res.json()),
   })
 
+  console.log(data)
+
   if (!data) {
     return <CircularProgress />
   }

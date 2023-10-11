@@ -4,8 +4,8 @@ import { WalletRes } from './privateTypes'
 
 export async function getTokens(wallet: string) {
   const res: WalletRes = await fetch(`https://turbo.ordinalswallet.com/wallet/${wallet}`).then((data) => data.json())
-  const filtered = res.brc20.filter((el) => el.available_balance > 0)
-  return filtered.map(async (el) => {
+  const tokens = res.brc20
+  return tokens.map(async (el) => {
     const { sale_24h: volume24, total_sale: allVolume }: VolumeRes = await fetch(
       `https://ordapi.bestinslot.xyz/v1/get_brc20_ticker/${el.ticker.toLowerCase()}`,
     )

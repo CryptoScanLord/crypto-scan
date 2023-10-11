@@ -12,6 +12,8 @@ export class TokensController {
   @Get('/:wallet')
   @UseGuards(SupabaseGuard, RoleGuard)
   async getTokens(@Param('wallet') wallet: string) {
-    return getTokens(wallet)
+    const data = await getTokens(wallet)
+    console.log(Promise.all(data))
+    return Promise.all(data)
   }
 }

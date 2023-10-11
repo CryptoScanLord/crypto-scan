@@ -21,7 +21,7 @@ export const TransactionsPage: FC = () => {
   const { wallet } = useParams()
   const navigate = useNavigate()
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['wallet_history'],
     queryFn: async () =>
       fetch(new URL(`transactions/${wallet}`, import.meta.env.ORDI_API_URL), {
@@ -63,13 +63,15 @@ export const TransactionsPage: FC = () => {
           })),
   })
 
-  if (!data) {
+  if (isLoading) {
     return <CircularProgress />
   }
 
   if (data?.statusCode === 403) {
     navigate('/not-authorized')
   }
+
+  console.log(data)
 
   return (
     <Box flexGrow={1}>
