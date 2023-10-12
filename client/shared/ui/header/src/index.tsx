@@ -17,7 +17,7 @@ export const Header: FC = () => {
       justifyContent="space-between"
     >
       <Typography variant="h6">OrdiTracker</Typography>
-      <Search value={wallet} handleChange={setWallet} navigate={navigate} />
+      <Search value={wallet} handleChange={setWallet} />
     </Box>
   );
 };

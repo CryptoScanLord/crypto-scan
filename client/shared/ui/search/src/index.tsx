@@ -14,7 +14,7 @@ export const Search: FC<SearchProps> = ({ value, handleChange }) => (
   <FormControl>
     <Input
       value={value}
-      // onChange={(e: ChangeEvent<HTMLInputElement>) => e.keyCode === 13 ? navigate(`/portfolio/${value}`) : handleChange(e.target.value)}
+      // onChange={(e: ChangeEvent<HTMLInputElement>) => e.keyCode === 13 ? navigate(`/portfolio/${value}`) : handleChange(e.target.value)} .
       onChange={(e: ChangeEvent<HTMLInputElement>) =>
         handleChange(e.target.value)
       }
