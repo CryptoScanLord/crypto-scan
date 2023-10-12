@@ -1,11 +1,9 @@
-import { FC }       from 'react'
+import { FC } from 'react'
 import { useState } from 'react'
-
-import Box          from '@mui/material/Box'
-import Typography   from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import { useNavigate } from 'react-router-dom'
-
-import { Search }   from '@ui/search'
+import { Search } from '@ui/search'
 
 export const Header: FC = () => {
   const navigate = useNavigate()
