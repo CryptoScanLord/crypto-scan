@@ -9,17 +9,17 @@ import      { FontStyles }                        from '@theme/font'
 import      { schema }                            from '@theme/schema'
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => (
-  <MuiThemeProvider theme={schema}>
-    <CssBaseline />
-    <GlobalStyles
-      styles={{
-        'html, body, #root': {
-          minHeight: '100vh',
-          zIndex: 1,
-        },
-      }}
-    />
-    <FontStyles />
-    {children}
-  </MuiThemeProvider>
+	<MuiThemeProvider theme={schema}>
+		<CssBaseline />
+		<GlobalStyles
+			styles={{
+				'html, body, #root': {
+					minHeight: '100vh',
+					zIndex: 1,
+				},
+			}}
+		/>
+		<FontStyles />
+		{children}
+	</MuiThemeProvider>
 )

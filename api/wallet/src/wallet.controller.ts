@@ -16,62 +16,62 @@ const DAY = 24 * 60 * 60 * 1000
 
 @Controller('wallet/:wallet')
 export class WalletController {
-  @Get('graph')
-  @UseInterceptors(CacheInterceptor)
-  @CacheTTL(60 * 1000)
-  @UseGuards(SupabaseGuard, RoleGuard)
-  async getGraph(@Param('wallet') wallet: string) {
-    const actualPrice = await fetch('https://ordapi.bestinslot.xyz/v1/btc_price').then((res) => res.text().then(Number))
+	@Get('graph')
+	@UseInterceptors(CacheInterceptor)
+	@CacheTTL(60 * 1000)
+	@UseGuards(SupabaseGuard, RoleGuard)
+	async getGraph(@Param('wallet') wallet: string) {
+		const actualPrice = await fetch('https://ordapi.bestinslot.xyz/v1/btc_price').then((res) => res.text().then(Number))
 
-    const { entries, balance } = await getHistory(wallet)
+		const { entries, balance } = await getHistory(wallet)
 
-    if (entries.length === 0) {
-      return []
-    }
+		if (entries.length === 0) {
+			return []
+		}
 
-    const first = entries.at(0)!
-    const last = entries.at(-1) ?? first
+		const first = entries.at(0)!
+		const last = entries.at(-1) ?? first
 
-    const [endRange] = first
-    const [startRange] = last
+		const [endRange] = first
+		const [startRange] = last
 
-    const prices = await getPriceHistory(new Date(startRange - DAY), new Date(endRange + DAY))
+		const prices = await getPriceHistory(new Date(startRange - DAY), new Date(endRange + DAY))
 
-    prices.reverse()
+		prices.reverse()
 
-    if (prices.length === 0) {
-      throw new InternalServerErrorException(null, 'Prices array is empty')
-    }
+		if (prices.length === 0) {
+			throw new InternalServerErrorException(null, 'Prices array is empty')
+		}
 
-    let iterableBalance = balance
+		let iterableBalance = balance
 
-    let priceIdx = 0
-    let lastPrice = prices[0]!
+		let priceIdx = 0
+		let lastPrice = prices[0]!
 
-    const mappedHistory = entries
-      .map(([entryTime, delta]) => {
-        if (!lastPrice) {
-          return undefined
-        }
+		const mappedHistory = entries
+			.map(([entryTime, delta]) => {
+				if (!lastPrice) {
+					return undefined
+				}
 
-        while (lastPrice[0] > entryTime) {
-          lastPrice = prices[++priceIdx]!
+				while (lastPrice[0] > entryTime) {
+					lastPrice = prices[++priceIdx]!
 
-          if (!lastPrice) {
-            return undefined
-          }
-        }
+					if (!lastPrice) {
+						return undefined
+					}
+				}
 
-        const [, price] = lastPrice
+				const [, price] = lastPrice
 
-        iterableBalance -= delta
+				iterableBalance -= delta
 
-        return [entryTime, (price * iterableBalance) / 100000000]
-      })
-      .filter(Boolean)
+				return [entryTime, (price * iterableBalance) / 100000000]
+			})
+			.filter(Boolean)
 
-    mappedHistory.unshift([Date.now(), (actualPrice * balance) / 100000000])
+		mappedHistory.unshift([Date.now(), (actualPrice * balance) / 100000000])
 
-    return mappedHistory
-  }
+		return mappedHistory
+	}
 }

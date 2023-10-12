@@ -1,64 +1,64 @@
 export interface Transfer {
-  from?: string
-  to: string
-  height: number
-  salePrice?: number
-  timestamp: string
-  tx: string
+	from?: string
+	to: string
+	height: number
+	salePrice?: number
+	timestamp: string
+	tx: string
 }
 
 export interface Attribute {
-  value: string
-  traitType: string
+	value: string
+	traitType: string
 }
 
 export interface Metadata {
-  name: string
-  attributes: Attribute[]
+	name: string
+	attributes: Attribute[]
 }
 
 export interface Trait {
-  trait: string
-  value: string | number
+	trait: string
+	value: string | number
 }
 export interface Sales {
-  tokenId: string
-  oldWallet: string
-  newWallet: string
-  itemName?: string
-  salePrice: number
-  tokenNum: number
+	tokenId: string
+	oldWallet: string
+	newWallet: string
+	itemName?: string
+	salePrice: number
+	tokenNum: number
 }
 export interface Volume {
-  lastDay: number
+	lastDay: number
 }
 
 export interface VolumeRes {
-  sale_7d: string
-  sale_24h: string
-  total_sale: string
+	sale_7d: string
+	sale_24h: string
+	total_sale: string
 }
 
 export interface MaxPrice {
-  maxPrice?: number
+	maxPrice?: number
 }
 
 export type NftData = {
-  tokenId: string
-  tokenNum: number
-  title: string
-  imageUrl: string
-  walletAddress: string
-  timestamp: string
-  genesisHeight: string
-  genesisFee: string
-  transfers: Transfer[]
-  itemName?: string
-  metadata?: Metadata
-  collectionName?: string
-  collectionSlug?: string
-  blockHeight: number
-  magicedenListingPrice?: number
-  magicedenFloorPrice?: number
-  traits: Trait[]
+	tokenId: string
+	tokenNum: number
+	title: string
+	imageUrl: string
+	walletAddress: string
+	timestamp: string
+	genesisHeight: string
+	genesisFee: string
+	transfers: Transfer[]
+	itemName?: string
+	metadata?: Metadata
+	collectionName?: string
+	collectionSlug?: string
+	blockHeight: number
+	magicedenListingPrice?: number
+	magicedenFloorPrice?: number
+	traits: Trait[]
 }

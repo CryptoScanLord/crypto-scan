@@ -9,12 +9,12 @@ import { SupabaseGuard }   from '@lib/auth-nestjs'
 
 @Controller('transactions')
 export class TxsController {
-  @Get('/:wallet')
-  @UseGuards(SupabaseGuard, RoleGuard)
-  async getTxs(@Param('wallet') wallet: string) {
-    return getTransactions(wallet, {
-      limit: 0,
-      offset: 0,
-    })
-  }
+	@Get('/:wallet')
+	@UseGuards(SupabaseGuard, RoleGuard)
+	async getTxs(@Param('wallet') wallet: string) {
+		return getTransactions(wallet, {
+			limit: 0,
+			offset: 0,
+		})
+	}
 }

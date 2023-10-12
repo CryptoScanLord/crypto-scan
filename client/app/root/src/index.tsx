@@ -6,10 +6,10 @@ import      { Container }     from '@ui/container'
 import      { Header }        from '@ui/header'
 
 const App: FC = () => (
-  <Container>
-    <Header />
-    <Routes />
-  </Container>
+	<Container>
+		<Header />
+		<Routes />
+	</Container>
 )
 
 export default withProviders(App)

@@ -10,17 +10,17 @@ import { WalletModule }  from '@api/wallet-module'
 import { AuthModule }    from '@lib/auth-nestjs'
 
 @Module({
-  imports: [
-    CacheModule.register({
-      isGlobal: true,
-    }),
-    AuthModule,
-    WalletModule,
-    NftsModule,
-    VolumeModule,
-    TxsModule,
-    TokensModule,
-    OverallModule,
-  ],
+	imports: [
+		CacheModule.register({
+			isGlobal: true,
+		}),
+		AuthModule,
+		WalletModule,
+		NftsModule,
+		VolumeModule,
+		TxsModule,
+		TokensModule,
+		OverallModule,
+	],
 })
 export class AppModule {}
