@@ -22,7 +22,7 @@ export class NftsController {
 				const activity = activityIndex[tokenId]
 
 				return {
-					inscription: activity?.tokenNum ?? undefined,
+					inscription: tokenNum ?? undefined,
 					collectionName: collectionName ?? undefined,
 					imageUrl: imageUrl ?? undefined,
 					totalSpent: activity?.salePrice ?? undefined,
