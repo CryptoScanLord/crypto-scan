@@ -17,22 +17,22 @@ import { TransactionsPage }    from '@page/transactions'
 
 const PortfolioPage = lazy(() => import('@page/portfolio'))
 export const Routes: FC = () => (
-  <Suspense
-    fallback={
-      <Box height='100dvh' display='flex' justifyContent='center' alignItems='center'>
-        <CircularProgress />
-      </Box>
-    }
-  >
-    <DOMRoutes>
-      <Route path='/' element={<SearchPage />} />
-      <Route path='/portfolio/:wallet' element={<PortfolioPage />} />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/nfts/:wallet' element={<NFTsPage />} />
-      <Route path='/brc-20/:wallet' element={<BRC20Page />} />
-      <Route path='/transactions/:wallet' element={<TransactionsPage />} />
-      <Route path='/not-authorized' element={<NotAuthorizedPage />} />
-      <Route path='*' element={<NotFoundPage />} />
-    </DOMRoutes>
-  </Suspense>
+	<Suspense
+		fallback={
+			<Box height='100dvh' display='flex' justifyContent='center' alignItems='center'>
+				<CircularProgress />
+			</Box>
+		}
+	>
+		<DOMRoutes>
+			<Route path='/' element={<SearchPage />} />
+			<Route path='/portfolio/:wallet' element={<PortfolioPage />} />
+			<Route path='/login' element={<LoginPage />} />
+			<Route path='/nfts/:wallet' element={<NFTsPage />} />
+			<Route path='/brc-20/:wallet' element={<BRC20Page />} />
+			<Route path='/transactions/:wallet' element={<TransactionsPage />} />
+			<Route path='/not-authorized' element={<NotAuthorizedPage />} />
+			<Route path='*' element={<NotFoundPage />} />
+		</DOMRoutes>
+	</Suspense>
 )

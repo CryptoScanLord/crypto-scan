@@ -8,28 +8,28 @@ const PORT = Number(process.env.ORDI_PORT ?? 8000)
 const CORS_ORIGIN = process.env.ORDI_CORS ?? JSON.stringify('http://localhost:5173')
 
 export async function factory() {
-  const app = await NestFactory.create(AppModule, {
-    httpsOptions: import.meta.env.PROD ? { cert, key } : undefined!,
-  })
+	const app = await NestFactory.create(AppModule, {
+		httpsOptions: import.meta.env.PROD ? { cert, key } : undefined!,
+	})
 
-  app.enableCors({
-    origin: JSON.parse(CORS_ORIGIN),
-    methods: ['POST', 'GET'],
-    allowedHeaders: 'Content-Type, Accept, Authorization',
-    credentials: true,
-  })
+	app.enableCors({
+		origin: JSON.parse(CORS_ORIGIN),
+		methods: ['POST', 'GET'],
+		allowedHeaders: 'Content-Type, Accept, Authorization',
+		credentials: true,
+	})
 
-  app.enableShutdownHooks()
+	app.enableShutdownHooks()
 
-  return app
+	return app
 }
 
 if (import.meta.env.PROD) {
-  void (async () => {
-    const app = await factory()
+	void (async () => {
+		const app = await factory()
 
-    await app.listen(PORT, '0.0.0.0')
-  })()
+		await app.listen(PORT, '0.0.0.0')
+	})()
 }
 
 export const app = factory()

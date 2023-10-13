@@ -1,4 +1,4 @@
 export interface Tokens {
-  ticker: string
-  overallBalance: string
+	ticker: string
+	overallBalance: string
 }

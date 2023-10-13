@@ -9,9 +9,9 @@ import { SupabaseGuard } from '@lib/auth-nestjs'
 
 @Controller('overall')
 export class OverallController {
-  @Get('/:wallet')
-  @UseGuards(SupabaseGuard, RoleGuard)
-  async getOverallBalance(@Param('wallet') wallet: string) {
-    return getOverall(wallet)
-  }
+	@Get('/:wallet')
+	@UseGuards(SupabaseGuard, RoleGuard)
+	async getOverallBalance(@Param('wallet') wallet: string) {
+		return getOverall(wallet)
+	}
 }

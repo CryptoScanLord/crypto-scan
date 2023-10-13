@@ -1,24 +1,24 @@
 export interface Identified {
-  txid: string
+	txid: string
 }
 
 export interface Valued {
-  value: number
+	value: number
 }
 
 export interface Addressed {
-  address: string
+	address: string
 }
 
 export interface Tx extends Identified {
-  inputs: Port[]
-  outputs: Port[]
-  time: number
+	inputs: Port[]
+	outputs: Port[]
+	time: number
 }
 
 export type Port = Identified & Valued & Addressed
 
 export interface Overall {
-  txs: number
-  confirmed: number
+	txs: number
+	confirmed: number
 }

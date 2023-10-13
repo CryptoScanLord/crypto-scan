@@ -7,25 +7,25 @@ import { createClient }      from './client'
 import { useSuspendSession } from './session'
 
 export function useLogin() {
-  const supabase = createClient()
-  return useCallback(
-    () => supabase.auth.signInWithOAuth({ provider: 'discord', options: { scopes: 'identify' } }),
-    [supabase.auth],
-  )
+	const supabase = createClient()
+	return useCallback(
+		() => supabase.auth.signInWithOAuth({ provider: 'discord', options: { scopes: 'identify' } }),
+		[supabase.auth],
+	)
 }
 
 export function useLogout() {
-  const supabase = createClient()
-  return useCallback(() => supabase.auth.signOut(), [supabase.auth])
+	const supabase = createClient()
+	return useCallback(() => supabase.auth.signOut(), [supabase.auth])
 }
 
 export function useAuthGuard() {
-  const navigate = useNavigate()
-  const session = useSuspendSession()
+	const navigate = useNavigate()
+	const session = useSuspendSession()
 
-  useEffect(() => {
-    if (!session) {
-      navigate('/login')
-    }
-  }, [navigate, session])
+	useEffect(() => {
+		if (!session) {
+			navigate('/login')
+		}
+	}, [navigate, session])
 }

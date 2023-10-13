@@ -10,23 +10,23 @@ import { useAuthGuard } from '@lib/auth-react'
 import { Search }       from '@ui/search'
 
 export const SearchPage = () => {
-  useAuthGuard()
-  const navigate = useNavigate()
+	useAuthGuard()
+	const navigate = useNavigate()
 
-  const [wallet, setWallet] = useState<string>('')
+	const [wallet, setWallet] = useState<string>('')
 
-  const handleClick = () => {
-    navigate(`/portfolio/${wallet}`)
-    setWallet('')
-  }
+	const handleClick = () => {
+		navigate(`/portfolio/${wallet}`)
+		setWallet('')
+	}
 
-  return (
-    <Box display='flex' flexDirection='column'>
-      <Typography>Wallet</Typography>
-      <Search value={wallet} handleChange={setWallet} />
-      <Button sx={{ marginTop: '5px' }} startIcon={<SearchIcon />} type='submit' onClick={handleClick}>
-        Search
-      </Button>
-    </Box>
-  )
+	return (
+		<Box display='flex' flexDirection='column'>
+			<Typography>Wallet</Typography>
+			<Search value={wallet} handleChange={setWallet} />
+			<Button sx={{ marginTop: '5px' }} startIcon={<SearchIcon />} type='submit' onClick={handleClick}>
+				Search
+			</Button>
+		</Box>
+	)
 }

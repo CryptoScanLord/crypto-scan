@@ -6,7 +6,7 @@ import      { QueryClientProvider } from '@tanstack/react-query'
 const client = new QueryClient()
 
 export const withQuery = (Component: FC) => () => (
-  <QueryClientProvider client={client}>
-    <Component />
-  </QueryClientProvider>
+	<QueryClientProvider client={client}>
+		<Component />
+	</QueryClientProvider>
 )

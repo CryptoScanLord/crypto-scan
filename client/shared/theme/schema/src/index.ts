@@ -10,9 +10,9 @@ import      { MuiTableCell }      from './table'
 import      { MuiTableRow }       from './table'
 
 declare module '@mui/material/styles' {
-  interface BreakpointOverrides {
-    sm: false
-  }
+	interface BreakpointOverrides {
+		sm: false
+	}
 }
 
 const primary = '#7b61ff'
@@ -27,66 +27,66 @@ const lightgray = '#98a4c0'
 const divider = '#1e2340'
 
 export const base = {
-  breakpoints: {
-    values: {
-      xs: 0,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
-  },
-  spacing: (abs: number) => `${abs * 6}px`,
-  transitions: {
-    duration: {
-      standard: 300,
-    },
-  },
-  typography: {
-    fontSize: 16,
-    fontFamily: 'mabry',
-  },
-  shape: {
-    borderRadius: 3,
-  },
+	breakpoints: {
+		values: {
+			xs: 0,
+			md: 900,
+			lg: 1200,
+			xl: 1536,
+		},
+	},
+	spacing: (abs: number) => `${abs * 6}px`,
+	transitions: {
+		duration: {
+			standard: 300,
+		},
+	},
+	typography: {
+		fontSize: 16,
+		fontFamily: 'mabry',
+	},
+	shape: {
+		borderRadius: 3,
+	},
 } satisfies ThemeOptions
 
 export const palette = {
-  palette: {
-    primary: {
-      main: primary,
-      light: lightPrimary,
-    },
-    error: {
-      main: red,
-    },
-    success: {
-      main: green,
-    },
-    grey: {
-      500: midgray,
-      700: lightgray,
-    },
-    background: {
-      default: background,
-      paper,
-    },
-    divider,
-    text: {
-      primary: text,
-    },
-  },
+	palette: {
+		primary: {
+			main: primary,
+			light: lightPrimary,
+		},
+		error: {
+			main: red,
+		},
+		success: {
+			main: green,
+		},
+		grey: {
+			500: midgray,
+			700: lightgray,
+		},
+		background: {
+			default: background,
+			paper,
+		},
+		divider,
+		text: {
+			primary: text,
+		},
+	},
 } satisfies ThemeOptions
 
 const components = {
-  components: {
-    MuiInput,
-    MuiPagination,
-    MuiPaginationItem,
-    MuiTableCell,
-    MuiTableRow,
-    MuiPaper,
-    MuiButton,
-  },
+	components: {
+		MuiInput,
+		MuiPagination,
+		MuiPaginationItem,
+		MuiTableCell,
+		MuiTableRow,
+		MuiPaper,
+		MuiButton,
+	},
 } satisfies ThemeOptions
 
 export const schema = createTheme({ ...base, ...palette, ...components })

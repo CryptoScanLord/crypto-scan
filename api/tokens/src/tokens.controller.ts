@@ -9,11 +9,11 @@ import { SupabaseGuard } from '@lib/auth-nestjs'
 
 @Controller('tokens')
 export class TokensController {
-  @Get('/:wallet')
-  @UseGuards(SupabaseGuard, RoleGuard)
-  async getTokens(@Param('wallet') wallet: string) {
-    const data = await getTokens(wallet)
-    console.log(Promise.all(data))
-    return Promise.all(data)
-  }
+	@Get('/:wallet')
+	@UseGuards(SupabaseGuard, RoleGuard)
+	async getTokens(@Param('wallet') wallet: string) {
+		const data = await getTokens(wallet)
+		console.log(Promise.all(data))
+		return Promise.all(data)
+	}
 }
