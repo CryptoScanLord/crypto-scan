@@ -21,7 +21,7 @@ export const Header: FC = () => {
 	};
 
 	useEffect(() => {
-		setWallet(searchParams);
+		setWallet(searchParams ? searchParams : "");
 	}, [searchParams]);
 
 	return (
